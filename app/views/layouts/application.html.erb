@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Powwow</title>
+  <title>Student Conference on Conservation Science - Bengaluru 2015</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -9,10 +9,17 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>"  data-no-turbolink>
 <!-- This is the layout for the public -->
-
+<br>
+<br>
+<br>
 <%= render 'layouts/mainmenu' %>
 
+
+<%= raw '<div class="container">' unless controller_name == 'home' %>
+
 <%= yield %>
+
+<%= raw '</div>' unless controller_name == 'home' %>
 
 </body>
 </html>

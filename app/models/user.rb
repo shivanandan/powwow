@@ -1,11 +1,24 @@
 class User < ActiveRecord::Base
+  before_save :default_values
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # :confirmable, :lockable, :timeoutable and :omniauthable 
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable,:rememberable, :trackable, :validatable
+
+  validates :first_name, presence:true
+  validates :last_name, presence:true
+  validates :gender, presence:true
 
   def admin?
     self.role == "admin"
+  end
+
+  def reviewer?
+    self.role == "reviewer"
+  end
+
+  def applicant?
+    self.role == "applicant"
   end
 
   private
@@ -14,7 +27,7 @@ class User < ActiveRecord::Base
     YimMailer.welcome_email(self, self.password).deliver
   end
 
-  def set_default_role
+  def default_values
     self.role ||= 'applicant'
   end
 end

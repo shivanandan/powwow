@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213123209) do
+ActiveRecord::Schema.define(version: 20150213140731) do
+
+  create_table "announcements", force: true do |t|
+    t.string   "title"
+    t.string   "message"
+    t.string   "date"
+    t.integer  "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                              default: "", null: false
