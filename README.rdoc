@@ -26,3 +26,29 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+nationality_and_middle_name_and_gender_and_title_and_institutional_affiliation_and_phone_and_address_and_pio_and_oci_and_guardian_names_and_date_of_birth_and_place_of_birth_and_passport_number_and_passport_place_and_passport_date_of_issue_and_passport_place_of_issue_and_passport_date_of_expiry_and_address_as_stated_in_your_passport_and_indian_consulate
+
+
+
+nationality
+middle_name
+gender
+title
+institutional_affiliation
+phone
+address
+pio
+oci
+guardian_names
+date_of_birth
+place_of_birth
+passport_number
+passport_place
+passport_date_of_issue
+passport_place_of_issue
+passport_date_of_expiry
+address_as_stated_in_your_passport
+indian_consulate
+role
