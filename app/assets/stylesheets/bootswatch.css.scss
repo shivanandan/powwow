@@ -1116,14 +1116,14 @@ img {
   height: auto;
 }
 .img-rounded {
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .img-thumbnail {
   padding: 4px;
   line-height: 1.846;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1516,14 +1516,14 @@ code {
   font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 kbd {
   padding: 2px 4px;
   font-size: 90%;
   color: #ffffff;
   background-color: #333333;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
           box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -1545,7 +1545,7 @@ pre {
   color: #212121;
   background-color: #f5f5f5;
   border: 1px solid #cccccc;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 pre code {
   padding: 0;
@@ -2536,7 +2536,7 @@ output {
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
@@ -2679,7 +2679,7 @@ fieldset[disabled] .checkbox label {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 select.input-sm {
   height: 30px;
@@ -2694,7 +2694,7 @@ select[multiple].input-sm {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 select.form-group-sm .form-control {
   height: 30px;
@@ -2715,7 +2715,7 @@ select[multiple].form-group-sm .form-control {
   padding: 10px 16px;
   font-size: 17px;
   line-height: 1.3333333;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 select.input-lg {
   height: 45px;
@@ -2730,7 +2730,7 @@ select[multiple].input-lg {
   padding: 10px 16px;
   font-size: 17px;
   line-height: 1.3333333;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 select.form-group-lg .form-control {
   height: 45px;
@@ -2977,7 +2977,7 @@ select[multiple].form-group-lg .form-control {
   padding: 6px 16px;
   font-size: 13px;
   line-height: 1.846;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3324,21 +3324,21 @@ fieldset[disabled] .btn-link:focus {
   padding: 10px 16px;
   font-size: 17px;
   line-height: 1.3333333;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .btn-block {
   display: block;
@@ -3422,7 +3422,7 @@ tbody.collapse.in {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   -webkit-background-clip: padding-box;
@@ -3722,7 +3722,7 @@ tbody.collapse.in {
   padding: 10px 16px;
   font-size: 17px;
   line-height: 1.3333333;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
@@ -3745,7 +3745,7 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
@@ -3786,17 +3786,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .input-group-addon.input-sm {
   padding: 5px 10px;
   font-size: 12px;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .input-group-addon.input-lg {
   padding: 10px 16px;
   font-size: 17px;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .input-group-addon input[type="radio"],
 .input-group-addon input[type="checkbox"] {
@@ -3947,7 +3947,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs.nav-justified > li > a {
   margin-right: 0;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
@@ -3969,7 +3969,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
 }
 .nav-pills > li > a {
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .nav-pills > li + li {
   margin-left: 2px;
@@ -4015,7 +4015,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs-justified > li > a {
   margin-right: 0;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .nav-tabs-justified > .active > a,
 .nav-tabs-justified > .active > a:hover,
@@ -4054,7 +4054,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar {
-    border-radius: 3px;
+    border-radius: 1px;
   }
 }
 @media (min-width: 768px) {
@@ -4185,7 +4185,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .navbar-toggle:focus {
   outline: 0;
@@ -4579,7 +4579,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   margin-bottom: 23px;
   list-style: none;
   background-color: #f5f5f5;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .breadcrumb > li {
   display: inline-block;
@@ -4596,7 +4596,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   display: inline-block;
   padding-left: 0;
   margin: 23px 0;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .pagination > li {
   display: inline;
@@ -4855,7 +4855,7 @@ a.badge:focus {
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .jumbotron .container {
   max-width: 100%;
@@ -4881,7 +4881,7 @@ a.badge:focus {
   line-height: 1.846;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
@@ -4904,7 +4904,7 @@ a.thumbnail.active {
   padding: 15px;
   margin-bottom: 23px;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .alert h4 {
   margin-top: 0;
@@ -5004,7 +5004,7 @@ a.thumbnail.active {
   height: 23px;
   margin-bottom: 23px;
   background-color: #f5f5f5;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -5288,7 +5288,7 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 23px;
   background-color: #ffffff;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -5497,7 +5497,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-group .panel {
   margin-bottom: 0;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
@@ -5655,7 +5655,7 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 20px;
   background-color: #f9f9f9;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -5665,11 +5665,11 @@ a.list-group-item-danger.active:focus {
 }
 .well-lg {
   padding: 24px;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .well-sm {
   padding: 9px;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .close {
   float: right;
@@ -5740,7 +5740,7 @@ button.close {
   background-color: #ffffff;
   border: 1px solid #999999;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   -webkit-background-clip: padding-box;
@@ -5857,7 +5857,7 @@ button.close {
   text-align: center;
   text-decoration: none;
   background-color: #727272;
-  border-radius: 3px;
+  border-radius: 1px;
 }
 .tooltip-arrow {
   position: absolute;
@@ -5939,7 +5939,7 @@ button.close {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   white-space: normal;
