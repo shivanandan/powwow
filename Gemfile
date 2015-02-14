@@ -38,6 +38,11 @@ gem 'cancancan', '~> 1.10'
 
 gem 'jquery-datatables-rails', '~> 3.1.1'
 
+gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+
+gem 'paperclip'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

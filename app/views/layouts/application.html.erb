@@ -6,6 +6,9 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
+  <% if action_name == 'edit' or action_name == 'new' %>
+  <%= tinymce_assets %>
+  <% end %>
 </head>
 <body class="<%= controller_name %> <%= action_name %>"  data-no-turbolink>
 <!-- This is the layout for the public -->
@@ -26,6 +29,10 @@
 </div>
 
 </footer>
+
+<% if action_name == 'edit' or action_name == 'new' %>
+  <%= tinymce %>
+  <% end %>
 
 </body>
 </html>

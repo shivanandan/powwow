@@ -1,0 +1,11 @@
+toolbar:
+  - styleselect | bold italic | undo redo | link | uploadimage | code
+plugins:
+  - image
+  - link
+  - uploadimage
+  - paste
+  - code
+menubar : false
+oninit : "setPlainText"
+skin : "light"

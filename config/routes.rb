@@ -1,4 +1,7 @@
 Powwow::Application.routes.draw do
+
+  post '/tinymce_assets' => 'tinymce_assets#create'
+  
   resources :webpages
 
   resources :announcements
