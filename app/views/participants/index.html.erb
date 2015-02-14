@@ -1,11 +1,56 @@
 <h1>All Participants</h1>
 
+<table id="example" class="table table-striped table-hover table-bordered datatable">
+	<thead>
+    <tr>
+	<th><%= :first_name %></th>
+	<th><%= :middle_name %></th>
+	<th><%= :last_name %></th>
+	<th><%= :nationality %></th>
+	<th><%= :email  %></th>
+	<th><%= :gender %></th>
+	<th><%= :title %></th>
+	<th><%= :institutional_affiliation %></th>
+	<th><%= :phone %></th>
+	<th><%= :address %></th>
+	<th><%= :role%></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+	<th><%= :first_name %></th>
+	<th><%= :middle_name %></th>
+	<th><%= :last_name %></th>
+	<th><%= :nationality %></th>
+	<th><%= :email  %></th>
+	<th><%= :gender %></th>
+	<th><%= :title %></th>
+	<th><%= :institutional_affiliation %></th>
+	<th><%= :phone %></th>
+	<th><%= :address %></th>
+	<th><%= :role%></th>
+    </tr>
+  </tfoot>
 
-
-
+<tbody></tbody>
 <% @users.each do |u| %>
-
-
+<tr>
+	<td><%= u.first_name %></td>
+	<td><%= u.middle_name %></td>
+	<td><%= u.last_name %></td>
+	<td><%= u.nationality %></td>
+	<td><%= u.email  %></td>
+	<td><%= u.gender %></td>
+	<td><%= u.title %></td>
+	<td><%= u.institutional_affiliation %></td>
+	<td><%= u.phone %></td>
+	<td><%= u.address %></td>
+	<td><%= u.role%></th>
+</tr>
 <% end %>
+
+</table>
+
+
 
 <%= @users.inspect %>
