@@ -1,15 +1,198 @@
-<h2>Sign up</h2>
+<div class="page-header">
+	<h2>Register for SCCS Bengaluru 2015</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <p>This is where you will register for the conference. More details here and lots of info about what where how eheb.</p>
 
-  <div><%= f.label :password %><br />
+  <hr>
+
+<div class="row">
+	<div class="col-lg-6">
+		
+		  <div class="page-header">
+			<h4>Basic Information</h4>
+		</div>
+
+		  <div class="form-group">
+		  	<%= f.label :first_name %> <br>
+		  	<%= f.text_field :first_name, autofocus: true, placeholder: "  First name as in passport", class: 'form-control', required: true %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :middle_name %> <br>
+		  	<%= f.text_field :middle_name, placeholder: " Middle name as in passport", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :last_name %> <br>
+		  	<%= f.text_field :last_name, placeholder: " Last name as in passport", class: 'form-control', required: true  %>
+		  </div>
+
+		  <div class="form-group">
+		  	
+			 <label>Gender</label>
+		  	<div class="row">
+		  		<div class="radio col-lg-3">
+			  		<label>
+			  		<%= f.radio_button :gender, 'Male', :checked => true %>
+					Male
+			  		</label>
+			  	</div>
+			  	<div class="radio col-lg-3">
+			  		<label>
+			  	 	<%= f.radio_button :gender, 'Female' %>
+			  	 	Female
+			  		</label>
+			  	</div>
+			  	<div class="radio col-lg-3">
+			  		<label>
+			  		<%= f.radio_button :gender, 'Other' %>
+			  		Other
+			  		</label>
+			  	</div>
+		  	</div> 
+
+		  	 
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :phone %>
+		  	<p class="text-muted">
+		  		 Your phone number with ISD and STD codes
+		  	</p>
+		  	<%= f.text_field :phone, placeholder: " Complete phone number", class: 'form-control', required: true  %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :address %>
+		  	<p class="text-muted">
+		  		 Your complete postal address
+		  	</p>
+		  	<%= f.text_area :address, placeholder: " Complete street address", class: 'form-control', required: true  %>
+		  </div>
+
+		<div class="page-header">
+			<h4>Education / Work</h4>
+		</div>
+
+		  <div class="form-group">
+		  	<%= f.label :title %> <br>
+		  	<%= f.text_field :title, placeholder: " What are you called", class: 'form-control', required: true  %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :institutional_affiliation %>
+		  	<p class="text-muted">
+		  		 Your complete institutional affiliation.
+		  	</p>
+		  	<%= f.text_area :institutional_affiliation, placeholder: " Complete Institutional Affiliation", class: 'form-control', required: true  %>
+		  </div>
+		</div>
+	<div class="col-lg-6">
+		<div class="page-header">
+			<h4>Citizenship</h4>
+		</div>
+		  <div id="nationstate" class="form-group">
+		  	<%= f.label :nationality %> <br>
+		  	<%= raw country_select_text %>
+		  </div>
+		  <div id="nonindian">
+		  	<br><br>
+		  <p class="text-warning">Please fill in the information below if you are a non-Indian citizen. SCCS-Bengaluru is required to collect the following information from foreign citizens because it is mandated by the Government of India for getting official clearance while applying for your conference visa to travel to India.</p>
+		  <div class="form-group">
+		  	<%= f.label :pio %>
+		  	<p class="text-muted">
+		  		 Your PIO number if you hold a <em>Person of Indian Origin</em> card.
+		  	</p>
+		  	<%= f.text_field :pio, placeholder: " PIO Number", class: 'form-control' %>
+		  </div>
+		  <div class="form-group">
+		  	<%= f.label :oci %>
+		  	<p class="text-muted">
+		  		 Your OCI number if you hold a <em>Overseas Citizen of India</em> card.
+		  	</p>
+		  	<%= f.text_field :oci, placeholder: " OCI Number", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :passport_number %>
+		  	<%= f.text_field :passport_number, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <p class="text-danger">If you do not have a passport and are applying for one, please get in touch with us immediately (sccs@sccs-bng.org) with details. We will not be able to issue you with a letter of invitation until all your passport details are sent to us.</p>
+
+		 <!--  <div class="form-group">
+		  	<%= f.label :passport_place %>
+		  	<%= f.text_field :passport_place, placeholder: " ", class: 'form-control' %>
+		  </div> -->
+
+		  <div class="form-group">
+		  	<%= f.label :guardian_names %>
+		  	<p class="text-muted">
+		  		 Names of Father / Mother / Gaurdian as in Passport
+		  	</p>
+		  	<%= f.text_area :guardian_names, placeholder: " Names of guardians", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group selectordate">
+		  	<%= f.label :date_of_birth %><br>
+		  	<%= f.date_select :date_of_birth, {required: true, :use_short_month=>true}, {:class => 'form-control'}  %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :place_of_birth %>
+		  	<%= f.text_field :place_of_birth, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :passport_date_of_issue %>
+		  	<%= f.text_field :passport_date_of_issue, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :passport_date_of_expiry %>
+		  	<%= f.text_field :passport_date_of_expiry, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :passport_place_of_issue %>
+		  	<%= f.text_field :passport_place_of_issue, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :address_as_stated_in_your_passport %>
+		  	<%= f.text_area :address_as_stated_in_your_passport, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :indian_consulate %>
+		  	<p class="text-muted">
+		  		 Please include the full address ofthe Indian consulate where you plan to apply for your visa and also include contact email ID and phone numbers.
+		  	</p>
+		  	<%= f.text_area :indian_consulate, placeholder: " ", class: 'form-control' %>
+		  </div>
+		</div> <!-- #nonindian ends -->
+	</div>
+</div>
+  <div class="page-header">
+	<h4>Login Details</h4>
+</div>
+
+  <div class="form-group">
+  	<%= f.label :email %> <br>
+  	<p class="text-muted">
+  		The primary email address used for all corresspondence.
+  	</p>
+	  <%= f.email_field :email, placeholder: " Your email address" %>
+  </div>
+
+  <div class="form-group"><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div class="form-group"><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.submit "Sign up" %></div>

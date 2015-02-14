@@ -34,11 +34,15 @@ nationality_and_middle_name_and_gender_and_title_and_institutional_affiliation_a
 
 nationality
 middle_name
+first_name
+last_name
 gender
 title
 institutional_affiliation
 phone
 address
+
+
 pio
 oci
 guardian_names
