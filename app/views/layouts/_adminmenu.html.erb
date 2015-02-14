@@ -12,9 +12,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li><a href="">BOSS</a></li>
+        <li><%= link_to 'Announcements', announcements_path %></li>
+        <li><%= link_to 'Participants', participants_path %></li>
       </ul>	
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Announcements', announcements_path %></li>
 
 		<li><%= link_to 'Signout', destroy_user_session_path, :method => 'delete' %></li>
         <li>&nbsp; &nbsp; &nbsp; &nbsp;</li>
