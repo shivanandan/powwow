@@ -5,7 +5,31 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <p>This is where you will register for the conference. More details here and lots of info about what where how eheb.</p>
+ <div class="row">
+ 	 <div class="col-lg-6">
+ 	 	<p>Registrations for SCCS BNG 2015 are a four step process. Once you fill our the form below, you will recieve an email with a link to confirm your account. After this you will have to make a payment with <em>doattend</em>, who manage our tickets. Once this is done, you will have to login and paste your ticket number in your panel.</p>
+ 	 	<p class="text-danger">Please make sure you use the same email address in doattend.com as the one you register with on this site.</p>
+	</div>
+
+	  <ul class="list-group col-lg-6">
+	  <li class="list-group-item">
+	    <strong class="text-primary">1</strong> &nbsp;
+	    Complete the form below
+	  </li>
+	  <li class="list-group-item">
+	    <strong class="text-primary">2</strong> &nbsp;
+	    Click the confirmation link in the email sent to you.
+	  </li>
+	  <li class="list-group-item">
+	    <strong class="text-primary">3</strong> &nbsp;
+	    Register and pay at doattend.
+	  </li>
+	  <li class="list-group-item">
+	    <strong class="text-primary">4</strong> &nbsp;
+	    Login to sccs-bng.org and paste your ticket number from doattend.
+	  </li>
+	</ul>
+ </div>
 
   <hr>
 

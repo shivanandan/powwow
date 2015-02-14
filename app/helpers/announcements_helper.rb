@@ -103,7 +103,7 @@ module AnnouncementsHelper
 			<option value="HK">Hong Kong</option>
 			<option value="HU">Hungary</option>
 			<option value="IS">Iceland</option>
-			<option value="IN" selected>India</option>
+			<option value="IN">India</option>
 			<option value="ID">Indonesia</option>
 			<option value="IR">Iran, Islamic Republic of</option>
 			<option value="IQ">Iraq</option>

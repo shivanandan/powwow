@@ -4,6 +4,11 @@ function action_on_nations(selected) {
 		$('#nonindian textarea').prop('required',true);
 		$('#nonindian select').prop('required',true);
 		$('#nonindian input').prop('disabled',false);
+
+		// making sure PIO and OCI remain not required
+		$('#user_pio').prop('required',false);
+		$('#user_oci').prop('required',false);
+
 		$('#nonindian textarea').prop('disabled',false);
 		$('#nonindian select').prop('disabled',false);
 		$('#nonindian').css('display', 'block');

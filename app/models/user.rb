@@ -18,13 +18,13 @@ class User < ActiveRecord::Base
 
   validates :nationality, presence:true
   
-  validates_presence_of :pio, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :oci, :unless => lambda {self.nationality == 'IN'}
+  #validates_presence_of :pio, :unless => lambda {self.nationality == 'IN'}
+  #validates_presence_of :oci, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :guardian_names, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :place_of_birth, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :date_of_birth, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :passport_number, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :passport_place, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :passport_place, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :passport_date_of_issue, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :passport_place_of_issue, :unless => lambda {self.nationality == 'IN'}
   validates_presence_of :passport_date_of_expiry, :unless => lambda {self.nationality == 'IN'}
