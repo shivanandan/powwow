@@ -7,6 +7,18 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-3">klm</div>
+		<% @announcements.each do |a| %>
+		<div class="col-lg-3 announce">
+			<div class="date">
+				<strong><%= a.date %></strong>
+			</div>
+			<div class="title">
+				<%= a.title %>
+			</div>
+			<div class="message">
+				<%= a.message %>
+			</div>
+		</div>
+		<% end %>
 	</div>
 </div>

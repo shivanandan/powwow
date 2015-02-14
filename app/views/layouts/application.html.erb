@@ -9,9 +9,6 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>"  data-no-turbolink>
 <!-- This is the layout for the public -->
-<br>
-<br>
-<br>
 <%= render 'layouts/mainmenu' %>
 
 
@@ -20,6 +17,15 @@
 <%= yield %>
 
 <%= raw '</div>' unless controller_name == 'home' %>
+
+<footer>
+<br><br><br><br>
+<div class="container">
+	<small>© SCCS Bengaluru 2015</small>
+	<br><br>
+</div>
+
+</footer>
 
 </body>
 </html>

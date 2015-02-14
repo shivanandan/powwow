@@ -1,4 +1,6 @@
 Powwow::Application.routes.draw do
+  resources :webpages
+
   resources :announcements
 
   devise_for :users
