@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   has_attached_file :passportscan
 
+  validates_attachment_content_type :passportscan, :content_type => ["application/pdf"]
+
   validates :first_name, presence:true
   # validates :middle_name
   validates :last_name, presence:true
@@ -56,7 +58,7 @@ class User < ActiveRecord::Base
     if self.nationality == 'IN'
       return false
     else
-      return true
+      !self.passportscan.exists?
     end
   end
 

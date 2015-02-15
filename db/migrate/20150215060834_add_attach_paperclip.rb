@@ -1,4 +1,4 @@
-class AddattachPaperclip < ActiveRecord::Migration
+class AddAttachPaperclip < ActiveRecord::Migration
    def self.up
      add_column :users, :passportscan_file_name,    :string
      add_column :users, :passportscan_content_type, :string

@@ -33,17 +33,18 @@ class ApplicantController < ApplicationController
 	end
 
 	def uploadpassport
+		@user = current_user
 	end
 
 	def passport
 		xxx = true
 		@user = current_user
-		@user.passportscan 
+		@user.passportscan = params[:user][:passportscan]
 		respond_to do |format|
-	      if xxx
+	      if @user.save
 	        format.html { redirect_to applicant_path, notice: 'Webpage was successfully created.' }
 	      else
-	      	@error = 'eror'
+	      	@error = 'error'
 	        format.html { render action: 'uploadpassport' }
 	      end
 	    end

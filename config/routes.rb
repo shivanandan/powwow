@@ -15,7 +15,8 @@ Powwow::Application.routes.draw do
   get 'setticket' => 'applicant#setticket', as: :setticket
   post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend
   get 'applicant' => 'applicant#index', as: :applicant
-  post 'uploadpassport' => 'applicant#pasport', as: :passport
+  
+  post 'passport' => 'applicant#passport', as: :passport
   get 'uploadpassport' => 'applicant#uploadpassport', as: :uploadpassport
 
 
