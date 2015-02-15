@@ -1,5 +1,19 @@
 <p>Welcome <%= @email %>!</p>
 
+<p>Before confirming your account, click on this link to purchase a ticket to attend SCCS-Bengaluru 2015: http://sccsbng2015.doattend.com/.</p>  
+
+<p>You can make the payment using credit, debit or cash cards, as well as from online bank accounts. Please use the same email ID that you registered with on the SCCS website. </p>
+
+<p>Once you have made the payment, you will receive an email from DoAttend with your ticket as an attachment and a link to a page where you can login to your account on the SCCS website. 
+</p>
+<p>After logging in to your SCCS account, provide your DoAttend ticket number.</p>  
+
+<p>Indian participants will then be able to submit an abstract and register for workshops, whereas non-Indians will need to upload scanned copies of their passports before they can proceed.</p>
+
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Thanks, <br>
+	Conference Administrator.
+</p>
