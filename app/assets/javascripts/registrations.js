@@ -36,7 +36,7 @@ function monitor_change_to_select() {
 	});
 
 	$('.areyouastudent input').click(function(){
-		var k = $(this).val();
+		var k = $(this).attr('data-hit');
 		$('.othersqs, .studentsqs').addClass('hide');
 		$('.'+k).removeClass('hide');
 	});
