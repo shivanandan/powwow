@@ -13,20 +13,58 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
-        <li><a href="#">Participate <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Venue</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information For Presenters <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">2015 Conference<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="/webpages/plenaries">Plenaries</a></li>
+            <li><a href="/webpages/workshops">Workshops</a></li>
+            <li><a href="/webpages/student-talks">Student Talks</a></li>
+            <li><a href="/webpages/student-posters">Student Posters</a></li>
+            
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Paricipate <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/webpages/who-can-participate">Who Can Participate</a></li>
+            <li><a href="/webpages/fees-and-bursaries">Fees and Bursaries</a></li>
+            <li><a href="/webpages/cancellation-policy">Cancelation Policy</a></li>
+            <li><a href="/webpages/abstract-submission">Abstract Submission</a></li>
+            <li><a href="/webpages/who-s-who-in-conservation">Who's who in conservation</a></li>
+            <li><a href="/webpages/workshop-registration">Workshop Registration</a></li>
+            <li><a href="/webpages/frequently-asked-questions">F.A.Q</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Venue <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/webpages/accommodation">Accommodation</a></li>
+            <li><a href="/webpages/getting-to-bengaluru">Getting to Bengaluru</a></li>
+            <li><a href="/webpages/getting-to-iisc">Getting to IISc</a></li>
+            <li><a href="/webpages/getting-around-iisc">Getting around IISc</a></li>
+
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information for presenters <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/webpages/abstract-submission-guidelines">Abstract Submission Guidelines</a></li>
+            <li><a href="/webpages/talk-guidelines">Talk Guidelines</a></li>
+            <li><a href="/webpages/poster-guidelines">Poster Guidelines</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/webpages/about">About</a></li>
+            <li><a href="/webpages/contact">Contact</a></li>
+            <li><a href="/webpages/organisers">Organisers</a></li>
+            <li><a href="/webpages/supporters">Supporters</a></li>
+            <li><a href="/webpages/sister-conferences">Sister Conferences</a></li>
+          </ul>
+        </li>
+        <li><a href="/webpages/schedule">Schedule</a></li>
+
         <% if user_signed_in? %>
         
         <% else %>
