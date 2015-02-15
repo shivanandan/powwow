@@ -34,5 +34,20 @@
   <%= tinymce %>
   <% end %>
 
+<% color_collection = ['#ff9800', '#4caf50'] %>
+<% colors = color_collection.shuffle %>
+
+<style>
+  h1 {
+    border-bottom-color: <%= colors[0] %>;
+    color: <%= colors[0] %>;
+  }
+
+  h3, h4, h5 {
+    border-bottom-color: <%= colors[1] %>;
+    color: <%= colors[1] %>;    
+  }
+</style>
+
 </body>
 </html>

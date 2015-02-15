@@ -8,8 +8,8 @@
 }
 
 .container .form-group {
-	input {
-		min-width: 300px;
+	input[type="text"], textarea {
+		border: 1px solid #f0f0f0;
 	}
 	label {
 		margin-top: 10px;
@@ -21,8 +21,13 @@
 		margin-top: 30px;
 	}
 	p.text-muted {
-		// background-color: #FFFACD;
+		background-color: #f3f3f3;
 		padding: 5px 10px;
+
+		&:before {
+			content: 'NOTE :';
+
+		}
 	}
 
 	input[required="required"] {
