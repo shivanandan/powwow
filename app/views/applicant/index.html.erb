@@ -10,6 +10,8 @@
 
 		<%= raw '<p>Foreign participants will also need to upload a scanned copy of their passports. </p>' if current_user.passportless? %>
 
+		<p>You can upload an abstract after the abstract submission deadline.</p>
+
 	</div>
 	<div class="col-lg-5">
 		<% success = '<span class="label label-success">&#10004;</span>' %>
@@ -26,6 +28,9 @@
 		    <%= raw notdone if current_user.passportless? %>
 		    <%= raw success unless current_user.passportless? %>
 		    Upload passport details
+		    <% unless current_user.passportless? %>
+		    <a href="<%= current_user.passportscan %>" target="_blank">View</a>
+		    <% end %>
 		  </li>
 		  <li class="list-group-item">
 		    <%= raw success unless current_user.abstractless? %>
@@ -36,4 +41,4 @@
 	</div>
 </div>
 
-<%= current_user.inspect %>
+<%# current_user.inspect %>
