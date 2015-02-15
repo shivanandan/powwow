@@ -12,7 +12,7 @@
 	<div class="col-lg-6">
 		<br>
 		<div class="well">
-			<%= form_tag ({:controller => "applicant", :action => "checkdoattend"}) do %>
+			<%= form_tag checkdoattend_path, :id =>'form' do %>
 
 				<% unless @error.nil? %>
 				<div class="alert alert-dismissible alert-danger">
@@ -28,8 +28,30 @@
 					<p class="text-info"><%= current_user.email %></p>
 					<%= text_field_tag :ticket_number,'', {:class=>'form-control', :placeholder=>'enter your ticket number here.'} %>
 				</div>
-				<%= submit_tag %>
+
+				<div class="loaderrr hide">
+					<br> <strong>VERIFYING</strong>
+					<div id="loadingProgressG">
+						<div id="loadingProgressG_1" class="loadingProgressG">
+						</div>
+					</div>
+					<br>
+				</div>
+
+				<%= submit_tag 'SUBMIT', :class => 'submitt btn btn-success' %>
 			<% end %>
 		</div>
 	</div>
 </div>
+
+
+<script>
+
+function loadingprogress() {
+	$('#form').submit(function() {
+		$('.loaderrr').removeClass('hide');
+	});
+}
+
+$(document).ready(loadingprogress);	
+</script>

@@ -9,12 +9,25 @@ class ApplicantController < ApplicationController
 	end
 
 	def checkdoattend
-		xx = true
+		ticket_number = params[:ticket_number]
+
+		doattend = JSON.parse RestClient.get(Doattend)
+		p = doattend['participants']
+		thisuser = p.select {|k| k["Ticket_Number"] == ticket_number}
+
+		unless thisuser.empty?
+			if thisuser[0]['Email'] == current_user.email
+				current_user.ticket_number = ticket_number
+				current_user.save
+			end
+		end
+
 		respond_to do |format|
-	      if xx
+	      unless thisuser.empty?
 	        format.html { redirect_to applicant_path, notice: 'Webpage was successfully created.' }
 	      else
-	      	@error = 'jnjnjn'
+	      	@ticketinfo = thisuser
+	      	@error = 'eror'
 	        format.html { render action: 'setticket' }
 	      end
 	    end
@@ -24,7 +37,5 @@ class ApplicantController < ApplicationController
 
 	def onlyapplicant
 	    raise CanCan::AccessDenied unless current_user.applicant?
-	  end
-
-
+	end
 end

@@ -6,6 +6,10 @@
 	<div class="col-lg-7">
 		<h6>STATUS</h6>
 		<hr>
+		<%= raw '<p>Hang in there, you are nearly done with registration!</p><p>Enter your ticket number and wait for a few minutes. A green checked box will appear once validation is complete.</p>' if current_user.ticketless? %>
+
+		<%= raw '<p>Foreign participants will also need to upload a scanned copy of their passports. </p>' if current_user.passportless? %>
+
 	</div>
 	<div class="col-lg-5">
 		<% success = '<span class="label label-success">&#10004;</span>' %>
