@@ -5,7 +5,6 @@ class ApplicantController < ApplicationController
 	end
 
 	def setticket
-
 	end
 
 	def checkdoattend
@@ -29,6 +28,23 @@ class ApplicantController < ApplicationController
 	      	@ticketinfo = thisuser
 	      	@error = 'eror'
 	        format.html { render action: 'setticket' }
+	      end
+	    end
+	end
+
+	def uploadpassport
+	end
+
+	def passport
+		xxx = true
+		@user = current_user
+		@user.passportscan 
+		respond_to do |format|
+	      if xxx
+	        format.html { redirect_to applicant_path, notice: 'Webpage was successfully created.' }
+	      else
+	      	@error = 'eror'
+	        format.html { render action: 'uploadpassport' }
 	      end
 	    end
 	end

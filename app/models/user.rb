@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable,:rememberable, :trackable, :validatable
 
+
+  has_attached_file :passportscan
+
   validates :first_name, presence:true
   # validates :middle_name
   validates :last_name, presence:true
