@@ -50,7 +50,11 @@ class User < ActiveRecord::Base
   end
 
   def passportless?
-    true
+    if self.nationality == 'IN'
+      return false
+    else
+      return true
+    end
   end
 
   def abstractless?
