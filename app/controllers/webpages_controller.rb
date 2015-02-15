@@ -65,7 +65,7 @@ class WebpagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_webpage
-      @webpage = Webpage.find(params[:id])
+      @webpage = Webpage.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
