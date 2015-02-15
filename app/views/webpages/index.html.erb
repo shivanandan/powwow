@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
+      <th>Slug (used for urls)</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,7 +15,7 @@
     <% @webpages.each do |webpage| %>
       <tr>
         <td><%= webpage.title %></td>
-        <td><%= webpage.body %></td>
+        <td><%= webpage.slug %></td>
         <td><%= link_to 'Show', webpage %></td>
         <td><%= link_to 'Edit', edit_webpage_path(webpage) %></td>
         <td><%= link_to 'Destroy', webpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
