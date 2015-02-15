@@ -12,6 +12,11 @@ Powwow::Application.routes.draw do
 
   get 'participants' => 'participants#index', as: :participants
 
+  get 'setticket' => 'applicant#setticket', as: :setticket
+  post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend
+  get 'applicant' => 'applicant#index', as: :applicant
+
+
   # You can have the root of your site routed with "root"
   root 'home#index'
 

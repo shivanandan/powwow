@@ -28,7 +28,7 @@
           </ul>
         </li>
         <% if user_signed_in? %>
-        <li><%= link_to 'Signout', destroy_user_session_path, :method => 'delete' %></li>
+        
         <% else %>
         <li><%= link_to "Register", new_user_registration_path %></li>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
@@ -41,6 +41,7 @@
 
 <% if user_signed_in? %>
 <%= render 'layouts/adminmenu' if current_user.admin? %>
+<%= render 'layouts/applicantmenu' if current_user.applicant? %>
 <% else %>
 
 <% end %>

@@ -1,0 +1,35 @@
+<br>
+<div class="webpages">
+	<h1>Enter Doattend ticket number</h1>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<br>
+		<h4>SYNC YOUR TICKET</h4>
+		<p>To attend the conference, we need your ticket number from doattend. You should have gotten an email with the details....</p>
+	</div>
+	<div class="col-lg-6">
+		<br>
+		<div class="well">
+			<%= form_tag ({:controller => "applicant", :action => "checkdoattend"}) do %>
+
+				<% unless @error.nil? %>
+				<div class="alert alert-dismissible alert-danger">
+				  <button type="button" class="close" data-dismiss="alert">×</button>
+				  <strong>Oh no!</strong> Are you sure you got your ticket number correct? Please check and try submitting again. <br>
+				  <p>
+				  	If you are still having a problem, shoot a mail to <em>sccs@sccs-bng.org</em> with <em>DOATTEND TICKET SYNC</em> in the subject line.
+				  </p>
+				</div>
+				<% end %>
+				<div class="form-group">
+					<%= label_tag :ticket_number, "Please enter the ticket number associated with the email address:" %> <br>
+					<p class="text-info"><%= current_user.email %></p>
+					<%= text_field_tag :ticket_number,'', {:class=>'form-control', :placeholder=>'enter your ticket number here.'} %>
+				</div>
+				<%= submit_tag %>
+			<% end %>
+		</div>
+	</div>
+</div>

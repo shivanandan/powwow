@@ -1,0 +1,33 @@
+<h1>Overview</h1>
+<br>
+<hr>
+
+<div class="row">
+	<div class="col-lg-7">
+		<h6>STATUS</h6>
+		<hr>
+	</div>
+	<div class="col-lg-5">
+		<% success = '<span class="label label-success">&#10004;</span>' %>
+		<% notdone = '<span class="label label-danger">NOT DONE</span>' %>
+		<h6>CHECKLIST</h5>
+			<br>
+		<ul class="list-group">
+		  <li class="list-group-item">
+		    <%= raw notdone if current_user.ticketless? %>
+		    <%= raw success unless current_user.ticketless? %>
+		    Enter Doattend Ticket
+		  </li>
+		  <li class="list-group-item">
+		    <%= raw notdone if current_user.passportless? %>
+		    <%= raw success unless current_user.passportless? %>
+		    Upload passport details
+		  </li>
+		  <li class="list-group-item">
+		    <%= raw success unless current_user.abstractless? %>
+		    <%= raw notdone if current_user.abstractless? %>
+		    Submit Abstract
+		  </li>
+		</ul>
+	</div>
+</div>

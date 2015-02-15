@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-fixed-top admin">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="">Hi <%= current_user.first_name %>!</a></li>
+        <li><%= link_to "My Overview", applicant_path %></li>
+      </ul>	
+      <ul class="nav navbar-nav navbar-right">
+      <% if current_user.ticketless? %>
+        <li><%= link_to "Enter ticket number", setticket_path %></li>
+      <% end %>
+		<li><%= link_to 'Signout', destroy_user_session_path, :method => 'delete' %></li>
+        <li>&nbsp; &nbsp; &nbsp; &nbsp;</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<% if current_user.ticketless? and (action_name != 'setticket') %>
+
+  <% if current_user.ticketless? and (action_name != 'checkdoattend') %>
+  
+    <div class="alert floatup alert-dismissible alert-warning">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>ALERT!</h4>
+      <p>
+         Please enter your doattend ticket number to attend the conference. You can click <%= link_to "here", setticket_path %>  to start the process.
+     </p>
+    </div>
+  <% end %>
+<% end %>

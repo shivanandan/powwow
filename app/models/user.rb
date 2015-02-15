@@ -45,6 +45,18 @@ class User < ActiveRecord::Base
     self.role == "applicant"
   end
 
+  def ticketless?
+    self.ticket_number.nil?
+  end
+
+  def passportless?
+    true
+  end
+
+  def abstractless?
+    true
+  end
+
   private
 
   def override_fields
