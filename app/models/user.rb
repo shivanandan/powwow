@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
   validates :phone, presence:true
   validates :address, presence:true
 
-  validates :title, presence:true
   validates :institutional_affiliation, presence:true
 
   validates :nationality, presence:true
