@@ -24,6 +24,7 @@
 		    <%= raw success unless current_user.ticketless? %>
 		    Enter Doattend Ticket
 		  </li>
+		  <% unless current_user.nationality == 'IN' %>
 		  <li class="list-group-item">
 		    <%= raw notdone if current_user.passportless? %>
 		    <%= raw success unless current_user.passportless? %>
@@ -32,6 +33,7 @@
 		    <a href="<%= current_user.passportscan %>" target="_blank">View</a>
 		    <% end %>
 		  </li>
+		  <% end %>
 		  <li class="list-group-item">
 		    <%= raw success unless current_user.abstractless? %>
 		    <%= raw notdone if current_user.abstractless? %>
