@@ -34,6 +34,26 @@ function monitor_change_to_select() {
 		var selectedvalue = $(this).val();
 		action_on_nations(selectedvalue);
 	});
+
+	$('.areyouastudent input').click(function(){
+		var k = $(this).attr('data-hit');
+		$('.othersqs, .studentsqs').addClass('hide');
+		$('.'+k).removeClass('hide');
+	});
+
+	$('.othersqs input').click(function(){
+		var html = '<div class="form-group tttt"><input id="titleotherinput" type="text" name="users[title]" class="form-control ti" placeholder="Your current job title"></div>';
+		
+		if ($(this).hasClass('ti1')) {
+			// This is to identify the others radio button
+			$('.othersqs').append(html);
+		} else if ($(this).hasClass('ti')) {
+			// To Identify the new input box
+		} else {
+			// remove the html thing
+			$('.tttt').remove()
+		}
+	});
 }
 
 $(document).ready(monitor_change_to_select);

@@ -119,11 +119,57 @@
 		<div class="page-header">
 			<h4>Education / Work</h4>
 		</div>
+		<div class="form-group areyouastudent">
+			<label>Are you a student?</label>
+			<div class="row">
+				<div class="radio col-lg-3">
+					<label><input checked='checked' type="radio" name="users[studying]" value="true" data-hit="studentsqs">Yes</label>
+				</div>
+				<div class="radio col-lg-3">
+					<label><input type="radio" name="users[studying]" value="false" data-hit="othersqs">No</label>
+				</div>
+			</div>
+		</div>
 
-		  <div class="form-group">
-		  	<%= f.label :title %> <br>
-		  	<%= f.text_field :title, placeholder: " What are you called", class: 'form-control', required: true  %>
-		  </div>
+		<div class="studentsqs">
+		<div class="form-group">
+			<label>What degree are you currently pursuing?</label>
+			<div class="row">
+				<div class="radio col-lg-3">
+					<label><input checked='checked' type="radio" name="users[student]" value="bachelors">Bachelors</label>
+				</div>
+				<div class="radio col-lg-3">
+					<label><input type="radio" name="users[student]" value="masters">Masters</label>
+				</div>
+				<div class="radio col-lg-3">
+					<label><input type="radio" name="users[student]" value="phd">PhD.</label>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="othersqs hide">
+			<div class="form-group">
+				<label>What is your current job title? If not applicable fill it under ‘Others’?</label>
+				<div class="row">
+					<div class="radio col-lg-12">
+						<label><input checked='checked' type="radio" name="users[title]" value="researchstudent">Research Student(Junior Research Fellow/Senior Research Fellow/Project assistant)</label>
+					</div>
+					<div class="radio col-lg-12">
+						<label><input type="radio" name="users[title]" value="postdoc">Post-doc (within two years from completion of PhD)</label>
+					</div>
+					<div class="radio col-lg-12">
+						<label><input type="radio" name="users[title]" value="independent">Independent</label>
+					</div>
+					<div class="radio col-lg-12">
+						<label><input type="radio" name="users[title]" value="unemployed">Unemployed</label>
+					</div>
+					<div class="radio col-lg-12">
+						<label><input id="titleothers" type="radio" name="users[title]" value="others" class="ti1">Others</label>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		  <div class="form-group">
 		  	<%= f.label :institutional_affiliation %>
@@ -237,6 +283,10 @@
   <div class="form-group"><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+<div class="row">
+	<p class="col-lg-6 text-info">Within a few minutes after clicking on 'Sign up' below, you will receive an email from us with a link to confirm your account as well as further instructions.</p>
+	<p class="col-lg-6">.</p>
+</div>    
   <div><%= f.submit "Sign up", :class=>'btn btn-success' %></div>
 <% end %>
 
