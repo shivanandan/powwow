@@ -5,9 +5,10 @@ function action_on_nations(selected) {
 		$('#nonindian select').prop('required',true);
 		$('#nonindian input').prop('disabled',false);
 
-		// making sure PIO and OCI remain not required
+		// making sure PIO and OCI and mother's name remain not required
 		$('#user_pio').prop('required',false);
 		$('#user_oci').prop('required',false);
+		$('#user_mothers_name').prop('required',false);
 
 		$('#nonindian textarea').prop('disabled',false);
 		$('#nonindian select').prop('disabled',false);
