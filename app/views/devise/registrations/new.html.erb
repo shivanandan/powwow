@@ -219,14 +219,22 @@
 		  <div class="form-group">
 		  	<%= f.label :guardian_names %>
 		  	<p class="text-muted">
-		  		 Names of Father / Mother / Gaurdian as in Passport
+		  		 Name of Father / Guardian as in Passport
 		  	</p>
-		  	<%= f.text_area :guardian_names, placeholder: " Names of guardians", class: 'form-control' %>
+		  	<%= f.text_field :guardian_names, placeholder: " Name of father / guardian", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :mothers_name %>
+		  	<p class="text-muted">
+		  		 Name of Mother
+		  	</p>
+		  	<%= f.text_field :mothers_name, placeholder: " Name of guardians", class: 'form-control' %>
 		  </div>
 
 		  <div class="form-group selectordate">
 		  	<%= f.label :date_of_birth %><br>
-		  	<%= f.date_select :date_of_birth, {required: true, :use_short_month=>true}, {:class => 'form-control'}  %>
+		  	<%= f.date_select :date_of_birth, {required: true, :use_short_month=>true, :start_year=>1930,:end_year=>2005}, {:class => 'form-control'}  %>
 		  </div>
 
 		  <div class="form-group">
