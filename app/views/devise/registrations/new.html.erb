@@ -173,7 +173,7 @@
 		  <div class="form-group">
 		  	<%= f.label :institutional_affiliation %>
 		  	<p class="text-muted">
-		  		 Your complete institutional affiliation.
+		  		 Your complete institutional affiliation with name and country. State 'None' if not applicable. 
 		  	</p>
 		  	<%= f.text_area :institutional_affiliation, placeholder: " Complete Institutional Affiliation", class: 'form-control', required: true  %>
 		  </div>
@@ -217,7 +217,7 @@
 		  </div> -->
 
 		  <div class="form-group">
-		  	<%= f.label :guardian_names, "Name of father / Guardian" %>
+		  	<%= f.label :guardian_names, "Name of father / guardian" %>
 		  	<p class="text-muted">
 		  		 Name of Father / Guardian as in Passport
 		  	</p>
@@ -225,11 +225,11 @@
 		  </div>
 
 		  <div class="form-group">
-		  	<%= f.label :mothers_name %>
+		  	<%= f.label :mothers_name, "Name of mother / guardian" %>
 		  	<p class="text-muted">
 		  		 Name of Mother
 		  	</p>
-		  	<%= f.text_field :mothers_name, placeholder: " Name of Mother", class: 'form-control' %>
+		  	<%= f.text_field :mothers_name, placeholder: " Name of mother / guardian", class: 'form-control' %>
 		  </div>
 
 		  <div class="form-group selectordate">
@@ -242,14 +242,15 @@
 		  	<%= f.text_field :place_of_birth, placeholder: " ", class: 'form-control' %>
 		  </div>
 
-		  <div class="form-group">
-		  	<%= f.label :passport_date_of_issue %>
-		  	<%= f.text_field :passport_date_of_issue, placeholder: " ", class: 'form-control' %>
+		  <div class="form-group selectordate">
+		  	<%= f.label :passport_date_of_issue %> <br>
+		  	<%= f.date_select :passport_date_of_issue, {required: true, :use_short_month=>true, :start_year=>1990,:end_year=>2015}, {:class => 'form-control'}  %>
 		  </div>
 
-		  <div class="form-group">
-		  	<%= f.label :passport_date_of_expiry %>
-		  	<%= f.text_field :passport_date_of_expiry, placeholder: " ", class: 'form-control' %>
+		  <div class="form-group selectordate">
+		  	<%= f.label :passport_date_of_expiry %> <br>
+		  	<%= f.date_select :passport_date_of_expiry, {required: true, :use_short_month=>true, :start_year=>2015,:end_year=>2035}, {:class => 'form-control'}  %>
+
 		  </div>
 
 		  <div class="form-group">
@@ -262,12 +263,26 @@
 		  	<%= f.text_area :address_as_stated_in_your_passport, placeholder: " ", class: 'form-control' %>
 		  </div>
 
+		  <div class="page-header">
+			<h4>Details of Indian consulate where you plan to apply</h4>
+		</div>
+
 		  <div class="form-group">
-		  	<%= f.label :indian_consulate %>
+		  	<%= f.label :indian_consulate, "Address of the Indian consulate" %>
 		  	<p class="text-muted">
-		  		 Please include the full address ofthe Indian consulate where you plan to apply for your visa and also include contact email ID and phone numbers.
+		  		 Please include the full address of the Indian consulate where you plan to apply for your visa and also include contact email ID and phone numbers.
 		  	</p>
 		  	<%= f.text_area :indian_consulate, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :consulate_phone %>
+		  	<%= f.text_field :consulate_phone, placeholder: "Consulate phone number", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :consulate_email %>
+		  	<%= f.text_field :consulate_email, placeholder: "Consulate email", class: 'form-control' %>
 		  </div>
 		</div> <!-- #nonindian ends -->
 	</div>
@@ -279,7 +294,7 @@
   <div class="form-group">
   	<%= f.label :email %> <br>
   	<p class="text-muted">
-  		The primary email address used for all corresspondence.
+  		The primary email address used for all correspondence.
   	</p>
 	  <%= f.email_field :email, placeholder: " Your email address" %>
   </div>
