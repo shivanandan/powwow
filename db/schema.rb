@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216112735) do
+ActiveRecord::Schema.define(version: 20150216113529) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20150216112735) do
     t.string   "student"
     t.boolean  "studying"
     t.string   "mothers_name"
+    t.string   "consulate_email"
+    t.string   "consulate_phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -263,12 +263,26 @@
 		  	<%= f.text_area :address_as_stated_in_your_passport, placeholder: " ", class: 'form-control' %>
 		  </div>
 
+		  <div class="page-header">
+			<h4>Details of Indian consulate where you plan to apply</h4>
+		</div>
+
 		  <div class="form-group">
-		  	<%= f.label :indian_consulate %>
+		  	<%= f.label :indian_consulate, "Address of the Indian consulate" %>
 		  	<p class="text-muted">
-		  		 Please include the full address ofthe Indian consulate where you plan to apply for your visa and also include contact email ID and phone numbers.
+		  		 Please include the full address of the Indian consulate where you plan to apply for your visa and also include contact email ID and phone numbers.
 		  	</p>
 		  	<%= f.text_area :indian_consulate, placeholder: " ", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :consulate_phone %>
+		  	<%= f.text_field :consulate_phone, placeholder: "Consulate phone number", class: 'form-control' %>
+		  </div>
+
+		  <div class="form-group">
+		  	<%= f.label :consulate_email %>
+		  	<%= f.text_field :consulate_email, placeholder: "Consulate email", class: 'form-control' %>
 		  </div>
 		</div> <!-- #nonindian ends -->
 	</div>
