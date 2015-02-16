@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216075521) do
+ActiveRecord::Schema.define(version: 20150216112735) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(version: 20150216075521) do
     t.string   "place_of_birth"
     t.string   "passport_number"
     t.string   "passport_place"
-    t.string   "passport_date_of_issue"
+    t.date     "passport_date_of_issue",             limit: 255
     t.string   "passport_place_of_issue"
-    t.string   "passport_date_of_expiry"
+    t.date     "passport_date_of_expiry",            limit: 255
     t.text     "address_as_stated_in_your_passport"
     t.text     "indian_consulate"
     t.string   "role"

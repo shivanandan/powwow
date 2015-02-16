@@ -35,7 +35,9 @@
 
 	&.selectordate select.form-control {
 		width: 30%;
+		max-width: 50px;
 		display: inline-block;
+		margin-right: 10px;
 		font-size: 100%;
 	}
 }
