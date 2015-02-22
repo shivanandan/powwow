@@ -11,9 +11,10 @@ class Ability
         can [:new, :create], Submission do |s|
             user.abstractless?
         end
-        can [:read, :manage], Submission do |s|
+        can [:read, :edit], Submission do |s|
             s.user_id == user.id
         end
+        cannot [:index], Submission
     else
         can :show, :all
         cannot :show, Submission
