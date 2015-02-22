@@ -1,18 +1,57 @@
 <p id="notice"><%= notice %></p>
 
+      :title, :abstract, :authors, :co_authors, :gps_lat, :gps_lng, :poster, :previous_attendance, :attendance_year, :previous_bursary, :bursary, :reason_for_bursary, :introduction, :methods, :results, :discussion, :visual_abstract, :presenter, :current_institution, :other_institutional_affiliations, :keywords)
+
+
 <p>
   <strong>Title:</strong>
   <%= @submission.title %>
 </p>
 
 <p>
-  <strong>Abstract:</strong>
-  <%= @submission.abstract %>
+  <strong>Introduction:</strong>
+  <%= @submission.introduction %>
 </p>
 
 <p>
-  <strong>Authors:</strong>
-  <%= @submission.authors %>
+  <strong>Methods:</strong>
+  <%= @submission.methods %>
+</p>
+
+<p>
+  <strong>Results:</strong>
+  <%= @submission.results %>
+</p>
+
+<p>
+  <strong>Discussion:</strong>
+  <%= @submission.discussion %>
+</p>
+
+<p>
+  <strong>Visual Abstract</strong> <br>
+  <%= image_tag @submission.visual_abstract(:medium) %>
+</p>
+
+<p>
+  <strong>Presenter:</strong>
+  <%= @submission.presenter %>
+</p>
+
+<p>
+  <strong>Current Institution:</strong>
+  <%= @submission.current_institution %>
+</p>
+
+<p>
+  <strong>Other Institutional Affiliations:</strong>
+  <%= @submission.other_institutional_affiliations %>
+</p>
+
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @submission.keywords %>
 </p>
 
 <p>
@@ -27,7 +66,7 @@
 </p>
 
 <p>
-  <strong>Poster:</strong>
+  <strong>Presentation Format:</strong>
   <%= @submission.poster %>
 </p>
 
@@ -56,10 +95,5 @@
   <%= @submission.reason_for_bursary %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @submission.user_id %>
-</p>
-
-<%# link_to 'Edit', edit_submission_path(@submission) %> |
+<%# link_to 'Edit', edit_submission_path(@submission) %>
 <%# link_to 'Back', submissions_path %>
