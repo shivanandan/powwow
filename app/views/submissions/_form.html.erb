@@ -80,7 +80,8 @@ Likewise, when you are describing what the conservation implications of your res
 
 <div class="row">
   <div class="form-group col-lg-8">
-    <%= f.label :visual_abstract %> <br>
+    <%= f.label :visual_abstract, "Visual Component" %>
+    <p>Visual Component (JPEG/PNG file less than 1 MB in size): we would like you to add a visual component which should typically complement the textual element of your abstract. This single image file could be either in the form of graphs, tables, maps, figures, illustrations, flow charts, photographs and other visual elements illustrating the main results, the study design, or the main idea that is captured by the study. Keep text within this visual component to a minimum and try not to replicate the same text you have used in the text of your abstract. </p>
     <span class="btn btn-file"><%= f.file_field :visual_abstract, required: true %></span>
   </div>
 </div>
@@ -240,7 +241,7 @@ All bursary applicants should also pay the conference registration fees online f
 
 <div class="row atty">
   <div class="form-group col-lg-6">
-    <%= f.label :previous_bursary, "Have you recieved a bursary before?" %><br>
+    <%= f.label :previous_bursary, "Have you received a bursary before?" %><br>
     <div class="col-lg-10">
        <div class="radio">
           <label>
@@ -292,7 +293,7 @@ All bursary applicants should also pay the conference registration fees online f
 
 
   <div class="actions">
-    <p>Please note that once you have clicked on the "Submit" button you cannot make any changes to this form. There is a link provided for you to view a copy of your submitted abstract. Each participant is allowed to submit only one abstract to the conference.</p>
+    <p class="text-danger">Please note that once you have clicked on the "Submit" button you cannot make any changes to this form. There is a link provided for you to view a copy of your submitted abstract. Each participant is allowed to submit only one abstract to the conference.</p>
     <br><br>
     <%= f.submit "Submit your Abstract!", :class=>'btn btn-success' %>
   </div>
