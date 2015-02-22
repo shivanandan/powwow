@@ -28,8 +28,11 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     @submission.user_id = current_user.id
 
+    @user = User.find(current_user.id)
+    @user.abstract_submitted = true
+
     respond_to do |format|
-      if @submission.save
+      if @submission.save and @user.save
         format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
         format.json { render action: 'show', status: :created, location: @submission }
       else
@@ -71,6 +74,6 @@ class SubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def submission_params
-      params.require(:submission).permit(:title, :abstract, :authors, :co_authors, :gps_lat, :gps_lng, :poster, :previous_attendance, :attendance_year, :previous_bursary, :bursary, :reason_for_bursary, :introduction, :methods, :results, :discussion, :visual_abstract, :presenter, :current_institution, :other_institutional_affiliations)
+      params.require(:submission).permit(:title, :abstract, :authors, :co_authors, :gps_lat, :gps_lng, :poster, :previous_attendance, :attendance_year, :previous_bursary, :bursary, :reason_for_bursary, :introduction, :methods, :results, :discussion, :visual_abstract, :presenter, :current_institution, :other_institutional_affiliations, :keywords)
     end
 end
