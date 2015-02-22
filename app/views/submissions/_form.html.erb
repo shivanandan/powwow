@@ -171,14 +171,20 @@ $('#us3').locationpicker({
      <div class="col-lg-10">
         <div class="radio">
           <label>
-            <%= f.radio_button :poster, "0", :checked => 'checked' %>
+            <%= f.radio_button :poster, "talk" %>
             Talk
           </label>
         </div>
        <div class="radio">
           <label>
-            <%= f.radio_button :poster, "1" %>
+            <%= f.radio_button :poster, "poster" %>
             Poster
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :poster, "either", :checked => 'checked'  %>
+            Either
           </label>
         </div>
       </div>
