@@ -11,6 +11,7 @@ class Ability
         can [:create], Submission do |s|
             user.abstractless?
         end
+        can :show, Webpage
         can [:read], Submission do |s|
             s.user_id == user.id
         end
