@@ -1,0 +1,314 @@
+<br>
+<%= form_for(@submission, :html => { :multipart => true }) do |f| %>
+  <% if @submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% @submission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="col-lg-6">
+    <p>Your abstract should be organized in the following eight sections. There are detailed guidelines and explanations for each section below. Recognising that conservation research and practice cover a diversity of disciplines and involve different types of data collection methods and interpretation we have attempted to use a broad template to help you submit your abstract. If you have any difficulty organising your abstract in the format below or would like any clarifications please write to us at sccs@sccs-bng.org at least two weeks before the abstract submission deadline.</p>
+  </div>
+</div>
+<div class="page-header">
+  <h4>Abstract Information</h4>
+</div>
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :title %>
+    <p class="text-muted">The title of your abstract. (20)</p>
+    <%= f.text_field :title, class: 'form-control', required: true %>
+    <div class="words wtitle"></div>
+  </div>
+  <div class="col-lg-6 instructions"></div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :introduction %><br>
+    <p class="text-muted">
+      What conservation issue, problem or question does your study address? (100)
+    </p>
+    <%= f.text_area :introduction, class: 'form-control', required: true %>
+    <div class="words wintro"></div>
+  </div>
+  <div class="col-lg-6 instructions">In this section you are expected to provide the general conservation context for your study, and to indicate your research question. The Research Question is the pivotal question of any research report. If you are in doubt as to which of the questions addressed in your study is the Research Question, the clarification is simple: the Research Question is the question that the title of the paper answers (or promises to answer). The specific objectives you addressed to answer the research question should be presented in the next section.</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :methods, "Methods/ Materials/Methodology" %>
+    <p class="text-muted">What were the main research methods you used? (125)</p>
+    <%= f.text_area :methods, class: 'form-control', required: true %>
+    <div class="words wmethods"></div>
+
+  </div>
+  <div class="col-lg-6 instructions">The Methods section describes the specific things you have done to acquire and analyse your data. This is the critical section where you justify your choice of methods and mention the possible errors/biases and how these were addressed. If you have multiple objectives, the methods used for each should be clearly mentioned. For completed work, or work-in-progress, your abstract should clearly communicate the following to the reviewers i. the time period over which the study was conducted; ii. types of data that were collected and their interpretation and iii. the sample size (N) if any.  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :results, "Results/ Findings/Argument Development" %>
+    <p class="text-muted">What are the main results/findings of your study? (125)</p>
+    <%= f.text_area :results, class: 'form-control', required: true %>
+    <div class="words wresults"></div>
+  </div>
+  <div class="col-lg-6 instructions">This section should be a presentation of the results of your analysis or which is developed by analysis of the evidence (sources, data) arising from the research undertaken. <br>
+The Results provide the answers to the questions represented by the Methods. Most researchers have no trouble understanding the nature of their results. Present only your most significant and conservation relevant results here.</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :discussion, "Discussion/Synthesis and conservation relevance" %>
+    <p class="text-muted">Discuss and synthesise your results based on the evidence presented in your results section. Please also use this section to discuss the relevance of your findings for conservation practice/science. (100)
+</p>
+    <%= f.text_area :discussion, class: 'form-control', required: true %>
+    <div class="words wdiscussion"></div>
+  </div>
+  <div class="col-lg-6 instructions">Your discussion/synthesis section should provide a broader perspective to your research results. It gives you the opportunity to effectively demonstrate your ability as a researcher to think critically about the conservation issue you are trying to address. If relevant, incorporate how your research and results are situated in a Global/Regional/Country specific perspective and highlight how your study contributes to current/ past literature and thinking; and if it contradicts or supports current popular thought/philosophies. Your discussion section should not be merely governed by the objective reporting of information via your results but, rather, it is where you can engage in creative thinking about issues through evidence-based interpretation of your findings. In other words, this is where you infuse your results with meaning.
+<br><br>
+Some of the most common mistakes that you can make when discussing the results of your study are to present a superficial interpretation of the findings, or come up with interpretations that go beyond your data and results. Rather, your discussion should remain focused only on the findings of your study. If, towards the end, you would like to speculate, or make suggestions beyond what your data are telling you, be very clear that these are your specific comments, speculations and suggestions and therefore these require further research. 
+<br><br>
+Likewise, when you are describing what the conservation implications of your research work is, make sure that you clearly differentiate between the implications arising directly from specific results of your study and those arising from speculations.  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-8">
+    <%= f.label :visual_abstract %> <br>
+    <span class="btn btn-file"><%= f.file_field :visual_abstract, required: true %></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-8">
+    <%= f.label :gps_lat, "Study location GPS co-ordinates" %>
+      <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+      <div id="us3" style="height: 300px; background-color:black;"></div>
+    <div class="row">
+      <div class="col-lg-4"><%= f.text_field :gps_lat, class: 'form-control', required: true %>LATITUDE</div>
+    
+      <div class="col-lg-4"><%= f.text_field :gps_lng, class: 'form-control', required: true %>LONGITUDE</div>
+    </div>
+    <script>
+
+/*! jquery-locationpicker - v0.1.12 - 2015-01-05 */
+
+!function(a){function b(a,b){var c=new google.maps.Map(a,b),d=new google.maps.Marker({position:new google.maps.LatLng(54.19335,-3.92695),map:c,title:"Drag Me",draggable:b.draggable});return{map:c,marker:d,circle:null,location:d.position,radius:b.radius,locationName:b.locationName,addressComponents:{formatted_address:null,addressLine1:null,addressLine2:null,streetName:null,streetNumber:null,city:null,district:null,state:null,stateOrProvince:null},settings:b.settings,domContainer:a,geodecoder:new google.maps.Geocoder}}function c(a){return void 0!=d(a)}function d(b){return a(b).data("locationpicker")}function e(a,b){if(a){var c=h.locationFromLatLng(b.location);a.latitudeInput&&a.latitudeInput.val(c.latitude).change(),a.longitudeInput&&a.longitudeInput.val(c.longitude).change(),a.radiusInput&&a.radiusInput.val(b.radius).change(),a.locationNameInput&&a.locationNameInput.val(b.locationName).change()}}function f(b,c){b&&(b.radiusInput&&b.radiusInput.on("change",function(b){b.originalEvent&&(c.radius=a(this).val(),h.setPosition(c,c.location,function(a){a.settings.onchanged.apply(c.domContainer,[h.locationFromLatLng(a.location),a.radius,!1])}))}),b.locationNameInput&&c.settings.enableAutocomplete&&(c.autocomplete=new google.maps.places.Autocomplete(b.locationNameInput.get(0)),google.maps.event.addListener(c.autocomplete,"place_changed",function(){var a=c.autocomplete.getPlace();return a.geometry?void h.setPosition(c,a.geometry.location,function(a){e(b,a),a.settings.onchanged.apply(c.domContainer,[h.locationFromLatLng(a.location),a.radius,!1])}):void c.settings.onlocationnotfound(a.name)})),b.latitudeInput&&b.latitudeInput.on("change",function(b){b.originalEvent&&h.setPosition(c,new google.maps.LatLng(a(this).val(),c.location.lng()),function(a){a.settings.onchanged.apply(c.domContainer,[h.locationFromLatLng(a.location),a.radius,!1])})}),b.longitudeInput&&b.longitudeInput.on("change",function(b){b.originalEvent&&h.setPosition(c,new google.maps.LatLng(c.location.lat(),a(this).val()),function(a){a.settings.onchanged.apply(c.domContainer,[h.locationFromLatLng(a.location),a.radius,!1])})}))}function g(a){google.maps.event.trigger(a.map,"resize"),setTimeout(function(){a.map.setCenter(a.marker.position)},300)}var h={drawCircle:function(b,c,d,e){return null!=b.circle&&b.circle.setMap(null),d>0?(d*=1,e=a.extend({strokeColor:"#0000FF",strokeOpacity:.35,strokeWeight:2,fillColor:"#0000FF",fillOpacity:.2},e),e.map=b.map,e.radius=d,e.center=c,b.circle=new google.maps.Circle(e),b.circle):null},setPosition:function(a,b,c){a.location=b,a.marker.setPosition(b),a.map.panTo(b),this.drawCircle(a,b,a.radius,{}),a.settings.enableReverseGeocode?a.geodecoder.geocode({latLng:a.location},function(b,d){d==google.maps.GeocoderStatus.OK&&b.length>0&&(a.locationName=b[0].formatted_address,a.addressComponents=h.address_component_from_google_geocode(b[0].address_components)),c&&c.call(this,a)}):c&&c.call(this,a)},locationFromLatLng:function(a){return{latitude:a.lat(),longitude:a.lng()}},address_component_from_google_geocode:function(a){for(var b={},c=a.length-1;c>=0;c--){var d=a[c];d.types.indexOf("postal_code")>=0?b.postalCode=d.short_name:d.types.indexOf("street_number")>=0?b.streetNumber=d.short_name:d.types.indexOf("route")>=0?b.streetName=d.short_name:d.types.indexOf("locality")>=0?b.city=d.short_name:d.types.indexOf("sublocality")>=0?b.district=d.short_name:d.types.indexOf("administrative_area_level_1")>=0?b.stateOrProvince=d.short_name:d.types.indexOf("country")>=0&&(b.country=d.short_name)}return b.addressLine1=[b.streetNumber,b.streetName].join(" ").trim(),b.addressLine2="",b}};a.fn.locationpicker=function(i,j){if("string"==typeof i){var k=this.get(0);if(!c(k))return;var l=d(k);switch(i){case"location":if(void 0==j){var m=h.locationFromLatLng(l.location);return m.radius=l.radius,m.name=l.locationName,m}j.radius&&(l.radius=j.radius),h.setPosition(l,new google.maps.LatLng(j.latitude,j.longitude),function(a){e(a.settings.inputBinding,a)});break;case"subscribe":if(void 0==j)return null;var n=j.event,o=j.callback;if(!n||!o)return console.error('LocationPicker: Invalid arguments for method "subscribe"'),null;google.maps.event.addListener(l.map,n,o);break;case"map":if(void 0==j){var p=h.locationFromLatLng(l.location);return p.formattedAddress=l.locationName,p.addressComponents=l.addressComponents,{map:l.map,marker:l.marker,location:p}}return null;case"autosize":return g(l),this}return null}return this.each(function(){var d=a(this);if(!c(this)){var g=a.extend({},a.fn.locationpicker.defaults,i),j=new b(this,{zoom:g.zoom,center:new google.maps.LatLng(g.location.latitude,g.location.longitude),mapTypeId:google.maps.MapTypeId.ROADMAP,mapTypeControl:!1,disableDoubleClickZoom:!1,scrollwheel:g.scrollwheel,streetViewControl:!1,radius:g.radius,locationName:g.locationName,settings:g,draggable:g.draggable});d.data("locationpicker",j),google.maps.event.addListener(j.marker,"dragend",function(){h.setPosition(j,j.marker.position,function(a){var b=h.locationFromLatLng(j.location);a.settings.onchanged.apply(j.domContainer,[b,a.radius,!0]),e(j.settings.inputBinding,j)})}),h.setPosition(j,new google.maps.LatLng(g.location.latitude,g.location.longitude),function(a){e(g.inputBinding,j),f(g.inputBinding,j),a.settings.oninitialized(d)})}})},a.fn.locationpicker.defaults={location:{latitude:40.7324319,longitude:-73.82480799999996},locationName:"",radius:500,zoom:15,scrollwheel:!0,inputBinding:{latitudeInput:null,longitudeInput:null,radiusInput:null,locationNameInput:null},enableAutocomplete:!1,enableReverseGeocode:!0,draggable:!0,onchanged:function(){},onlocationnotfound:function(){},oninitialized:function(){}}}(jQuery);
+
+$('#us3').locationpicker({
+
+  <% if @submission.gps_lat.nil? %>
+    location: {latitude: 13.015551285477105, longitude: 77.5613899230957}, 
+  <% else %>
+    location: {latitude: <%= @submission.gps_lat %>, longitude: <%= @submission_gps_lng %>}, 
+  <% end %>
+
+  radius: 300,
+  zoom: 6,
+  inputBinding: {
+        latitudeInput: $('#submission_gps_lat'),
+        longitudeInput: $('#submission_gps_lng')
+    }
+  });
+
+    </script>
+  </div>
+  <div class="col-lg-4 instructions">
+    <br><br>
+    Please indicate the geographical location(s) where yourstudy was conducted on the map provided. If your study did not involve fieldwork, i.e. if your work was theoretical, literature-based etc., please indicate the location of the institution/organisation where the work was carried out . You can either mark the location on the Google Map provided or enter GPS coordinates of your study site.
+  </div>
+</div>
+
+<div class="page-header">
+  <h4>Authorship</h4>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :authors %><br>
+    <%= f.text_area :authors, class: 'form-control', required: true %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :co_authors %><br>
+    <%= f.text_area :co_authors, class: 'form-control', required: true %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :poster, "Presentation Preference" %><br>
+     <div class="col-lg-10">
+        <div class="radio">
+          <label>
+            <%= f.radio_button :poster, "0", :checked => 'checked' %>
+            Talk
+          </label>
+        </div>
+       <div class="radio">
+          <label>
+            <%= f.radio_button :poster, "1" %>
+            Poster
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6 prev">
+    <%= f.label :previous_attendance, "Have you attended SCCS Bangalore before?" %><br>
+     <div class="col-lg-10">
+       <div class="radio">
+          <label>
+            <%= f.radio_button :previous_attendance, "1", :checked => 'checked' %>
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :previous_attendance, "0" %>
+            No
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row atty">
+  <div class="form-group col-lg-6">
+    <%= f.label :attendance_year %><br>
+    <%= f.text_field :attendance_year, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+
+<div class="page-header">
+  <h4>Bursary</h4>
+</div>
+
+<div class="row atty">
+  <div class="form-group col-lg-6">
+    <%= f.label :previous_bursary, "Have you recieved a bursary before?" %><br>
+    <div class="col-lg-10">
+       <div class="radio">
+          <label>
+            <%= f.radio_button :previous_bursary, "1", :checked => 'checked' %>
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :previous_bursary, "0" %>
+            No
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions"></div>
+</div>
+
+
+<div class="row">
+  <div class="form-group col-lg-6 bur">
+    <%= f.label :bursary, "Would you like a bursary for SCCS-Bengaluru 2015?" %><br>
+    <div class="col-lg-10">
+       <div class="radio">
+          <label>
+            <%= f.radio_button :bursary, "1", :checked => 'checked' %>
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :bursary, "0" %>
+            No
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row submission_reason_for_bursary">
+  <div class="form-group col-lg-6">
+    <%= f.label :reason_for_bursary %><br>
+    <%= f.text_area :reason_for_bursary, class: 'form-control', required: true %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+
+  <div class="actions">
+    <br><br>
+    <%= f.submit "Submit your Abstract!", :class=>'btn btn-success' %>
+  </div>
+<% end %>
+
+
+<script>
+$( document ).ready(function() {
+
+
+  var title = document.getElementById('submission_title')
+  var introduction = document.getElementById('submission_introduction')
+  var methods = document.getElementById('submission_methods')
+  var results = document.getElementById('submission_results')
+  var discussion = document.getElementById('submission_discussion')
+
+  Countable.live(title, function (counter) {
+    $('.wtitle').html(20 - counter.words + ' words left.');
+  });
+
+  Countable.live(introduction, function (counter) {
+    $('.wintro').html(100 - counter.words  + ' words left.');
+  });
+
+  Countable.live(methods, function (counter) {
+    $('.wmethods').html(125 - counter.words  + ' words left.');
+  });
+
+  Countable.live(results, function (counter) {
+    $('.wresults').html(125 - counter.words  + ' words left.');
+  });
+
+  Countable.live(discussion, function (counter) {
+    $('.wdiscussion').html(100 - counter.words  + ' words left.');
+  });
+
+  $('.prev input:radio').change(
+    function(){
+        if ($(this).val() == 0) {
+          $('.atty').hide();
+        } else {
+          $('.atty').show();
+        }
+    }
+  ); 
+
+  $('.bur input:radio').change(
+    function(){
+        if ($(this).val() == 0) {
+          $('.submission_reason_for_bursary').hide();
+        } else {
+          $('.submission_reason_for_bursary').show();
+        }
+    }
+  );          
+
+
+});
+</script>

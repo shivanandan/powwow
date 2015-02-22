@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable,:rememberable, :trackable, :validatable
 
+  has_one :submission
+
 
   has_attached_file :passportscan
 
@@ -62,7 +64,11 @@ class User < ActiveRecord::Base
   end
 
   def abstractless?
-    true
+    if self.submission.nil?
+      return true
+    else
+      return false
+    end
   end
 
   private
