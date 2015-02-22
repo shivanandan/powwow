@@ -121,7 +121,7 @@ $('#us3').locationpicker({
   </div>
   <div class="col-lg-4 instructions">
     <br><br>
-    Please indicate the geographical location(s) where yourstudy was conducted on the map provided. If your study did not involve fieldwork, i.e. if your work was theoretical, literature-based etc., please indicate the location of the institution/organisation where the work was carried out . You can either mark the location on the Google Map provided or enter GPS coordinates of your study site.
+   Please indicate the geographical location where your study was conducted on the map provided. If your study did not involve fieldwork, i.e. if your work was theoretical, literature-based etc., please indicate the location of the institution/organisation where the work was carried out . You can either mark the location on the Google Map provided by clicking and dragging the pin or enter GPS coordinates of your study site.site.
   </div>
 </div>
 
@@ -131,18 +131,38 @@ $('#us3').locationpicker({
 
 <div class="row">
   <div class="form-group col-lg-6">
-    <%= f.label :authors %><br>
-    <%= f.text_area :authors, class: 'form-control', required: true %>
+    <%= f.label :presenter %><br>
+    <%= f.text_field :presenter, class: 'form-control', value: "#{current_user.first_name} #{current_user.middle_name} #{current_user.last_name}" ,required: true %>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions"><br>FUll Name of the presenter</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :current_institution, "Current Institution Name and Country of Presenter" %><br>
+    <%= f.text_area :current_institution, class: 'form-control', value: "#{current_user.institutional_affiliation}" ,required: true %>
+  </div>
+  <div class="col-lg-6 instructions"><br>Current institutional affiliation of main presenter
+
+</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :other_institutional_affiliations %><br>
+    <%= f.text_area :other_institutional_affiliations, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions"><br>Leave blank if not applicable
+
+</div>
 </div>
 
 <div class="row">
   <div class="form-group col-lg-6">
     <%= f.label :co_authors %><br>
-    <%= f.text_area :co_authors, class: 'form-control', required: true %>
+    <%= f.text_area :co_authors, class: 'form-control' %>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions">Co-Authors (if any) and their Institutions including Country (separate using semi-colons): Leave blank if not applicable</div>
 </div>
 
 <div class="row">
@@ -151,19 +171,25 @@ $('#us3').locationpicker({
      <div class="col-lg-10">
         <div class="radio">
           <label>
-            <%= f.radio_button :poster, "0", :checked => 'checked' %>
+            <%= f.radio_button :poster, "talk" %>
             Talk
           </label>
         </div>
        <div class="radio">
           <label>
-            <%= f.radio_button :poster, "1" %>
+            <%= f.radio_button :poster, "poster" %>
             Poster
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :poster, "either", :checked => 'checked'  %>
+            Either
           </label>
         </div>
       </div>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions"></div>
 </div>
 
 <div class="row">
@@ -184,7 +210,7 @@ $('#us3').locationpicker({
         </div>
       </div>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions"></div>
 </div>
 
 <div class="row atty">
@@ -192,13 +218,17 @@ $('#us3').locationpicker({
     <%= f.label :attendance_year %><br>
     <%= f.text_field :attendance_year, class: 'form-control' %>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions">If you have attended the conference more than once, separate years using semi-colons </div>
 </div>
 
 
 <div class="page-header">
   <h4>Bursary</h4>
 </div>
+
+<p>If you come from South or South-east Asia or Africa, you can also apply for a bursary to assist with travel and other costs, but please note that we can only provide partial bursaries to help a limited number of applicants, and only for those whose abstracts are chosen and accepted for oral or poster presentations in SCCS-Bengaluru 2015.
+<br><br>
+All bursary applicants should also pay the conference registration fees online for their abstract and bursary applications to be accepted and reviewed. If the bursary application is successful, a partial refund of costs incurred in attending the conference (international travel and free local accommodation in Bengaluru) will be provided as part of the bursary. If your bursary application is not successful and if you wish to cancel your registration, cancellation rules of SCCS-Bengaluru 2015 will apply.</p>
 
 <div class="row atty">
   <div class="form-group col-lg-6">
@@ -240,7 +270,7 @@ $('#us3').locationpicker({
         </div>
       </div>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions"></div>
 </div>
 
 <div class="row submission_reason_for_bursary">
@@ -248,7 +278,7 @@ $('#us3').locationpicker({
     <%= f.label :reason_for_bursary %><br>
     <%= f.text_area :reason_for_bursary, class: 'form-control', required: true %>
   </div>
-  <div class="col-lg-6 instructions">Instructions</div>
+  <div class="col-lg-6 instructions">Provide a justification of why you think you are deserving of a bursary and what personal or other funds you can make available for attending SCCS-Bengaluru 2015.</div>
 </div>
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222051529) do
+ActiveRecord::Schema.define(version: 20150222082219) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150222051529) do
     t.text     "authors"
     t.text     "co_authors"
     t.string   "gps_lat"
-    t.boolean  "poster"
+    t.string   "poster"
     t.boolean  "previous_attendance"
     t.string   "attendance_year"
     t.boolean  "previous_bursary"
@@ -70,6 +70,9 @@ ActiveRecord::Schema.define(version: 20150222051529) do
     t.string   "visual_abstract_content_type"
     t.integer  "visual_abstract_file_size"
     t.datetime "visual_abstract_updated_at"
+    t.string   "presenter"
+    t.text     "current_institution"
+    t.text     "other_institutional_affiliations"
   end
 
   create_table "users", force: true do |t|
