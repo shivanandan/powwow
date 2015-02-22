@@ -64,10 +64,10 @@ class User < ActiveRecord::Base
   end
 
   def abstractless?
-    if self.submission.nil?
-      return true
-    else
+    if self.abstract_submitted == true
       return false
+    else
+      return true
     end
   end
 

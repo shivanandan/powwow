@@ -8,13 +8,13 @@ class Ability
     if user.admin?
         can :manage, :all
     elsif user.applicant?
-        can [:new, :create], Submission do |s|
+        can [:create], Submission do |s|
             user.abstractless?
         end
-        can [:read, :edit], Submission do |s|
+        can [:read], Submission do |s|
             s.user_id == user.id
         end
-        cannot [:index], Submission
+        cannot [:index, :edit, :update], Submission
     else
         can :show, :all
         cannot :show, Submission

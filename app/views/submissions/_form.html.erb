@@ -86,6 +86,14 @@ Likewise, when you are describing what the conservation implications of your res
 </div>
 
 <div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :keywords %>
+    <%= f.text_field :keywords, class: 'form-control', required: true %>
+  </div>
+  <div class="col-lg-6 instructions">Maximum of 5 keywords separated by semi-colons(;) which best describes your study</div>
+</div>
+
+<div class="row">
   <div class="form-group col-lg-8">
     <%= f.label :gps_lat, "Study location GPS co-ordinates" %>
       <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
@@ -276,13 +284,15 @@ All bursary applicants should also pay the conference registration fees online f
 <div class="row submission_reason_for_bursary">
   <div class="form-group col-lg-6">
     <%= f.label :reason_for_bursary %><br>
-    <%= f.text_area :reason_for_bursary, class: 'form-control', required: true %>
+    <%= f.text_area :reason_for_bursary, class: 'form-control' %>
+    <div class="wbursary"></div>
   </div>
   <div class="col-lg-6 instructions">Provide a justification of why you think you are deserving of a bursary and what personal or other funds you can make available for attending SCCS-Bengaluru 2015.</div>
 </div>
 
 
   <div class="actions">
+    <p>Please note that once you have clicked on the "Submit" button you cannot make any changes to this form. There is a link provided for you to view a copy of your submitted abstract. Each participant is allowed to submit only one abstract to the conference.</p>
     <br><br>
     <%= f.submit "Submit your Abstract!", :class=>'btn btn-success' %>
   </div>
@@ -298,6 +308,7 @@ $( document ).ready(function() {
   var methods = document.getElementById('submission_methods')
   var results = document.getElementById('submission_results')
   var discussion = document.getElementById('submission_discussion')
+  var bursary = document.getElementById('submission_reason_for_bursary')
 
   Countable.live(title, function (counter) {
     $('.wtitle').html(20 - counter.words + ' words left.');
@@ -317,6 +328,10 @@ $( document ).ready(function() {
 
   Countable.live(discussion, function (counter) {
     $('.wdiscussion').html(100 - counter.words  + ' words left.');
+  });
+
+   Countable.live(bursary, function (counter) {
+    $('.wbursary').html(100 - counter.words  + ' words left.');
   });
 
   $('.prev input:radio').change(
