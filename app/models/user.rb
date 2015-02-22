@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable,:rememberable, :trackable, :validatable
 
+  has_one :submission
+
 
   has_attached_file :passportscan
 

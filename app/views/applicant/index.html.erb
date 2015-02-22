@@ -12,6 +12,12 @@
 
 		<p>You can upload an abstract after the abstract submission opens.</p>
 
+		<p>
+			<% unless (current_user.passportless? and current_user.ticketless?) %>
+				This will be a link to the abstract
+			<% end %>
+		</p>
+
 	</div>
 	<div class="col-lg-5">
 		<% success = '<span class="label label-success">&#10004;</span>' %>

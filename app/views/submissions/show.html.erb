@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @submission.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @submission.abstract %>
+</p>
+
+<p>
+  <strong>Authors:</strong>
+  <%= @submission.authors %>
+</p>
+
+<p>
+  <strong>Co authors:</strong>
+  <%= @submission.co_authors %>
+</p>
+
+<p>
+  <strong>Gps:</strong>
+  <%= @submission.gps %>
+</p>
+
+<p>
+  <strong>Poster:</strong>
+  <%= @submission.poster %>
+</p>
+
+<p>
+  <strong>Previous attendance:</strong>
+  <%= @submission.previous_attendance %>
+</p>
+
+<p>
+  <strong>Attendance year:</strong>
+  <%= @submission.attendance_year %>
+</p>
+
+<p>
+  <strong>Previous bursary:</strong>
+  <%= @submission.previous_bursary %>
+</p>
+
+<p>
+  <strong>Bursary:</strong>
+  <%= @submission.bursary %>
+</p>
+
+<p>
+  <strong>Reason for bursary:</strong>
+  <%= @submission.reason_for_bursary %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @submission.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_submission_path(@submission) %> |
+<%= link_to 'Back', submissions_path %>

@@ -20,15 +20,6 @@
 	h3 {
 		margin-top: 30px;
 	}
-	p.text-muted {
-		background-color: #f3f3f3;
-		padding: 5px 10px;
-
-		&:before {
-			content: 'NOTE :';
-
-		}
-	}
 
 	input[required="required"] {
 	}
@@ -39,5 +30,22 @@
 		display: inline-block;
 		margin-right: 10px;
 		font-size: 100%;
+	}
+
+	.radio label{
+		text-transform: none;
+		float: left;
+	}
+}
+
+.registrations .form-group {
+	p.text-muted {
+		background-color: #f3f3f3;
+		padding: 5px 10px;
+
+		&:before {
+			content: 'NOTE :';
+
+		}
 	}
 }

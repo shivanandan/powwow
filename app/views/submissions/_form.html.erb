@@ -1,0 +1,223 @@
+<br>
+<%= form_for(@submission, :html => { :multipart => true }) do |f| %>
+  <% if @submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% @submission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="col-lg-6">
+    <p>Your abstract should be organized in the following eight sections. There are detailed guidelines and explanations for each section below. Recognising that conservation research and practice cover a diversity of disciplines and involve different types of data collection methods and interpretation we have attempted to use a broad template to help you submit your abstract. If you have any difficulty organising your abstract in the format below or would like any clarifications please write to us at sccs@sccs-bng.org at least two weeks before the abstract submission deadline.</p>
+  </div>
+</div>
+<div class="page-header">
+  <h4>Abstract Information</h4>
+</div>
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :title %>
+    <p class="text-muted">The title of your abstract. (20)</p>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions"></div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :introduction %><br>
+    <p class="text-muted">
+      What conservation issue, problem or question does your study address? (100)
+    </p>
+    <%= f.text_area :introduction, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">In this section you are expected to provide the general conservation context for your study, and to indicate your research question. The Research Question is the pivotal question of any research report. If you are in doubt as to which of the questions addressed in your study is the Research Question, the clarification is simple: the Research Question is the question that the title of the paper answers (or promises to answer). The specific objectives you addressed to answer the research question should be presented in the next section.</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :methods, "Methods/ Materials/Methodology" %>
+    <p class="text-muted">What were the main research methods you used? (125)</p>
+    <%= f.text_area :methods, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">The Methods section describes the specific things you have done to acquire and analyse your data. This is the critical section where you justify your choice of methods and mention the possible errors/biases and how these were addressed. If you have multiple objectives, the methods used for each should be clearly mentioned. For completed work, or work-in-progress, your abstract should clearly communicate the following to the reviewers i. the time period over which the study was conducted; ii. types of data that were collected and their interpretation and iii. the sample size (N) if any.  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :results, "Results/ Findings/Argument Development" %>
+    <p class="text-muted">What are the main results/findings of your study? (125)</p>
+    <%= f.text_area :results, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">This section should be a presentation of the results of your analysis or which is developed by analysis of the evidence (sources, data) arising from the research undertaken. <br>
+The Results provide the answers to the questions represented by the Methods. Most researchers have no trouble understanding the nature of their results. Present only your most significant and conservation relevant results here.</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :discussion, "Discussion/Synthesis and conservation relevance" %>
+    <p class="text-muted">Discuss and synthesise your results based on the evidence presented in your results section. Please also use this section to discuss the relevance of your findings for conservation practice/science. (100)
+</p>
+    <%= f.text_area :discussion, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">Your discussion/synthesis section should provide a broader perspective to your research results. It gives you the opportunity to effectively demonstrate your ability as a researcher to think critically about the conservation issue you are trying to address. If relevant, incorporate how your research and results are situated in a Global/Regional/Country specific perspective and highlight how your study contributes to current/ past literature and thinking; and if it contradicts or supports current popular thought/philosophies. Your discussion section should not be merely governed by the objective reporting of information via your results but, rather, it is where you can engage in creative thinking about issues through evidence-based interpretation of your findings. In other words, this is where you infuse your results with meaning.
+<br><br>
+Some of the most common mistakes that you can make when discussing the results of your study are to present a superficial interpretation of the findings, or come up with interpretations that go beyond your data and results. Rather, your discussion should remain focused only on the findings of your study. If, towards the end, you would like to speculate, or make suggestions beyond what your data are telling you, be very clear that these are your specific comments, speculations and suggestions and therefore these require further research. 
+<br><br>
+Likewise, when you are describing what the conservation implications of your research work is, make sure that you clearly differentiate between the implications arising directly from specific results of your study and those arising from speculations.  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-8">
+    <%= f.label :visual_abstract %> <br>
+    <span class="btn btn-file"><%= f.file_field :visual_abstract %></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-8">
+    <%= f.label :gps_lat, "Study location GPS co-ordinates" %><br>
+
+    <br>
+    <div class="col-lg-4"><%= f.text_field :gps_lat, class: 'form-control' %>LATITUDE</div>
+    
+    <div class="col-lg-4"><%= f.text_field :gps_lng, class: 'form-control' %>LONGITUDE</div>
+  </div>
+</div>
+
+<div class="page-header">
+  <h4>Authorship</h4>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :authors %><br>
+    <%= f.text_area :authors, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :co_authors %><br>
+    <%= f.text_area :co_authors, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :poster, "Presentation Preference" %><br>
+     <div class="col-lg-10">
+        <div class="radio">
+          <label>
+            <%= f.radio_button :poster, "0", :checked => 'checked' %>
+            Talk
+          </label>
+        </div>
+       <div class="radio">
+          <label>
+            <%= f.radio_button :poster, "1" %>
+            Poster
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :previous_attendance, "Have you attended SCCS Bangalore before?" %><br>
+     <div class="col-lg-10">
+       <div class="radio">
+          <label>
+            <%= f.radio_button :previous_attendance, "1", :checked => 'checked' %>
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :previous_attendance, "0" %>
+            No
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :attendance_year %><br>
+    <%= f.text_field :attendance_year, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+
+<div class="page-header">
+  <h4>Bursary</h4>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :previous_bursary, "Have you recieved a bursary before?" %><br>
+    <div class="col-lg-10">
+       <div class="radio">
+          <label>
+            <%= f.radio_button :previous_bursary, "1", :checked => 'checked' %>
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :previous_bursary, "0" %>
+            No
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions"></div>
+</div>
+
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :bursary, "Would you like a bursary for SCCS-Bengaluru 2015?" %><br>
+    <div class="col-lg-10">
+       <div class="radio">
+          <label>
+            <%= f.radio_button :bursary, "1", :checked => 'checked' %>
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <%= f.radio_button :bursary, "0" %>
+            No
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+<div class="row">
+  <div class="form-group col-lg-6">
+    <%= f.label :reason_for_bursary %><br>
+    <%= f.text_area :reason_for_bursary, class: 'form-control' %>
+  </div>
+  <div class="col-lg-6 instructions">Instructions</div>
+</div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216113529) do
+ActiveRecord::Schema.define(version: 20150222051529) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -44,6 +44,32 @@ ActiveRecord::Schema.define(version: 20150216113529) do
     t.datetime "file_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "submissions", force: true do |t|
+    t.string   "title"
+    t.text     "abstract"
+    t.text     "authors"
+    t.text     "co_authors"
+    t.string   "gps_lat"
+    t.boolean  "poster"
+    t.boolean  "previous_attendance"
+    t.string   "attendance_year"
+    t.boolean  "previous_bursary"
+    t.boolean  "bursary"
+    t.text     "reason_for_bursary"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "introduction"
+    t.text     "methods"
+    t.text     "results"
+    t.text     "discussion"
+    t.string   "gps_lng"
+    t.string   "visual_abstract_file_name"
+    t.string   "visual_abstract_content_type"
+    t.integer  "visual_abstract_file_size"
+    t.datetime "visual_abstract_updated_at"
   end
 
   create_table "users", force: true do |t|

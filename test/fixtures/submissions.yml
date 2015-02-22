@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  abstract: MyText
+  authors: MyText
+  co_authors: MyText
+  gps: MyString
+  poster: false
+  previous_attendance: false
+  attendance_year: MyString
+  previous_bursary: false
+  bursary: false
+  reason_for_bursary: MyText
+  user_id: 1
+
+two:
+  title: MyString
+  abstract: MyText
+  authors: MyText
+  co_authors: MyText
+  gps: MyString
+  poster: false
+  previous_attendance: false
+  attendance_year: MyString
+  previous_bursary: false
+  bursary: false
+  reason_for_bursary: MyText
+  user_id: 1
