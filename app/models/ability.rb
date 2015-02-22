@@ -9,8 +9,7 @@ class Ability
         can :manage, :all
     elsif user.applicant?
         can [:new, :create], Submission do |s|
-            # user.abstractless?
-            user.email = 'devathip@gmail.com'
+            user.abstractless?
         end
         can [:read, :manage], Submission do |s|
             s.user_id == user.id
