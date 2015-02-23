@@ -7,7 +7,8 @@
       <th>Abstract</th>
       <th>Authors</th>
       <th>Co authors</th>
-      <th>Gps</th>
+      <th>Gps Lat</th>
+      <th>Gps Lng</th>
       <th>Poster</th>
       <th>Previous attendance</th>
       <th>Attendance year</th>
@@ -28,7 +29,8 @@
         <td><%= submission.abstract %></td>
         <td><%= submission.authors %></td>
         <td><%= submission.co_authors %></td>
-        <td><%= submission.gps %></td>
+        <td><%= submission.gps_lat %></td>
+        <td><%= submission.gps_lng %></td>
         <td><%= submission.poster %></td>
         <td><%= submission.previous_attendance %></td>
         <td><%= submission.attendance_year %></td>
@@ -46,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Submission', new_submission_path %>
+<%# link_to 'New Submission', new_submission_path %>
