@@ -10,5 +10,6 @@
 	<div class="col-lg-6 presenter">Presented by <%= p[3] %></div>
 </div>
 <hr>
-<%= raw p[2] %>
+<%= raw p[2].gsub(/\\r\\n/,'') %>
+<% raw p[2] %>
 </div>
