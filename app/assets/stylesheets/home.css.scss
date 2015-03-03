@@ -11,3 +11,55 @@
 		font-size: 110%;
 	}
 }
+
+.archive {
+	&.container {
+		max-width: 900px;
+	}
+
+	h1 {
+		margin-top: 10px;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 3px solid #f0f0f0;
+	}
+	.oldabstract {
+		h2 {
+			font-size: 18px;
+			max-width: 600px;
+			line-height: 1.6;
+		}
+	}
+	.presenter {
+		border-right: 1px solid #f0f0f0;
+	}
+	.presenter, .authors {
+		padding: 20px;
+	}
+	.metameta {
+		border-top: 1px solid #f0f0f0;
+		border-bottom: 1px solid #f0f0f0;
+		margin-top: 20px;
+	}
+	.capitalize {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+}
+
+li.menutit {
+	padding: 0px 20px;
+}
+
+.plenary_archive {
+	padding: 10px;
+	border-bottom: 1px solid #f0f0f0;
+	min-height: 100px;
+	&:nth-child(2n-1) {
+		border-right: 1px solid #f0f0f0;
+	}
+}
+
+.plenar {
+	border-top: 1px solid #f0f0f0;
+}

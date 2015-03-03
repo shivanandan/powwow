@@ -63,6 +63,27 @@
             <li><a href="/webpages/sister-conferences">Sister Conferences</a></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Earlier Events <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="menutit"><strong>2014</strong></li>
+            <li><%= link_to "Plenaries", plenaries_archive_path(2013) %></li>
+            <li><%= link_to "Workshops", workshops_archive_path(2014) %></li>
+            <li><%= link_to "Student Talks", presentation_archive_path(2014, 'talks') %></li>
+            <li><%= link_to "Student Posters", presentation_archive_path(2014, 'posters') %></li>
+            <li class="divider"></li>
+            <li class="menutit"><strong>2013</strong></li>
+            <li><%= link_to "Plenaries", plenaries_archive_path(2013) %></li>
+            <li><%= link_to "Workshops", workshops_archive_path(2014) %></li>
+            <li><%= link_to "Student Talks", presentation_archive_path(2013, 'talks') %></li>
+            <li><%= link_to "Student Posters", presentation_archive_path(2013, 'posters') %></li>
+            <li class="divider"></li>
+            <li><a href="/webpages/2012-conference">2012 Conference</a></li>
+            <li><a href="/webpages/2011-conference">2011 Conference</a></li>
+            <li><a href="/webpages/2010-conference">2010 Conference</a></li>
+            
+          </ul>
+        </li>
 
         <% if user_signed_in? %>
         

@@ -1,0 +1,17 @@
+<% s = @result[0] %>
+<br>
+<br>
+<br>
+
+<div class="container archive">
+<span class="capitalize label label-info">Earlier events :: <%= 2012 + s[4] %> :: STUDENT <%= 'Talks' if s[6] == 1 %><%= 'Poster' if s[6] == 2 %></span>
+<hr>
+<h2><%= s[1] %></h2>
+<div class="row metameta">
+	<div class="col-lg-6 presenter">Presented by <br> <strong><%= s[30].titleize %> <%= s[31].titleize %></strong> <br><%= @users[0][21].titleize %></div>
+	<div class="col-lg-6 authors">Authors <br> <strong><%= s[2].titleize %></strong></div>
+</div>
+<div class="oldabstract">
+	<%= raw s[3] %>
+</div>
+</div>

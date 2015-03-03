@@ -1,0 +1,16 @@
+<br>
+<br>
+<br>
+<div class="container">
+  <span class="capitalize label label-info">EARLIER EVENTS :: <%= @params[:year] %></span>
+  <hr>
+  <h1>Workshops</h1>
+  <div class="plenar">
+  <% @results.each do |w| %>
+    <div class="col-lg-6 plenary_archive">
+      <strong><%= link_to w[1], single_workshop_archive_path(@params[:year],w[8]) %></strong><br>
+      <span class="text"><%= w[3] %></span>
+    </div>
+  <% end %>
+  </div>
+</div>

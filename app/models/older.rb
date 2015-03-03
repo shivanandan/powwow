@@ -1,0 +1,3 @@
+class Older < PastDb
+   # my model code...
+end
