@@ -1,0 +1,22 @@
+<%# @results.inspect %>
+<br>
+<br>
+<br>
+
+<div class="container archive">
+<span class="capitalize label label-info">EARLIER EVENTS :: <%= @params[:year] %> </span>
+<hr>
+<h1>Student <%= @params[:type].titleize %></h1>
+
+<%# @results[0] %>
+
+
+<% @results.each do |s| %>
+<%= link_to s[1].titleize, single_abstract_archive_path(s[0])  %>
+<br>
+Presented by  <%= s[30].titleize %>  <%= s[31].titleize %><br>
+
+<hr>
+<% end %>
+
+</div>

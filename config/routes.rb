@@ -21,6 +21,13 @@ Powwow::Application.routes.draw do
   post 'passport' => 'applicant#passport', as: :passport
   get 'uploadpassport' => 'applicant#uploadpassport', as: :uploadpassport
 
+  get 'archive/plenaries/:year' => 'home#plenaries_archive', as: :plenaries_archive
+  get 'archive/plenary/:year/:slug' => 'home#single_plenary', as: :single_plenary_archive
+  get 'archive/workshops/:year' => 'home#workshops_archive', as: :workshops_archive
+  get 'archive/workshop/:year/:id' => 'home#single_workshop', as: :single_workshop_archive
+  get 'archive/abstracts/:year/:type' => 'home#abstracts_archive', as: :presentation_archive
+  get 'archive/abstract/:id' => 'home#single_abstract', as: :single_abstract_archive
+
 
   # You can have the root of your site routed with "root"
   root 'home#index'
