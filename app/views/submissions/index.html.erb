@@ -1,46 +1,26 @@
 <h1>Listing submissions</h1>
 
-<table>
+<table id="" class="table table-striped table-hover table-bordered datatable">
   <thead>
     <tr>
+      <th>ID</th>
+      <th>User ID</th>
       <th>Title</th>
-      <th>Abstract</th>
-      <th>Authors</th>
-      <th>Co authors</th>
-      <th>Gps Lat</th>
-      <th>Gps Lng</th>
       <th>Poster</th>
-      <th>Previous attendance</th>
-      <th>Attendance year</th>
-      <th>Previous bursary</th>
-      <th>Bursary</th>
-      <th>Reason for bursary</th>
       <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @submissions.each do |submission| %>
       <tr>
+        <td><%= submission.id %></td>
+        <td><%= submission.user.id %></td>
         <td><%= submission.title %></td>
-        <td><%= submission.abstract %></td>
-        <td><%= submission.authors %></td>
-        <td><%= submission.co_authors %></td>
-        <td><%= submission.gps_lat %></td>
-        <td><%= submission.gps_lng %></td>
         <td><%= submission.poster %></td>
-        <td><%= submission.previous_attendance %></td>
-        <td><%= submission.attendance_year %></td>
-        <td><%= submission.previous_bursary %></td>
-        <td><%= submission.bursary %></td>
-        <td><%= submission.reason_for_bursary %></td>
-        <td><%= submission.user_id %></td>
-        <td><%= link_to 'Show', submission %></td>
-        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
-        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= submission.user.full_name %></td>
+        <td><%= link_to 'Show', submission %> <%= link_to 'Edit', edit_submission_path(submission) %> <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

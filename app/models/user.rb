@@ -71,6 +71,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    return "#{self.first_name} #{self.middle_name} #{self.last_name}"
+  end
+
   private
 
   def override_fields
