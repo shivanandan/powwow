@@ -10,7 +10,7 @@
   <%= tinymce_assets %>
   <% end %>
 </head>
-<body class="<%= controller_name %> <%= action_name %><%= " boss" if (current_user.admin?) %>"  data-no-turbolink>
+<body class="<%= controller_name %> <%= action_name %><%= " boss" if (user_signed_in? and current_user.admin?) %>"  data-no-turbolink>
 <!-- This is the layout for the public -->
 <%= render 'layouts/mainmenu' %>
 
