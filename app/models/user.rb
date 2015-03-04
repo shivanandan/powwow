@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    return "#{self.first_name} #{self.middle_name} #{self.last_name}"
+    return "#{self.first_name} #{self.middle_name} #{self.last_name}".titleize
   end
 
   private
