@@ -30,9 +30,13 @@
 	<td><%= u.role%></td>
 	<td>
 		<%= link_to "Edit", edit_participant_path(u.id) %> 
-		<% if u.passportless? %>
+		<% if u.nationality == 'IN' %>
+		
 		<% else %>
-		• <a href="<%= u.passportscan %>">Download Passport</a>
+			<% if u.passportless? %>
+			<% else %>
+			• <a href="<%= u.passportscan %>">Download Passport</a>
+			<% end %>
 		<% end %>
 	</td>
 </tr>
