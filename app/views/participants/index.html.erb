@@ -31,6 +31,7 @@
 	<td>
 		<%= link_to "Edit", edit_participant_path(u.id) %> 
 		<% if u.passportless? %>
+		<% else %>
 		• <a href="<%= u.passportscan %>">Download Passport</a>
 		<% end %>
 	</td>
