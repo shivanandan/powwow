@@ -28,6 +28,9 @@ Powwow::Application.routes.draw do
   get 'archive/abstracts/:year/:type' => 'home#abstracts_archive', as: :presentation_archive
   get 'archive/abstract/:id' => 'home#single_abstract', as: :single_abstract_archive
 
+  get 'participants/edit_user/:user_id' => 'participants#edit_user', as: :edit_participant
+  post '/participants/save_edited/:user_id' => 'participants#save_edited', as: :save_edited
+  
 
   # You can have the root of your site routed with "root"
   root 'home#index'

@@ -10,9 +10,9 @@
 	<th>Title</th>
 	<th>Institutional Affiliation</th>
 	<th>Phone</th>
-	<th>Address</th>
+	<th>Ticket</th>
 	<th>Role</th>
-	
+	<th>Actions</th>
     </tr>
   </thead>
 
@@ -26,8 +26,14 @@
 	<td><%= u.title %></td>
 	<td><%= u.institutional_affiliation %></td>
 	<td><%= u.phone %></td>
-	<td><%= u.address %></td>
-	<td><%= u.role%></th>
+	<td><%= u.ticket_number %><%= raw "<span class='text-danger' title='Not Registered with doattend'>✖</span>" if u.ticket_number.nil? %></td>
+	<td><%= u.role%></td>
+	<td>
+		<%= link_to "Edit", edit_participant_path(u.id) %> 
+		<% if u.passportless? %>
+		• <a href="<%= u.passportscan %>">Download Passport</a>
+		<% end %>
+	</td>
 </tr>
 <% end %>
 </tbody>
