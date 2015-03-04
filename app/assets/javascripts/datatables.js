@@ -1,6 +1,10 @@
 function datatable_it() {
 	$('.datatable').DataTable({
-		responsive: true
+		responsive: true,
+		"dom": 'T<"clear">lfrtip',
+        "tableTools": {
+            "sSwfPath": "/swf/copy_csv_xls_pdf.swf"
+        }
 	  // ajax: ...,
 	  // autoWidth: false,
 	  // pagingType: 'full_numbers',
