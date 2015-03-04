@@ -3,8 +3,14 @@ function datatable_it() {
 		responsive: true,
 		"dom": 'T<"clear">lfrtip',
         "tableTools": {
-            "sSwfPath": "/swf/copy_csv_xls_pdf.swf"
-        }
+            "sSwfPath": "http://cdn.datatables.net/tabletools/2.2.2/swf/copy_csv_xls_pdf.swf"
+        },
+        aLengthMenu: [
+	        [25, 50, 100, 200, -1],
+	        [25, 50, 100, 200, "All"]
+	    ],
+		iDisplayLength: -1
+
 	  // ajax: ...,
 	  // autoWidth: false,
 	  // pagingType: 'full_numbers',
