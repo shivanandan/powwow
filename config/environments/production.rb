@@ -12,7 +12,7 @@ Powwow::Application.configure do
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = true
+  config.action_controller.perform_caching = false
   
   config.action_mailer.default_url_options = {:host => "http://104.236.91.214"}
   config.action_mailer.delivery_method = :smtp

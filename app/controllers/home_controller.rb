@@ -20,6 +20,7 @@ class HomeController < ApplicationController
   	@id = params[:id].to_i
   	archive = SQLite3::Database.new 'db/past.sqlite3'
   	@result =  archive.execute ("select * from submissions s LEFT OUTER JOIN users u ON s.user_id = u.id where s.id=#{@id}")
+    @attachment = archive.execute ("select * from attachments where attachable_id=#{@id} and attachable_type='Submission'")
   	@uid = @result[0][5].to_i
   	@users = archive.execute ("select * from users u LEFT OUTER JOIN details d ON u.id = d.user_id where u.id=#{@uid}")
   end
