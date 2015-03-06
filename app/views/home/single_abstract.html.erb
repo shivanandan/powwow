@@ -16,6 +16,6 @@
 </div>
 <img style="display:block; margin:0 auto; max-width: 100%; border-bottom: 1px solid #f0f0f0;" src="/system/system/attachments/pics/000/000/<%= att_id %>/slide/<%= @attachment[0][5] %><%=  %>" alt="">
 <div class="oldabstract">
-	<%= raw s[3] %>
+	<%= raw s[3].gsub(/\\r\\n/,'') %>
 </div>
 </div>
