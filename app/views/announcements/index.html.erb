@@ -6,6 +6,8 @@
       <th>Title</th>
       <th>Message</th>
       <th>Date</th>
+      <th>Start Date</th>
+      <th>End Date</th>
       <th>Priority</th>
       <th></th>
       <th></th>
@@ -19,6 +21,8 @@
         <td><%= announcement.title %></td>
         <td><%= announcement.message %></td>
         <td><%= announcement.date %></td>
+        <td><%= announcement.start_date %></td>
+        <td><%= announcement.end_date %></td>
         <td><%= announcement.priority %></td>
         <td><%= link_to 'Show', announcement %></td>
         <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>

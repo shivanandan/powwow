@@ -5,6 +5,14 @@
 		<p class="lead"><strong>8 - 11 SEPTEMBER 2015, IISc, BENGALURU </strong><br> 300 of Africa and Asia's brightest conservation researchers</p>
 	</div>
 </div>
+
+<div class="twrap">
+	<div class="container">
+		<div id="timesheet"></div>
+	</div>
+</div>
+
+
 <div class="container">
 	<div class="row">
 		<% @announcements.each do |a| %>
@@ -48,3 +56,111 @@
 		</div>
 	</div>
 </div>
+
+
+<!-- THIS IS ALL FOR THE TIMELINE AS IT ONLY LOADS ON THE FRONT PAGE -->
+
+
+<style type="text/css">
+.twrap {
+		background-color: #fefefe;
+		padding: 40px 100px;
+}
+	#timesheet {
+		width: 100%;
+		margin-bottom: 50px;
+		min-height: 100px;
+	}
+	.jumbotron {
+		margin-bottom: 0px;
+	}
+	.timeline_event {
+		border-top: 4px black solid;
+		display: inline-block;
+		font-size: 9px;
+		line-height: 12px;
+		margin-bottom: 20px;
+	}
+	#timesheet .month {
+		font-size: 9px;
+		font-weight: bold;
+		color: #d0d0d0;
+	}
+	.monkey {
+		margin-bottom: 20px;
+		clear: both;
+	}
+</style>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+<script type="text/javascript">
+
+function parseDate(str) {
+    var mdy = str.split('/')
+    return new Date(mdy[2], mdy[1], mdy[0]-1);
+}
+
+function daydiff(first, second) {
+    return (second-first)/(1000*60*60*24);
+}
+
+
+
+var timesheet = function(data, months, number_of_days) {
+
+	$('#timesheet').html('');
+
+	var td = $('#timesheet');
+	var single_day_width = td.width() / number_of_days;
+	var colors = ['#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37']
+	console.log(single_day_width);
+
+
+	console.log(months.length);
+	_.each(months, function(element, index, list){
+		console.log(element);
+		var checker = $.inArray(element, ['MAR', 'MAY', 'JUL', 'AUG']);
+		var num_days;
+		if ( element == 'FEB' ) {
+			num_days = 28;
+		} else if ( checker > -1 ) {
+			num_days = 31;
+		} else {
+			num_days = 30;
+		}
+		$('#timesheet').append('<div class="month" style="width:'+num_days*single_day_width+'px; float:left;">'+element+'</div>');
+	});
+
+	$('#timesheet').append('<div class="clear monkey"></div>');
+
+	
+	
+	_.each(time_data, function(element, index){
+		var day_difference = daydiff(parseDate(element[0]), parseDate(element[1]));
+		var days_since_start = daydiff(parseDate('02/02/2015'), parseDate(element[0]));
+		$('#timesheet').append('<div style="margin-left:'+days_since_start*single_day_width+'px;width:'+day_difference*single_day_width+'px;"><div class="timeline_event" style="width:'+day_difference*single_day_width+'px; border-top-color:'+colors[index]+';"><strong>'+element[2]+'</strong><br>'+element[4]+'</div></div>');
+		console.log('jn');
+		console.log(day_difference);
+	});
+}
+
+
+var months = ['FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP'];
+var time_data = [
+	<% @announcements.each do |a| %>
+		<% unless ( a.start_date.nil? and a.end_date.nil? ) %>
+			['<%= a.start_date %>', '<%= a.end_date %>', '<%= a.title %>', '<%= a.message %>', '<%= a.date %>'],
+		<% end %>
+	<% end %>
+];
+
+
+jQuery(document).ready(function($) {
+	timesheet(time_data, months, 242);	
+});
+
+
+
+
+</script>

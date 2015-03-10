@@ -21,7 +21,18 @@
   </div>
   <div class="field">
     <%= f.label :date %><br>
+    <p class='text-muted'>Please leave this date field blank for now. It is a legacy field from when we were displaying these announcements as text.</p>
     <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <p class='text-muted'>Make sure the start date is in the format of DD/MM/YY. If you leave this blank, they do not show up on the visualization on the front page.</p>
+    <%= f.text_field :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <p class='text-muted'>Make sure the end date is in the format of DD/MM/YY. If you leave this blank, they do not show up on the visualization on the front page.</p>
+    <%= f.text_field :end_date %>
   </div>
   <div class="field">
     <%= f.label :priority %><br>
