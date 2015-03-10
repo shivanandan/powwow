@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 	# load_and_authorize_resource
 
   def index
-  	@announcements = Announcement.order('priority DESC').limit(4)
+  	@announcements = Announcement.order('priority DESC').limit(10)
   end
 
   def abstracts_archive
