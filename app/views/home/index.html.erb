@@ -77,11 +77,18 @@
 	}
 	.timeline_event {
 		border-top: 4px black solid;
-		display: inline-block;
-		font-size: 12px;
+		padding-bottom: 4px;
+		display: block;
+	}
+	.t_event_wrap {
+		font-size: 13px;
 		padding-top: 5px;
 		line-height: 14px;
 		margin-bottom: 20px;
+		min-width: 200px;
+		font-family: monospace;
+		color: white;
+		text-transform: uppercase;
 	}
 	#timesheet .month {
 		font-size: 9px;
@@ -141,7 +148,7 @@ var timesheet = function(data, months, number_of_days) {
 	_.each(time_data, function(element, index){
 		var day_difference = daydiff(parseDate(element[0]), parseDate(element[1]));
 		var days_since_start = daydiff(parseDate('02/02/2015'), parseDate(element[0]));
-		$('#timesheet').append('<div style="margin-left:'+days_since_start*single_day_width+'px;width:'+day_difference*single_day_width+'px;"><div class="timeline_event" style="width:'+day_difference*single_day_width+'px; border-top-color:'+colors[index]+';"><strong>'+element[2]+'</strong><br>'+element[4]+'</div></div>');
+		$('#timesheet').append('<div class="t_event_wrap" style="margin-left:'+days_since_start*single_day_width+'px;width:'+day_difference*single_day_width+'px;"><div class="timeline_event" style="width:'+day_difference*single_day_width+'px; border-top-color:'+colors[index]+';"></div><strong>'+element[2]+'</strong><br>'+element[4]+'</div>');
 		console.log('jn');
 		console.log(day_difference);
 	});
