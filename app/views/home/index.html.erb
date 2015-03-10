@@ -1,5 +1,4 @@
 <div class="jumbotron">
-	<br><br><br>
 	<div class="container">
 		<h1>Student Conference on <br> Conservation Science - Bengaluru</h1>
 		<p class="lead"><strong>8 - 11 SEPTEMBER 2015, IISc, BENGALURU </strong><br> 300 of Africa and Asia's brightest conservation researchers</p>
@@ -148,7 +147,7 @@ var timesheet = function(data, months, number_of_days) {
 	_.each(time_data, function(element, index){
 		var day_difference = daydiff(parseDate(element[0]), parseDate(element[1]));
 		var days_since_start = daydiff(parseDate('02/02/2015'), parseDate(element[0]));
-		$('#timesheet').append('<div class="t_event_wrap" style="margin-left:'+days_since_start*single_day_width+'px;width:'+day_difference*single_day_width+'px;"><div class="timeline_event" style="width:'+day_difference*single_day_width+'px; border-top-color:'+colors[index]+';"></div><strong>'+element[2]+'</strong><br>'+element[4]+'</div>');
+		$('#timesheet').append('<div class="t_event_wrap" style="margin-left:'+days_since_start*single_day_width+'px;width:'+day_difference*single_day_width+'px;"><div class="timeline_event" style="width:'+day_difference*single_day_width+'px; border-top-color:'+colors[index]+';"></div><strong>'+element[2]+'</strong><br>'+element[4]+'<br>'+element[3]+'</div>');
 		console.log('jn');
 		console.log(day_difference);
 	});
