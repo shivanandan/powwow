@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= @review.submission_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user_id %>
+</p>
+
+<p>
+  <strong>Conservation score:</strong>
+  <%= @review.conservation_score %>
+</p>
+
+<p>
+  <strong>Science score:</strong>
+  <%= @review.science_score %>
+</p>
+
+<p>
+  <strong>Visual score:</strong>
+  <%= @review.visual_score %>
+</p>
+
+<p>
+  <strong>Recommendation:</strong>
+  <%= @review.recommendation %>
+</p>
+
+<p>
+  <strong>Comment to applicant:</strong>
+  <%= @review.comment_to_applicant %>
+</p>
+
+<p>
+  <strong>Comment to admin:</strong>
+  <%= @review.comment_to_admin %>
+</p>
+
+<p>
+  <strong>Finalized:</strong>
+  <%= @review.finalized %>
+</p>
+
+<p>
+  <strong>View count:</strong>
+  <%= @review.view_count %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

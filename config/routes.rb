@@ -1,5 +1,7 @@
 Powwow::Application.routes.draw do
 
+  resources :reviews
+
   resources :submissions
 
   post '/tinymce_assets' => 'tinymce_assets#create'

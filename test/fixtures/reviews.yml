@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  submission_id: MyString
+  user_id: MyString
+  conservation_score: 1
+  science_score: 1
+  visual_score: 1
+  recommendation: MyString
+  comment_to_applicant: MyText
+  comment_to_admin: MyText
+  finalized: false
+  view_count: 1
+
+two:
+  submission_id: MyString
+  user_id: MyString
+  conservation_score: 1
+  science_score: 1
+  visual_score: 1
+  recommendation: MyString
+  comment_to_applicant: MyText
+  comment_to_admin: MyText
+  finalized: false
+  view_count: 1
