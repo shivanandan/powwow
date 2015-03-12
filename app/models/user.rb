@@ -17,12 +17,14 @@ class User < ActiveRecord::Base
   # validates :middle_name
   validates :last_name, presence:true
   validates :gender, presence:true
-  validates :phone, presence:true
-  validates :address, presence:true
 
-  validates :institutional_affiliation, presence:true
 
-  validates :nationality, presence:true
+  validates :phone, presence:true, :if => lambda {self.role == 'applicant'}
+  validates :address, presence:true, :if => lambda {self.role == 'applicant'}
+
+  validates :institutional_affiliation, presence:true, :if => lambda {self.role == 'applicant'}
+
+  validates :nationality, presence:true, :if => lambda {self.role == 'applicant'}
   
   #validates_presence_of :pio, :unless => lambda {self.nationality == 'IN'}
   #validates_presence_of :oci, :unless => lambda {self.nationality == 'IN'}
@@ -78,6 +80,18 @@ class User < ActiveRecord::Base
   private
 
   def override_fields
+    if ( self.role == 'admin' or self.role == 'reviewer' )
+      self.nationality = 'IN'
+      self.pio = nil
+      self.oci = nil
+      self.guardian_names = nil
+      self.date_of_birth = nil
+      self.place_of_birth = nil
+      self.passport_number = nil
+      self.passport_place = nil
+      self.passport_place_of_issue = nil
+      self.passport_place_of_issue = nil
+    end
     if self.nationality == 'IN'
       self.pio = nil
       self.oci = nil

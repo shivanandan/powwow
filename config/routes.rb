@@ -28,6 +28,8 @@ Powwow::Application.routes.draw do
   get 'archive/abstracts/:year/:type' => 'home#abstracts_archive', as: :presentation_archive
   get 'archive/abstract/:id' => 'home#single_abstract', as: :single_abstract_archive
 
+  get 'participants/new_user/' => 'participants#new_user', as: :new_participant
+  post '/participants/create_user/' => 'participants#create_user', as: :create_participant
   get 'participants/edit_user/:user_id' => 'participants#edit_user', as: :edit_participant
   post '/participants/save_edited/:user_id' => 'participants#save_edited', as: :save_edited
   

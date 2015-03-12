@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p><strong>Dear <%= @user.full_name %>,</strong></p>
+    <p>Thank you for accepting our invitation to review abstracts for SCCS-Bengaluru 2015.</p>
+    <p>An administrator at sccs-bng.org has added you to the site as <strong><% @user.role == 'reviewer' ? "a" : "an" %> <%= @user.role %></strong>.</p>
+    <p>Your login credentials are below. Please note, you can change your password once you <a href="http://www.sccs-bng.org/users/sign_in" "email me">SIGN IN</a> to the site.</p>
+
+    <pre style="background-color: #f0f0f0; padding:5px;">
+      <strong>Username :</strong> <%= @user.email %> <br>
+      <strong>Password :</strong> <%= @password %>
+    </pre>
+
+    <% if @user.role == 'reviewer' %>     
+    <p>The abstract review guidelines are found below, and are also accessible once you login.</p>
+    <% end %>
+
+    <p>Best wishes, <br>
+    SCCS-Bengaluru 2015 Organizing Committee </p>
+
+    <% if @user.role == 'reviewer' %>     
+<br>
+<hr>
+<br>
+      <div class="WordSection1">
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;mso-bidi-font-size:10.0pt">Guidelines for reviewers:</span></b></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">1.
+      Conflict of interest:</span></b></p>
+
+      <p class="normal"><span lang="EN-US">Please inform us (send an email to
+      sccs@sccs-bng.org) of conflicts of interest, if any, with regard to the
+      abstracts assigned to you.<span style="mso-spacerun:yes">&nbsp; </span>If you
+      have been assigned an abstract of a student from your lab, <span class="GramE">of<span style="mso-spacerun:yes">&nbsp; </span>someone</span> you have supervised or
+      assisted, of a friend or relative, etc., please let us know and we will
+      reassign the abstract to another reviewer. If you are not certain if a
+      particular case constitutes a conflict of interest, please email us the details
+      and we will help you to make a decision.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">2.
+      Abstract submission format </span></b></p>
+
+      <p class="normal"><span lang="EN-US">Students have been asked to submit their
+      abstract under the format below (word limit is in parentheses):</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">1. Title (20)</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">2. Introduction: What conservation issue,
+      problem or question does your study address? (100)</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">3. Methods/ Materials/Methodology: What were
+      the main research methods you used? (125)</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">4. Results/ Findings/Argument Development:
+      What are the main results/findings of your study? (125)</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">5. Discussion/Synthesis and conservation
+      relevance: Discuss and <span class="SpellE">synthesise</span> your results based
+      on the evidence presented in your results section. Please also use this section
+      to discuss the relevance of your findings for conservation practice/science.
+      (100)</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">*6. Visual Component (JPEG/PNG file less than
+      1 MB in size):</span></p>
+
+      <p class="normal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;</span></span></p>
+
+      <p class="normal"><span lang="EN-US">7. Study location GPS co-ordinates:</span></p>
+
+      <p class="normal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;</span></span></p>
+
+      <p class="normal"><span lang="EN-US">8. Keywords: Maximum of 5 keywords separated
+      by semi-<span class="GramE">colons(</span>;) </span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><i style="mso-bidi-font-style:normal"><span lang="EN-US">* Visual
+      component of the abstract</span></i><span lang="EN-US">:</span></p>
+
+      <p class="normal" style="text-indent:36.0pt"><span lang="EN-US">It is mandatory for
+      presenters to include a visual component in their abstract submission, which
+      should typically serve as a complement to their textual element. Students have
+      been instructed that the visual component of their abstract can take any of the
+      following forms, - graphs, tables, maps, figures, illustrations, flow charts,
+      photographs and/or other visual elements, and should illustrate the main
+      results, the study design, or the main idea that is captured by the study.
+      Typically, text within their illustration should be minimal. Please note that
+      the visual component is not expected to act as a stand-alone visual abstract.
+      Please also note that SCCS-Bengaluru would like to attract a diversity of
+      research questions and approaches within conservation science; and for certain
+      research questions, e.g., those involving non-quantitative approaches, it may
+      not be possible/appropriate to use certain <span class="SpellE">visualisation</span>
+      aids (e.g., graphs, tables).</span></p>
+
+      <p class="normal"><span lang="EN-US">The visual component is mainly to help
+      reviewers gauge the quality and quantity of the data presented in the abstract
+      and to flag abstracts based on literature reviews or opinions (which are not
+      appropriate at this conference). Visual components also help students who have
+      difficulty in written English, present their main results with minimal text.
+      The visual component of the abstract should be judged primarily based the
+      clarity of the message conveyed and not by its visual appeal.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">3.
+      Scoring abstracts:</span></b></p>
+
+      <p class="normal"><span lang="EN-US">Please score each abstract on two different
+      aspects - conservation relevance ('Conservation') and quality of research
+      ('Science'). Each aspect is scored from 0 to 5, with 0 indicating very poor
+      relevance/quality and 5 very high relevance/quality. Please use the whole range
+      of possible values (0 – 5) as required. Ensure that you select these
+      values before you save changes.</span></p>
+
+      <p class="normal"><i style="mso-bidi-font-style:normal"><span lang="EN-US">Scoring
+      the visual component:</span></i><span lang="EN-US"> Please also score the visual
+      component of the abstract from 0 to 5, with 0 indicating very poor
+      relevance/quality and 5 very high relevance/quality. </span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">For each abstract, please provide your
+      recommendation from one of the following choices:</span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">“Talk”</span></b><span lang="EN-US">, <span class="GramE">better-suited</span> for talk than poster</span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">“Poster”</span></b><span lang="EN-US">, better-suited for poster than talk </span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">“Either
+      a talk or a poster”</span></b><span lang="EN-US">, equally-suited for talk or
+      poster </span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">“Not
+      acceptable as talk or poster”</span></b><span lang="EN-US">, not suitable for
+      talk or poster</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">This is meant to convey your overall
+      impression of the quality of the abstract and its suitability as a talk or
+      poster. We would like talks to be of good quality and preferably based on
+      completed work. We would like to be more flexible with regard to our selections
+      for the poster session and allowing both completed work, work-in-progress <span style="color:red">as well as proposed work</span>.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">4.
+      Feedback:</span></b></p>
+
+      <p class="normal"><span lang="EN-US">You have the option of leaving two kinds of
+      comments:</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">1. Comments that the applicant and <span class="SpellE">organisers</span> to can view</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">2. Comments available only to the <span class="SpellE">organisers</span></span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">Both these are optional but we hope you use
+      them in most cases, to tell us what you liked and didn’t like about a
+      particular abstract. We would also value it greatly if you can provide
+      constructive feedback to the applicants.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">5.
+      Using the web-based review process:</span></b></p>
+
+      <p class="normal"><span lang="EN-US">Your home screen will have a list of all
+      abstracts assigned to you. You can click on the title of any abstract to view
+      and evaluate the abstract. You have the option of saving changes as you
+      evaluate an abstract, which allows you to edit and re-evaluate the abstract as
+      many times as you like. Once you have finished evaluating the abstract, please
+      hit the '<span class="SpellE">Finalise</span> Review' button. Please note that
+      you will only be able to <span class="SpellE">finalise</span> the review once you
+      have clicked on ‘save changes’. Once you '<span class="SpellE">Finalise</span>
+      Review', you will not be able to edit or re-evaluate the abstract.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">-Please send us an email on sccs@sccs-bng.org
+      once you have completed reviewing all the abstracts assigned to you.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">-We would like to have all the abstracts
+      reviewed latest by Friday 25 <span class="GramE">April,</span> 2015. We have a
+      commitment to communicate all results to applicants by the first week of May
+      2015. At this time we also have to send a list of foreign attendees and their
+      visa details to the Ministry of External Affairs in India.</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US">-Do contact us at sccs@sccs-bng.org if you
+      need any further information or clarification. </span></p>
+
+      <p class="normal"><span lang="EN-US">-Please do share with us feedback on this
+      review procedure. Are there any changes you would like to see?</span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="MsoNormal" style="mso-pagination:widow-orphan"><span lang="EN-US" style="mso-bidi-font-size:12.0pt;background:yellow">Once you have set your
+      password, you can login at http://www.sccs-bng.org/login/</span><span lang="EN-US" style="font-size:10.0pt;font-family:Times;color:windowtext"><o:p></o:p></span></p>
+
+      <p class="MsoNormal" style="mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:10.0pt;font-family:Times;color:windowtext"><o:p>&nbsp;</o:p></span></p>
+
+      <p class="normal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+      </div>
+    <% end %>
+    <!-- End reviewers if -->
+
+
+  </body>
+</html>

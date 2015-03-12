@@ -26,6 +26,32 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def new_user
+    @user = User.new
+  end
+
+  def create_user
+    @user = User.new(user_params)
+    @user.nationality = 'IN'
+    @user.password = Devise.friendly_token.first(8)
+    @user.skip_confirmation!
+
+    respond_to do |format|
+      if @user.save
+        ParticipantMailer.welcome_reviewer(@user, @user.password).deliver
+        format.html { redirect_to participants_path, notice: 'Announcement was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @announcement }
+      else
+        format.html { render action: 'new_user' }
+        format.json { render json: @announcement.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def reviewers
+    @users = User.where(:role => 'reviewer')
+  end
+
   private
 
   def user_params
