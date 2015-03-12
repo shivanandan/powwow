@@ -16,6 +16,10 @@ class Ability
             s.user_id == user.id
         end
         cannot [:index, :edit, :update], Submission
+    elsif user.reviewer?
+        can [:edit, :update, :show], Review do |r|
+            r.user_id = user.id
+        end
     else
         can :show, :all
         cannot :show, Submission

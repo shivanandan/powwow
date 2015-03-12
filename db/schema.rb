@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310091120) do
+ActiveRecord::Schema.define(version: 20150312062556) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -44,6 +44,21 @@ ActiveRecord::Schema.define(version: 20150310091120) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.string   "submission_id"
+    t.string   "user_id"
+    t.integer  "conservation_score"
+    t.integer  "science_score"
+    t.integer  "visual_score"
+    t.string   "recommendation"
+    t.text     "comment_to_applicant"
+    t.text     "comment_to_admin"
+    t.boolean  "finalized"
+    t.integer  "view_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
