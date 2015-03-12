@@ -12,14 +12,16 @@ Powwow::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get 'participants' => 'participants#index', as: :participants
-
-  get 'setticket' => 'applicant#setticket', as: :setticket
-  post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend
-  get 'applicant' => 'applicant#index', as: :applicant
   
+
+  get 'applicant' => 'applicant#index', as: :applicant
+  get 'setticket' => 'applicant#setticket', as: :setticket
+  post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend  
   post 'passport' => 'applicant#passport', as: :passport
   get 'uploadpassport' => 'applicant#uploadpassport', as: :uploadpassport
+
+
+  get 'reviewer' => 'reviewer#index', as: :reviewer
 
   get 'archive/plenaries/:year' => 'home#plenaries_archive', as: :plenaries_archive
   get 'archive/plenary/:year/:slug' => 'home#single_plenary', as: :single_plenary_archive
@@ -28,10 +30,13 @@ Powwow::Application.routes.draw do
   get 'archive/abstracts/:year/:type' => 'home#abstracts_archive', as: :presentation_archive
   get 'archive/abstract/:id' => 'home#single_abstract', as: :single_abstract_archive
 
+  get 'participants' => 'participants#index', as: :participants
   get 'participants/new_user/' => 'participants#new_user', as: :new_participant
   post '/participants/create_user/' => 'participants#create_user', as: :create_participant
   get 'participants/edit_user/:user_id' => 'participants#edit_user', as: :edit_participant
   post '/participants/save_edited/:user_id' => 'participants#save_edited', as: :save_edited
+
+  get 'transfer' => 'home#post_login', as: :post_login
   
 
   # You can have the root of your site routed with "root"

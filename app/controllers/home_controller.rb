@@ -51,4 +51,15 @@ class HomeController < ApplicationController
     @result =  archive.execute ("select * from workshops where id='#{@params[:id]}'")
   end
 
+  def post_login
+    # Do stuff here for all different users
+    if user_signed_in?
+      redirect_to applicant_path if current_user.applicant?
+      redirect_to reviewer_path if current_user.reviewer?
+      redirect_to root_path if current_user.admin?
+    else
+      redirect_to root_path
+    end
+  end
+
 end
