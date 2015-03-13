@@ -8,6 +8,27 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
+  def overview
+    @submissions = Submission.includes(:reviews)
+  end
+
+  def get_free_reviewers
+    @allreviewers = User.where(:role => 'reviewer')
+    @submission = Submission.find(params[:submission_id])
+    @reviews = Review.where(:submission_id => params[:submission_id]).includes(:users)
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
+  def assign_reviewer
+  end
+
+  def unassign_reviewer
+  end
+
   # GET /reviews/1
   # GET /reviews/1.json
   def show

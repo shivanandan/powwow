@@ -1,5 +1,6 @@
 class Submission < ActiveRecord::Base
 	belongs_to :user
+	has_many :reviews
 
 	has_attached_file :visual_abstract, :styles => { :large => "1200x1200", :medium => "800x800>", :thumb => "300x300>" }, :default_url => "/images/:style/missing.png"
 	validates_attachment_content_type :visual_abstract, :content_type => /\Aimage\/.*\Z/

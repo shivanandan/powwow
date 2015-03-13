@@ -1,94 +1,88 @@
-#loadingProgressG{
-width:100%;
-height:6px;
-overflow:hidden;
-background-color:#000000;
--moz-border-radius:1px;
--webkit-border-radius:1px;
--ms-border-radius:1px;
--o-border-radius:1px;
-border-radius:1px;
+#powwowloader {
+	background-color: rgba(1,1,1,0.9);
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	z-index: 1100;
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+         -o-animation: fadein 0.5s; /* Opera < 12.1 */
+            animation: fadein 0.5s;
 }
 
-.loadingProgressG{
-background-color:#FF9900;
-margin-top:0;
-margin-left:-100%;
--moz-animation-name:bounce_loadingProgressG;
--moz-animation-duration:2.3s;
--moz-animation-iteration-count:infinite;
--moz-animation-timing-function:linear;
--webkit-animation-name:bounce_loadingProgressG;
--webkit-animation-duration:2.3s;
--webkit-animation-iteration-count:infinite;
--webkit-animation-timing-function:linear;
--ms-animation-name:bounce_loadingProgressG;
--ms-animation-duration:2.3s;
--ms-animation-iteration-count:infinite;
--ms-animation-timing-function:linear;
--o-animation-name:bounce_loadingProgressG;
--o-animation-duration:2.3s;
--o-animation-iteration-count:infinite;
--o-animation-timing-function:linear;
-animation-name:bounce_loadingProgressG;
-animation-duration:2.3s;
-animation-iteration-count:infinite;
-animation-timing-function:linear;
-width:100%;
-height:6px;
+#loadingProgressG {
+	margin: auto;
+	position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  height: 20em;
 }
 
-@-moz-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-100%;
+.loader {
+  margin: 6em auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 5px solid rgba(255, 255, 255, 0.2);
+  border-right: 5px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+  border-left: 5px solid #ffffff;
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
-100%{
-margin-left:100%;
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-@-webkit-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-100%;
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-100%{
-margin-left:100%;
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-}
-
-@-ms-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-100%;
-}
-
-100%{
-margin-left:100%;
-}
-
-}
-
-@-o-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-100%;
-}
-
-100%{
-margin-left:100%;
-}
-
-}
-
-@keyframes bounce_loadingProgressG{
-0%{
-margin-left:-100%;
-}
-
-100%{
-margin-left:100%;
-}
-
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

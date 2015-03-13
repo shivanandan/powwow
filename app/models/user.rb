@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_one :submission
 
+  has_many :reviews
 
   has_attached_file :passportscan
 
