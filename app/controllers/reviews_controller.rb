@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
     @allreviewers = User.where(:role => 'reviewer')
     @submission = Submission.find(params[:submission_id])
     @reviews = Review.where(:submission_id => params[:submission_id]).includes(:users)
+    @assigned_reviews = Review.where(:submission_id => params[:submission_id])
 
     respond_to do |format|
       format.js
@@ -24,9 +25,45 @@ class ReviewsController < ApplicationController
   end
 
   def assign_reviewer
+    @submission = Submission.find(params[:submission_id])
+    @reviewer = User.find(params[:reviewer_id])
+
+    # Find and see if the reviewer exists
+    r = Review.where(:submission_id => params[:submission_id]).where(:user_id => params[:reviewer_id])
+
+    if r.empty?
+      @review = Review.new
+      @review.submission_id = params[:submission_id]
+      @review.user_id = params[:reviewer_id]
+
+      @review.save
+    else
+      @review = r.first
+      @errors = 'Reviewer has already been assigned to this submission'
+    end
+
+    
+    respond_to do |format|
+      # format.js
+      format.html {redirect_to review_overview_path}
+    end
+
+    # Check if th
   end
 
   def unassign_reviewer
+    @submission = Submission.find(params[:submission_id])
+    @reviewer = User.find(params[:reviewer_id])
+    @reviews = Review.where(:submission_id => params[:submission_id]).where(:user_id => params[:reviewer_id])
+    @reviews.each do |r|
+      r.destroy
+    end
+
+    respond_to do |format|
+      # format.js
+      format.html {redirect_to review_overview_path}
+    end
+
   end
 
   # GET /reviews/1

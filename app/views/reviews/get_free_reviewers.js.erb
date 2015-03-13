@@ -8,13 +8,25 @@ html += '<div class="modal fade bs-example-modal-lg" id="mymodal" tabindex="-1" 
 html += '<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">';
 
 // Modal Header
-html += 'Reviewers that are assignable';
+html += 'Reviewer Assignment';
 
 html += '</h4></div><div class="modal-body">'
+html += 'Assigning Reviewers to: <br>';
+html += '<strong><%= @submission.title %></strong> by <%= @submission.user.full_name %>';
+html+='<br><p>';
+<% @assigned_reviewers = [] %>
+<% @assigned_reviews.each do |ar| %>
+	<% @assigned_reviewers << ar.user %>
+<% end %>
+<% @freereviewers = @allreviewers - @assigned_reviewers %>
 
-
-// modal body here
-html += 'khkjnkjn';
+<% @freereviewers.each do |r| %>
+	html += '<%= link_to "Assign #{r.full_name}", assign_reviewer_path(@submission.id, r.id), :class=> "load btn btn-small", :method => :post %>';
+<% end %>
+<% if @freereviewers.empty? %>
+	html += 'All Reviewers have been assigned to this submission or you have not added enough reviewers.'
+<% end %>
+html+='</p>';
 
 
 html += '</div><div class="modal-footer">';

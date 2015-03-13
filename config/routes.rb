@@ -41,6 +41,7 @@ Powwow::Application.routes.draw do
   get 'review_overview' => 'reviews#overview', as: :review_overview
   get 'get_free_reviewers/:submission_id' => 'reviews#get_free_reviewers', as: :get_free_reviewers
   post 'assign_reviewer/:submission_id/:reviewer_id' => 'reviews#assign_reviewer', as: :assign_reviewer
+  delete 'unassign_reviewer/:submission_id/:reviewer_id' => 'reviews#unassign_reviewer', as: :unassign_reviewer
 
   get 'transfer' => 'home#post_login', as: :post_login
   
