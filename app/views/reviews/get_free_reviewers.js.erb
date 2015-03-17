@@ -21,7 +21,7 @@ html+='<br><p>';
 <% @freereviewers = @allreviewers - @assigned_reviewers %>
 
 <% @freereviewers.each do |r| %>
-	html += '<%= link_to "Assign #{r.full_name}", assign_reviewer_path(@submission.id, r.id), :class=> "load btn btn-small", :method => :post %>';
+	html += '<%= link_to "Assign #{r.full_name}", assign_reviewer_path(@submission.id, r.id), :remote=>true, :class=> "load btn btn-small", :method => :post %>';
 <% end %>
 <% if @freereviewers.empty? %>
 	html += 'All Reviewers have been assigned to this submission or you have not added enough reviewers.'

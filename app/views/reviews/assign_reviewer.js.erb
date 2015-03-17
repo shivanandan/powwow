@@ -1,2 +1,10 @@
-loader();
-alert('created');
+$('#s<%= @submission.id %>-').html('');
+
+var html = '<%= @reviewer.full_name %>';
+html += "<%=j link_to 'Unassign', unassign_reviewer_path(@submission.id, @reviewer.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' } %>";
+
+$('#s<%= @submission.id %>-').html(html);
+
+$('#s<%= @submission.id %>-').attr('id', 's<%= @submission.id %>-<%= @reviewer.id %>');
+
+$('#mymodal').modal('hide');

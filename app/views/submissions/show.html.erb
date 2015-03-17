@@ -1,11 +1,23 @@
 <p id="notice"><%= notice %></p>
+<br><br>
+<span class="capitalize label label-info">2015 : Submission</span>
+<hr>
+<div class="archive">
+<h2><%= @submission.title %></h2>
 
+<div class="row metameta">
+  <div class="col-lg-6 presenter">Presented by <br> <strong><%= @submission.user.full_name %></strong> <br><%= @submission.current_institution %> <%= " • <strong>Other Institutional Affiliations:</strong>  #{@submission.other_institutional_affiliations}" unless @submission.other_institutional_affiliations.empty? %></div>
+  <div class="col-lg-6 authors">Authors <br> <strong><%= @submission.co_authors %></strong></div>
+</div>
+<%= image_tag @submission.visual_abstract(:large) %>
+<hr>
 <p>
-  <strong>Title:</strong>
-  <%= @submission.title %>
+  <strong>Keywords: </strong>
+  <%= @submission.keywords %>
 </p>
-
-<p>
+<hr>
+<div class="oldabstract">
+  <p>
   <strong>Introduction:</strong>
   <%= @submission.introduction %>
 </p>
@@ -24,78 +36,54 @@
   <strong>Discussion:</strong>
   <%= @submission.discussion %>
 </p>
+</div>
 
-<p>
-  <strong>Visual Abstract</strong> <br>
-  <%= image_tag @submission.visual_abstract(:medium) %>
-</p>
 
+<!-- MAP -->
+<hr>
+<div class="row">
+  <div class="col-lg-6">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="" style="width:100%;"> 
+  </div>
+  <div class="col-lg-4">
+    
+  </div>
+</div>
 <p>
-  <strong>Presenter:</strong>
-  <%= @submission.presenter %>
-</p>
-
-<p>
-  <strong>Current Institution:</strong>
-  <%= @submission.current_institution %>
-</p>
-
-<p>
-  <strong>Other Institutional Affiliations:</strong>
-  <%= @submission.other_institutional_affiliations %>
 </p>
 
 
-<p>
-  <strong>Keywords:</strong>
-  <%= @submission.keywords %>
-</p>
+</div>
 
-<p>
-  <strong>Co authors:</strong>
-  <%= @submission.co_authors %>
-</p>
-
-<p>
-  <strong>Gps:</strong>
-  LAT: <%= @submission.gps_lat %> <br>
-  LONG : <%= @submission.gps_lng %>
-</p>
-
-<p>
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap
-&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="">
-</p>
+<!-- ONLY FOR ADMIN -->
+<% if current_user.admin? %>
 
 <p>
   <strong>Presentation Format:</strong>
   <%= @submission.poster %>
 </p>
-
 <p>
   <strong>Previous attendance:</strong>
   <%= @submission.previous_attendance %>
 </p>
-
 <p>
   <strong>Attendance year:</strong>
   <%= @submission.attendance_year %>
 </p>
-
 <p>
   <strong>Previous bursary:</strong>
   <%= @submission.previous_bursary %>
 </p>
-
 <p>
   <strong>Bursary:</strong>
   <%= @submission.bursary %>
 </p>
-
 <p>
   <strong>Reason for bursary:</strong>
   <%= @submission.reason_for_bursary %>
 </p>
+
+<% end %>
 
 <%# link_to 'Edit', edit_submission_path(@submission) %>
 <%# link_to 'Back', submissions_path %>

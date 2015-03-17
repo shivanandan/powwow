@@ -1,0 +1,14 @@
+$('#s<%= @submission.id %>-<%= @reviewer.id %>').html('');
+
+// alert('1');
+
+var html = '';
+html += '<%= link_to "Assign", get_free_reviewers_path(@submission.id), :remote => 'true' %>'
+
+$('#s<%= @submission.id %>-<%= @reviewer.id %>').html(html);
+
+// alert('2');
+
+$('#s<%= @submission.id %>-<%= @reviewer.id %>').attr('id', 's<%= @submission.id %>-');
+
+$('#mymodal').modal('hide');

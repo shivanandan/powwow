@@ -44,8 +44,8 @@ class ReviewsController < ApplicationController
 
     
     respond_to do |format|
-      # format.js
-      format.html {redirect_to review_overview_path}
+      format.js
+      # format.html {redirect_to review_overview_path}
     end
 
     # Check if th
@@ -60,8 +60,8 @@ class ReviewsController < ApplicationController
     end
 
     respond_to do |format|
-      # format.js
-      format.html {redirect_to review_overview_path}
+      format.js
+      # format.html {redirect_to review_overview_path}
     end
 
   end
