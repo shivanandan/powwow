@@ -345,8 +345,10 @@ $( document ).ready(function() {
     function(){
         if ($(this).val() == 0) {
           $('.submission_reason_for_bursary').hide();
+          $('.submission_reason_for_bursary').removeAttr('required');​​​​​
         } else {
           $('.submission_reason_for_bursary').show();
+          $('.submission_reason_for_bursary').prop('required',true);
         }
     }
   );          
