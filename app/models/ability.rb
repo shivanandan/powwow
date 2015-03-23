@@ -9,7 +9,7 @@ class Ability
         can :manage, :all
     elsif user.applicant?
         can [:create], Submission do |s|
-            user.abstractless?
+            user.abstractless? and !user.ticketless?
         end
         can :show, Webpage
         can [:read], Submission do |s|
