@@ -89,7 +89,7 @@
         <% if user_signed_in? %>
         
         <% else %>
-        <li><%= link_to "Register", new_user_registration_path %></li>
+        <li style="font-weight:bold; background-color: #111;"><%= link_to "Register", new_user_registration_path, :style=>'color: white;' %></li>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
         <% end %>
         <li>&nbsp; &nbsp; &nbsp; &nbsp;</li>
