@@ -48,6 +48,23 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def new_ticket
+    # Check if user has a ticket
+    @participant = User.find(params[:user_id])
+    @errors = "Could not issue ticket as this user already has a ticket in her/his name."
+    if @participant.ticket_number.nil?
+      # Fetch the lowest ticket number and issue a lower one
+      @all = User.where.not(:ticket_number => nil).order(:ticket_number).limit(5)
+      @participant.ticket_number = @all.first.ticket_number.to_i - 1
+      @errors = "Success! The user has been issued ticket_number : #{@participant.ticket_number}!"
+      @participant.save
+    end
+    # Issue new ticket if user is ticketless
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def reviewers
     @users = User.where(:role => 'reviewer')
   end
