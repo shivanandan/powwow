@@ -1,7 +1,7 @@
 function action_on_nations(selected) {
-	if (selected != 'IN') {
-		$('#nonindian input').prop('required',true);
-		$('#nonindian textarea').prop('required',true);
+	// if (selected != 'IN') {
+		$('#nonindian input').prop('required',false);
+		$('#nonindian textarea').prop('required',false);
 		$('#nonindian select').prop('required',true);
 		$('#nonindian input').prop('disabled',false);
 
@@ -15,17 +15,17 @@ function action_on_nations(selected) {
 		$('#nonindian').css('display', 'block');
 		$('#nonindian').animate({'opacity': 1}, 500, function(){
 		});
-	} else {
-		$('#nonindian input').prop('required',false);
-		$('#nonindian textarea').prop('required',false);
-		$('#nonindian select').prop('required',false);
-		$('#nonindian input').prop('disabled',true);
-		$('#nonindian textarea').prop('disabled',true);
-		$('#nonindian select').prop('required',false);
-		$('#nonindian').animate({'opacity': 0}, 500, function(){
-			$(this).css('display', 'none');
-		});
-	}
+	// } else {
+	// 	$('#nonindian input').prop('required',false);
+	// 	$('#nonindian textarea').prop('required',false);
+	// 	$('#nonindian select').prop('required',false);
+	// 	$('#nonindian input').prop('disabled',true);
+	// 	$('#nonindian textarea').prop('disabled',true);
+	// 	$('#nonindian select').prop('required',false);
+	// 	$('#nonindian').animate({'opacity': 0}, 500, function(){
+	// 		$(this).css('display', 'none');
+	// 	});
+	// }
 }
 
 

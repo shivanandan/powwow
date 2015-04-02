@@ -29,16 +29,21 @@ class User < ActiveRecord::Base
   
   #validates_presence_of :pio, :unless => lambda {self.nationality == 'IN'}
   #validates_presence_of :oci, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :guardian_names, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :place_of_birth, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :date_of_birth, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :passport_number, :unless => lambda {self.nationality == 'IN'}
+  
+  # Optional for srilankans problems
+  # validates_presence_of :guardian_names, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :place_of_birth, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :date_of_birth, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :passport_number, :unless => lambda {self.nationality == 'IN'}
+  
   # validates_presence_of :passport_place, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :passport_date_of_issue, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :passport_place_of_issue, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :passport_date_of_expiry, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :address_as_stated_in_your_passport, :unless => lambda {self.nationality == 'IN'}
-  validates_presence_of :indian_consulate  , :unless => lambda {self.nationality == 'IN'}
+  
+  # Optional for srilankans problems
+  # validates_presence_of :passport_date_of_issue, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :passport_place_of_issue, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :passport_date_of_expiry, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :address_as_stated_in_your_passport, :unless => lambda {self.nationality == 'IN'}
+  # validates_presence_of :indian_consulate  , :unless => lambda {self.nationality == 'IN'}
 
 
 
