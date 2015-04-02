@@ -7,7 +7,7 @@
 
 <div class="row metameta">
   <div class="col-lg-6 presenter">Presented by <br> <strong><%= @submission.user.full_name %></strong> <br><%= @submission.current_institution %> <%= " • <strong>Other Institutional Affiliations:</strong>  #{@submission.other_institutional_affiliations}" unless @submission.other_institutional_affiliations.empty? %></div>
-  <div class="col-lg-6 authors">Authors <br> <strong><%= @submission.co_authors %></strong></div>
+  <div class="col-lg-6 authors">Co-authors <br> <strong><%= @submission.co_authors %></strong></div>
 </div>
 <%= image_tag @submission.visual_abstract(:large) %>
 <hr>
