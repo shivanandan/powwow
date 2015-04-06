@@ -24,6 +24,7 @@ Powwow::Application.routes.draw do
 
 
   get 'reviewer' => 'reviewer#index', as: :reviewer
+  get 'reviewer/review/:submission_id' => 'reviewer#review_submission', as: :review_submission
 
   get 'archive/plenaries/:year' => 'home#plenaries_archive', as: :plenaries_archive
   get 'archive/plenary/:year/:slug' => 'home#single_plenary', as: :single_plenary_archive

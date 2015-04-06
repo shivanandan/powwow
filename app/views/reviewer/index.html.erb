@@ -12,7 +12,10 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade active in" id="home">
       <div class="well">
-        Assigned abstracts here
+        <% @reviews.each do |r| %>
+        <%= link_to r.submission.title, review_submission_path(r.submission) %> <br>
+        <% end %>
+        <%= "Abstracts are yet to be assigned to you." if @reviews.empty? %>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="guidelines">

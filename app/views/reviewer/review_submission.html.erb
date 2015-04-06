@@ -1,0 +1,113 @@
+<br>
+<span class="capitalize label label-info">REVIEWING</span>
+<hr>
+<div class="archive col-lg-7">
+<h4><%= @submission.title %></h4>
+
+<!-- <div class="row metameta">
+  <div class="col-lg-6 presenter">Presented by <br> <strong><%= @submission.user.full_name %></strong> <br><%= @submission.current_institution %> <%= " • <strong>Other Institutional Affiliations:</strong>  #{@submission.other_institutional_affiliations}" unless @submission.other_institutional_affiliations.empty? %></div>
+  <div class="col-lg-6 authors">Co-authors <br> <strong><%= @submission.co_authors %></strong></div>
+</div> -->
+<%= image_tag @submission.visual_abstract(:large) %>
+<hr>
+<p>
+  <strong>Keywords: </strong>
+  <%= @submission.keywords %>
+</p>
+<hr>
+<div class="oldabstract">
+  <p>
+  <strong>Introduction:</strong>
+  <%= @submission.introduction %>
+</p>
+
+<p>
+  <strong>Methods:</strong>
+  <%= @submission.methods %>
+</p>
+
+<p>
+  <strong>Results:</strong>
+  <%= @submission.results %>
+</p>
+
+<p>
+  <strong>Discussion:</strong>
+  <%= @submission.discussion %>
+</p>
+</div>
+
+
+<!-- MAP -->
+<hr>
+<div class="row">
+  <div class="col-lg-12">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="" style="width:100%;"> 
+  </div>
+</div>
+<p>
+</p>
+
+
+</div>
+
+
+<div class="col-lg-3 well">
+	<h5>Review this submission</h5>
+	<hr>
+	<%= form_for(@review) do |f| %>
+	  <% if @review.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+	      <ul>
+	      <% @review.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+<!-- 
+	  <div class="field">
+	    <%= f.label :submission_id %><br>
+	    <%= f.text_field :submission_id %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :user_id %><br>
+	    <%= f.text_field :user_id %>
+	  </div> -->
+	  <div class="field">
+	    <%= f.label :conservation_score %><br>
+	    <%= f.number_field :conservation_score, in: 0...6 %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :science_score %><br>
+	    <%= f.number_field :science_score, in: 0...6 %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :visual_score %><br>
+	    <%= f.number_field :visual_score, in: 0...6 %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :recommendation %><br>
+	    <%= f.select :recommendation, ['denied','Talk', 'Poster', 'Either'] %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :comment_to_applicant %><br>
+	    <%= f.text_area :comment_to_applicant %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :comment_to_admin %><br>
+	    <%= f.text_area :comment_to_admin %>
+	  </div>
+	  <!-- <div class="field">
+	    <%= f.label :finalized %><br>
+	    <%= f.check_box :finalized %>
+	  </div> -->
+	  <p>You have viewed this submission <%= @review.view_count %> times.</p>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+
+</div>
