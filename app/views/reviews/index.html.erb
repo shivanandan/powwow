@@ -1,6 +1,10 @@
 <h1>Listing reviews</h1>
-
-<table>
+<br>
+<hr>
+Links to : <%= link_to "Review Overview", review_overview_path %> / <%= link_to "Add Reviewer", new_participant_path %>
+<hr>
+<br>
+<table class="table table-striped table-hover table-bordered datatable">
   <thead>
     <tr>
       <th>Submission</th>
@@ -41,5 +45,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Review', new_review_path %>
