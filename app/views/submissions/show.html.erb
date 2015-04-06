@@ -83,6 +83,39 @@
   <%= @submission.reason_for_bursary %>
 </p>
 
+<hr>
+  <% unless @reviews.empty? %>
+<div class="row">
+    <div class="col-lg-12">
+      <h5>Reviews</h5>
+      <hr>
+    </div>
+</div>
+<div class="row">
+    <% @reviews.each do |r| %>
+      <div class="col-lg-3 well">
+        <strong><%= r.user.full_name %></strong> <hr>
+        CONSERVATION : <%= r.conservation_score %> <br>
+        SCIENCE : <%= r.science_score %> <br>
+        VISUAL : <%= r.visual_score %> <br>
+        <hr>
+        <%= raw "COMMENT TO ADMIN : <br>" unless r.comment_to_admin %>
+        <%= r.comment_to_admin %>
+        <%= raw "<hr>" unless r.comment_to_admin %>
+        <%= raw "COMMENT TO APPLICANT : <br>" unless r.comment_to_applicant %>
+        <%= r.comment_to_applicant %>
+        <%= raw "<hr>" unless r.comment_to_applicant %>
+        RECOMENDATION : <%= r.recommendation %>
+        <hr>
+        <small><%= r.user.full_name %> has viewed this abstract <%= r.view_count %> times.</small>
+      </div>
+      <div class="col-lg-1"></div>
+    <% end %>
+</div>
+  <% else %>
+
+  <% end %>
+
 <% end %>
 
 <%# link_to 'Edit', edit_submission_path(@submission) %>

@@ -11,6 +11,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions/1
   # GET /submissions/1.json
   def show
+    @reviews = Review.where(:submission_id => params[:id])
   end
 
   # GET /submissions/new
