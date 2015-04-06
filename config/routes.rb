@@ -38,6 +38,7 @@ Powwow::Application.routes.draw do
   get 'participants/edit_user/:user_id' => 'participants#edit_user', as: :edit_participant
   post '/participants/save_edited/:user_id' => 'participants#save_edited', as: :save_edited
   post 'participants/new_ticket/:user_id' => 'participants#new_ticket', as: :new_ticket
+  get 'participants/all_reviewers/' => 'participants#all_reviewers', as: :all_reviewers
 
   get 'review_overview' => 'reviews#overview', as: :review_overview
   get 'get_free_reviewers/:submission_id' => 'reviews#get_free_reviewers', as: :get_free_reviewers

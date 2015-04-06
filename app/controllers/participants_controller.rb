@@ -48,6 +48,11 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def all_reviewers
+    @reviewers = User.where(:role => 'reviewer')
+    @reviews = Review.group(:user_id)
+  end
+
   def new_ticket
     # Check if user has a ticket
     @participant = User.find(params[:user_id])

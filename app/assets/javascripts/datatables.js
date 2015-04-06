@@ -1,5 +1,6 @@
+var _datatable;
 function datatable_it() {
-	$('.datatable').DataTable({
+	_datatable = $('.datatable').DataTable({
 		responsive: true,
 		"dom": 'T<"clear">lfrtip',
         "tableTools": {
