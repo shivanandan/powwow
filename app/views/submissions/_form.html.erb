@@ -73,7 +73,7 @@ The Results provide the answers to the questions represented by the Methods. Mos
   </div>
   <div class="col-lg-6 instructions">Your discussion/synthesis section should provide a broader perspective to your research results. It gives you the opportunity to effectively demonstrate your ability as a researcher to think critically about the conservation issue you are trying to address. If relevant, incorporate how your research and results are situated in a Global/Regional/Country specific perspective and highlight how your study contributes to current/ past literature and thinking; and if it contradicts or supports current popular thought/philosophies. Your discussion section should not be merely governed by the objective reporting of information via your results but, rather, it is where you can engage in creative thinking about issues through evidence-based interpretation of your findings. In other words, this is where you infuse your results with meaning.
 <br><br>
-Some of the most common mistakes that you can make when discussing the results of your study are to present a superficial interpretation of the findings, or come up with interpretations that go beyond your data and results. Rather, your discussion should remain focused only on the findings of your study. If, towards the end, you would like to speculate, or make suggestions beyond what your data are telling you, be very clear that these are your specific comments, speculations and suggestions and therefore these require further research. 
+Some of the most common mistakes that you can make when discussing the results of your study are to present a superficial interpretation of the findings, or come up with interpretations that go beyond your data and results. Rather, your discussion should remain focused only on the findings of your study. If, towards the end, you would like to speculate, or make suggestions beyond what your data are telling you, be very clear that these are your specific comments, speculations and suggestions and therefore these require further research.
 <br><br>
 Likewise, when you are describing what the conservation implications of your research work are, make sure that you clearly differentiate between the implications arising directly from specific results of your study and those arising from speculations.  </div>
 </div>
@@ -101,7 +101,7 @@ Likewise, when you are describing what the conservation implications of your res
       <div id="us3" style="height: 300px; background-color:black;"></div>
     <div class="row">
       <div class="col-lg-4"><%= f.text_field :gps_lat, class: 'form-control', required: true %>LATITUDE</div>
-    
+
       <div class="col-lg-4"><%= f.text_field :gps_lng, class: 'form-control', required: true %>LONGITUDE</div>
     </div>
     <script>
@@ -109,9 +109,9 @@ Likewise, when you are describing what the conservation implications of your res
 $('#us3').locationpicker({
 
   <% if @submission.gps_lat.nil? %>
-    location: {latitude: 13.015551285477105, longitude: 77.5613899230957}, 
+    location: {latitude: 13.015551285477105, longitude: 77.5613899230957},
   <% else %>
-    location: {latitude: <%= @submission.gps_lat %>, longitude: <%= @submission_gps_lng %>}, 
+    location: {latitude: <%= @submission.gps_lat %>, longitude: <%= @submission_gps_lng %>},
   <% end %>
 
   radius: 300,
@@ -339,19 +339,19 @@ $( document ).ready(function() {
           $('.atty').show();
         }
     }
-  ); 
+  );
 
   $('.bur input:radio').change(
     function(){
         if ($(this).val() == 0) {
           $('.submission_reason_for_bursary').hide();
-          $('.submission_reason_for_bursary').removeAttr('required');​​​​​
-        } else {
+          $('.submission_reason_for_bursary').removeAttr('required');
+          } else {
           $('.submission_reason_for_bursary').show();
           $('.submission_reason_for_bursary').prop('required',true);
         }
     }
-  );          
+  );
 
 
 });
