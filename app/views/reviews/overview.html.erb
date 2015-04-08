@@ -20,7 +20,7 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 		<% @submissions.each do |s| %>
 		<tr id="s<%= s.id %>">
 			<td><%= link_to s.title, submission_path(s) %> / <%= s.user.full_name %></td>
-			
+
 				<% if s.reviews.count > 0 %>
 					<% ctotal = 0 %>
 					<% stotal = 0 %>
@@ -38,7 +38,7 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 					<td>nil</td>
 					<td>nil</td>
 				<% end %>
-			
+
 			<td>
 				<% if s.reviews.count > 0 %>
 					<% s.reviews.each do |r| %>
@@ -49,17 +49,17 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 				<% end %>
 			</td>
 			<td id="s<%= s.id %>-<%= s.reviews[0].id unless s.reviews[0].nil? %>">
-				<%= s.reviews[0].user.first_name unless s.reviews[0].nil? %>
+				<%= s.reviews[0].user.full_name unless s.reviews[0].nil? %>
 				<%= link_to "Assign", get_free_reviewers_path(s.id), :remote => 'true' if s.reviews[0].nil? %>
 				<%= link_to "Unassign", unassign_reviewer_path(s.id, s.reviews[0].user.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' }  unless s.reviews[0].nil? %>
 			</td>
 			<td id="s<%= s.id %>-<%= s.reviews[1].id unless s.reviews[1].nil? %>">
-				<%= s.reviews[1].user.first_name unless s.reviews[1].nil? %>
+				<%= s.reviews[1].user.full_name unless s.reviews[1].nil? %>
 				<%= link_to "Assign", get_free_reviewers_path(s.id), :remote => 'true' if s.reviews[1].nil? %>
 				<%= link_to "Unassign", unassign_reviewer_path(s.id, s.reviews[1].user.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' }  unless s.reviews[1].nil? %>
 			</td>
 			<td id="s<%= s.id %>-<%= s.reviews[2].id unless s.reviews[2].nil? %>">
-				<%= s.reviews[2].user.first_name unless s.reviews[2].nil? %>
+				<%= s.reviews[2].user.full_name unless s.reviews[2].nil? %>
 				<%= link_to "Assign", get_free_reviewers_path(s.id), :remote => 'true' if s.reviews[2].nil? %>
 				<%= link_to "Unassign", unassign_reviewer_path(s.id, s.reviews[2].user.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' }  unless s.reviews[2].nil? %>
 			</td>
