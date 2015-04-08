@@ -42,7 +42,7 @@
 <hr>
 <div class="row">
   <div class="col-lg-12">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="" style="width:100%;"> 
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="" style="width:100%;">
   </div>
 </div>
 <p>
@@ -51,7 +51,22 @@
 
 </div>
 
+<% if @review.finalized %>
+<div class="col-lg-3 well">
+  <h5>Your Review</h5>
+  <strong>Conservation Score : </strong> <%= @review.conservation_score %> <br>
+  <strong>Science Score : </strong> <%= @review.science_score %> <br>
+  <strong>Visual Score : </strong> <%= @review.visual_score %> <br>
+  <hr>
+  <strong>Comment to the applicant : </strong> <br>
+  <%= raw @review.comment_to_applicant %>
+  <hr>
+  <strong>Comment to the admin : </strong> <br>
+  <%= raw @review.comment_to_admin %>
 
+
+</div>
+<% else %>
 <div class="col-lg-3 well">
 	<h5>Review this submission</h5>
 	<hr>
@@ -67,15 +82,7 @@
 	      </ul>
 	    </div>
 	  <% end %>
-<!-- 
-	  <div class="field">
-	    <%= f.label :submission_id %><br>
-	    <%= f.text_field :submission_id %>
-	  </div>
-	  <div class="field">
-	    <%= f.label :user_id %><br>
-	    <%= f.text_field :user_id %>
-	  </div> -->
+
 	  <div class="field">
 	    <%= f.label :conservation_score %><br>
 	    <%= f.number_field :conservation_score, in: 0...6 %>
@@ -90,7 +97,7 @@
 	  </div>
 	  <div class="field">
 	    <%= f.label :recommendation %><br>
-	    <%= f.select :recommendation, ['denied','Talk', 'Poster', 'Either'] %>
+	    <%= f.select :recommendation, [['Not Acceptable as Talk or Poster','denied'],['Talk', 'talk'], ['Poster', 'poster'], ['Either Talk or Poster', 'either']] , :class=>'form-control' %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :comment_to_applicant %><br>
@@ -100,14 +107,18 @@
 	    <%= f.label :comment_to_admin %><br>
 	    <%= f.text_area :comment_to_admin %>
 	  </div>
-	  <!-- <div class="field">
-	    <%= f.label :finalized %><br>
-	    <%= f.check_box :finalized %>
-	  </div> -->
+	  <div class="field">
+      <div class="checkbox">
+                <label>
+                  <%= f.check_box :finalized %>Finalise Review
+                </label>
+              </div>
+	  </div>
 	  <p>You have viewed this submission <%= @review.view_count %> times.</p>
 	  <div class="actions">
-	    <%= f.submit %>
+	    <%= f.submit "Save Changes" %>
 	  </div>
 	<% end %>
+<% end %>
 
 </div>

@@ -18,7 +18,7 @@ class Ability
         cannot [:index, :edit, :update], Submission
     elsif user.reviewer?
         can [:update, :show], Review do |r|
-            r.user_id = user.id
+            r.user_id = user.id and !r.finalized
         end
     else
         can :show, :all

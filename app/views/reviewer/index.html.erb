@@ -13,7 +13,7 @@
     <div role="tabpanel" class="tab-pane fade active in" id="home">
       <div class="well">
         <% @reviews.each do |r| %>
-        <%= link_to r.submission.title, review_submission_path(r.submission) %> <br>
+        <%= raw '<span class="capitalize label label-success">FINALIZED</span>' if r.finalized %> <%= raw '<span class="capitalize label label-danger">OPEN</span>' unless r.finalized %> <%= link_to r.submission.title, review_submission_path(r.submission) %> | Viewed : <%= r.view_count %> <hr>
         <% end %>
         <%= "Abstracts are yet to be assigned to you." if @reviews.empty? %>
       </div>
@@ -150,9 +150,7 @@
           and evaluate the abstract. You have the option of saving changes as you
           evaluate an abstract, which allows you to edit and re-evaluate the abstract as
           many times as you like. Once you have finished evaluating the abstract, please
-          hit the 'Finalise Review' button. Please note that
-          you will only be able to finalise the review once you
-          have clicked on ‘save changes’. Once you 'Finalise
+          check the 'Finalise Review' box and save changes. Once you 'Finalise
           Review', you will not be able to edit or re-evaluate the abstract.</p>
 
           <p>-Please send us an email on sccs@sccs-bng.org

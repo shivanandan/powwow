@@ -12,6 +12,9 @@ class ReviewsController < ApplicationController
     @submissions = Submission.includes(:reviews)
   end
 
+  def alert_reviewers
+  end
+
   def get_free_reviewers
     @allreviewers = User.where(:role => 'reviewer')
     @submission = Submission.find(params[:submission_id])
@@ -42,7 +45,7 @@ class ReviewsController < ApplicationController
       @errors = 'Reviewer has already been assigned to this submission'
     end
 
-    
+
     respond_to do |format|
       format.js
       # format.html {redirect_to review_overview_path}
