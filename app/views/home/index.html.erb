@@ -1,179 +1,91 @@
-<div class="jumbotron">
+<div class="jumbotron backer vertical-center" style="background-image: url(<%= asset_path 'lizard.jpg' %>)">
 	<div class="container">
+		<p class="leadin">The sixth</p>
 		<h1>Student Conference on <br> Conservation Science - Bengaluru</h1>
-		<p class="lead"><strong>8 - 11 SEPTEMBER 2015, IISc, BENGALURU </strong><br> 300 of Africa and Asia's brightest conservation researchers</p>
+		<p class="lead"><strong>8 - 11 SEPTEMBER 2015, IISc, BENGALURU </strong><br> 500 of Africa and Asia's brightest conservation researchers</p>
 		<div class="tempannounce">
-	Abstract submission deadline has been extended to 23:59 (Indian Standard Time) on April 10, 2015
-	<!-- <div class="tadismiss">CLOSE</div> -->
-</div>
+			Abstract submission deadline has been extended to 23:59 (Indian Standard Time) on April 10, 2015
+			<!-- <div class="tadismiss">CLOSE</div> -->
+		</div>
+		<div class="scrolldown">
+
+		</div>
 	</div>
 </div>
 
-<div class="twrap">
+<div class="announceee" style="background-image: url(<%= asset_path 'stardust.png' %>)">
+	<div class="container announcey">
+		<div class="mem">DATES TO REMEMBER</div>
+		<div class="row">
+				<% @announcements.each do |a| %>
+				<div class="col-lg-3">
+					<div class="announce">
+						<div class="date">
+							<strong><%= a.date %></strong>
+						</div>
+						<div class="title">
+							<%= a.title %>
+						</div>
+						<div class="message">
+							<%= a.message %>
+						</div>
+					</div>
+				</div>
+				<% end %>
+		</div>
+	</div>
+</div>
+
+
+<div class="showoff">
 	<div class="container">
-		<div id="timesheet"></div>
-	</div>
-</div>
-
-<div class="container">
-<!-- 	<div class="row">
-		<% @announcements.each do |a| %>
-		<div class="col-lg-3 announce">
-			<div class="date">
-				<strong><%= a.date %></strong>
-			</div>
-			<div class="title">
-				<%= a.title %>
-			</div>
-			<div class="message">
-				<%= a.message %>
-			</div>
+		<div class="reallyshowit col-lg-6 vertical-align3">
+			The largest and premier student conference in India
 		</div>
-		<% end %>
-	</div> -->
-
-
-	<br>
-	<div class="row">
-		<div class="col-lg-6">
-			<a class="twitter-timeline" width="540" height="340" href="https://twitter.com/sccsbng" data-widget-id="490797529257107456">Tweets by @sccsbng</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		<div id="fb-root"></div>
-		<div class="fb-like" data-href="https://www.facebook.com/sccsbangalore" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="col-lg-3 vertical-align3">
+			<div>6 Plenary Talks <br> 20 Student Talks <br> 80 Student Posters</div>
 		</div>
-		<div class="col-lg-5">
-			<div class="panel list-group">
-				<a class="list-group-item active" href="">SISTER CONFERENCES</a>
-				<a class="list-group-item" href="http://www.sccs-aus.org/" target="_blank">SCCS Australia</a>
-				<a class="list-group-item" href="http://www.sccs-cam.org/" target="_blank">SCCS Cambridge</a>
-				<a class="list-group-item" href="http://sccs.okologia.mta.hu/" target="_blank">SCCS Hungary</a>
-				<a class="list-group-item" href="http://www.amnh.org/our-research/center-for-biodiversity-conservation/events-exhibitions/conferences-and-symposia/2015-sccs-ny" target="_blank">SCCS New York</a>
-				<a class="list-group-item" href="http://www.sccs-cam.org/Pdfs/2014/SCCS-Beijing%202013.pdf" target="_blank">SCCS Beijing</a>
-			</div>
+		<div class="col-lg-3 vertical-align3">
+			<div>40+ Workshops <br> Who's Who in Conservation <br> Post-conference Field Trip <br> </div>
 		</div>
 	</div>
 </div>
 
+<div class="speakers"  style="background-image: url(<%= asset_path 'rockywall.png' %>)">
+	<div class="container">
+		<div class="h3title">2015 PLENARY SPEAKERS</div>
+		<div class="row">
+			<div class="col-lg-1">.</div>
+			<div class="speaker col-lg-3">
+				<a href="/webpages/plenaries"><%= image_tag 'jn.png' %> </a><br>
+				<p>On Integrating Science and Conservation: How Can We Make Our Science Most Useful? <br><strong>James D. Nichols</strong></p>
+			</div>
+			<div class="col-lg-1">.</div>
+			<div class="speaker col-lg-3">
+				<a href="/webpages/plenaries"><%= image_tag 'sv.png' %></a><br>
+				<p>Moving mountains: migration, rurality and social ecology.<br> <strong>Sudha Vasan</strong></p>
+			</div>
+			<div class="col-lg-1">.</div>
+			<div class="speaker col-lg-3">
+				<a href="/webpages/plenaries"><%= image_tag 'co.png' %> </a><br>
+				<p>North-South Climate Equity: From Common but Differentiated to Common but Shifted Responsibility. <br> <strong>Chukwumerije Okereke</strong></p>
+			</div>
 
-<!-- THIS IS ALL FOR THE TIMELINE AS IT ONLY LOADS ON THE FRONT PAGE -->
+		</div>
 
+		<div class="yeahyeahyeah">OTHER SPEAKERS TO BE ANNOUNCED <br> <small>Register with us to keep yourself updated!</small></div>
+	</div>
+</div>
 
-<style type="text/css">
-.twrap {
-		background-color: #333;
-		padding: 20px 100px;
-}
-	#timesheet {
-		width: 100%;
-		margin-bottom: 0px;
-		min-height: 100px;
-	}
-	.jumbotron {
-		margin-bottom: 0px;
-	}
-	.timeline_event {
-		border-top: 4px black solid;
-		padding-bottom: 4px;
-		display: block;
-	}
-	.t_event_wrap {
-		font-size: 13px;
-		padding-top: 5px;
-		line-height: 14px;
-		margin-bottom: 20px;
-		min-width: 400px;
-		max-width: 600px;
-		font-family: monospace;
-		color: white;
-		text-transform: uppercase;
-	}
-	#timesheet .month {
-		font-size: 9px;
-		font-weight: bold;
-		color: #d0d0d0;
-	}
-	.monkey {
-		margin-bottom: 20px;
-		clear: both;
-	}
-</style>
+<div class="past">
+	<div class="container">
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
-<script type="text/javascript">
-
-function parseDate(str) {
-    var mdy = str.split('/')
-    return new Date(mdy[2], mdy[1], mdy[0]-1);
-}
-
-function daydiff(first, second) {
-    return (second-first)/(1000*60*60*24);
-}
-
-
-
-var timesheet = function(data, months, number_of_days) {
-
-	$('#timesheet').html('');
-
-	var td = $('#timesheet');
-	var single_day_width = td.width() / number_of_days;
-	var colors = ['#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37','#88CF8B', '#F68345', '#FFDC37']
-	console.log(single_day_width);
-
-
-	console.log(months.length);
-	_.each(months, function(element, index, list){
-		console.log(element);
-		var checker = $.inArray(element, ['MAR', 'MAY', 'JUL', 'AUG']);
-		var num_days;
-		if ( element == 'FEB' ) {
-			num_days = 28;
-		} else if ( checker > -1 ) {
-			num_days = 31;
-		} else {
-			num_days = 30;
-		}
-		$('#timesheet').append('<div class="month" style="width:'+num_days*single_day_width+'px; float:left;">'+element+'</div>');
-	});
-
-	$('#timesheet').append('<div class="clear monkey"></div>');
-
-	
-	
-	_.each(time_data, function(element, index){
-		var day_difference = daydiff(parseDate(element[0]), parseDate(element[1]));
-		var days_since_start = daydiff(parseDate('02/02/2015'), parseDate(element[0]));
-		$('#timesheet').append('<div class="t_event_wrap" style="margin-left:'+days_since_start*single_day_width+'px;width:'+day_difference*single_day_width+'px;"><div class="timeline_event" style="width:'+day_difference*single_day_width+'px; border-top-color:'+colors[index]+';"></div><div><strong>'+element[2]+'</strong><br>'+element[4]+'<br>'+element[3]+'</div></div>');
-		console.log('jn');
-		console.log(day_difference);
-	});
-}
-
-
-var months = ['FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP'];
-var time_data = [
-	<% @announcements.each do |a| %>
-		<% unless ( a.start_date.nil? and a.end_date.nil? ) %>
-			['<%= a.start_date %>', '<%= a.end_date %>', '<%= a.title %>', '<%= a.message %>', '<%= a.date %>'],
-		<% end %>
-	<% end %>
-];
-
-
-jQuery(document).ready(function($) {
-	timesheet(time_data, months, 242);	
-});
-
-
-
-
-</script>
+	<strong>OUR SISTER CONFERENCES</strong> <br>
+	<a class="" href="http://www.sccs-aus.org/" target="_blank">SCCS Australia</a> •
+	<a class="" href="http://www.sccs-cam.org/" target="_blank">SCCS Cambridge</a> •
+	<a class="" href="http://sccs.okologia.mta.hu/" target="_blank">SCCS Hungary</a> •
+	<a class="" href="http://www.amnh.org/our-research/center-for-biodiversity-conservation/events-exhibitions/conferences-and-symposia/2015-sccs-ny" target="_blank">SCCS New York</a> •
+	<a class="" href="http://www.sccs-cam.org/Pdfs/2014/SCCS-Beijing%202013.pdf" target="_blank">SCCS Beijing</a>
+	</div>
+</div>

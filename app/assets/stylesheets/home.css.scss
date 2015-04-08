@@ -1,5 +1,133 @@
+$yellow : #FFE45A;
+$green : #84CF92;
+$orange : #FF8F57;
+
 .home .jumbotron {
 	background-color: #FED434;
+	background-size: cover;
+	background-position: top;
+	color: white;
+	font-weight: 900;
+	text-shadow: 2px 2px 20px black;
+	margin-bottom: 0px;
+
+	h1 {
+		font-weight: 100;
+		color: white;
+		text-shadow: 2px 2px 30px black;
+		margin-top: 0px;
+	}
+
+	p {
+		font-weight: 500;
+	}
+
+	p.leadin {
+		margin-bottom: 0px;
+	}
+}
+
+.vertical-center {
+  min-height: 80%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 80vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.vertical-center2 {
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+}
+
+.announceee {
+}
+
+.announcey {
+	padding: 50px 0px;
+	padding-bottom: 80px;
+	border-bottom: 1px solid black;
+	.mem {
+		// text-align: center;
+		color: $orange;
+		padding-bottom: 30px;
+		font-weight: bold;
+		font-size: 21px;
+	}
+	.announce {
+		border: 3px solid;
+		border-color: $orange;
+		border-radius: 3px;
+		padding: 13px;
+		height: 120px;
+		font-size: 12px;
+		color: $orange;
+		&:nth-child(2) {
+			background-color: $green;
+		}
+		.title {
+			font-weight: 900;
+		}
+	}
+}
+
+.showoff {
+	padding: 40px 0px;
+	background-color: white;
+	.reallyshowit {
+		font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+		font-family: "Lucida Bright",Georgia,serif;
+		// font-style: italic;
+		font-size: 50px;
+		line-height: 1;
+		// font-weight: 900;
+	}
+}
+
+.vertical-align3 {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.speakers {
+	text-align: center;
+	padding: 70px 0px;
+	color: $green;
+	.h3title {
+		margin-bottom: 60px;
+		font-size: 30px;
+		color: $green;
+	}
+	img {
+		max-width: 80%;
+		border: 6px solid $green;
+		margin-bottom: 15px;
+		&:hover {
+			border-width: 10px;
+		}
+	}
+	.yeahyeahyeah {
+		font-size: 18px;
+		width: 30%;
+		margin: 0 auto;
+		small {
+			font-size: 14px;
+			line-height: 14px;
+		}
+	}
+}
+
+.past {
+	background-size: cover;
+	padding: 100px 0px;
+	background-position: center;
+	text-align: center;
+
+	a {
+	}
 }
 
 .home.index {
@@ -65,10 +193,26 @@ li.menutit {
 }
 
 .tempannounce {
-	background-color: red;
+	background-color: black;
 	display: inline-block;
-	padding: 5px;
-	color: white;
+	padding: 5px 10px;
+	color: $yellow;
 	font-weight: 500;
 	border-radius: 2px;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+
+footer {
+	background-size: cover;
+	background-position:  bottom;
+	margin-bottom: 0px;
+	text-align: center;
+	color: white;
 }

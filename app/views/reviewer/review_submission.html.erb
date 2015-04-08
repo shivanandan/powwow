@@ -8,7 +8,8 @@
   <div class="col-lg-6 presenter">Presented by <br> <strong><%= @submission.user.full_name %></strong> <br><%= @submission.current_institution %> <%= " • <strong>Other Institutional Affiliations:</strong>  #{@submission.other_institutional_affiliations}" unless @submission.other_institutional_affiliations.empty? %></div>
   <div class="col-lg-6 authors">Co-authors <br> <strong><%= @submission.co_authors %></strong></div>
 </div> -->
-<%= image_tag @submission.visual_abstract(:large) %>
+<style>img.full{max-width: 100%}</style>
+<a href="<%= image_path @submission.visual_abstract %>" target="_blank"><%= image_tag @submission.visual_abstract(:large), :class=>'full' %></a>
 <hr>
 <p>
   <strong>Keywords: </strong>
@@ -88,7 +89,7 @@
 
 </div>
 <% else %>
-<div class="col-lg-3 well">
+<div class="col-lg-4 well">
 	<h5>Review this submission</h5>
 	<hr>
 	<%= form_for(@review) do |f| %>
@@ -103,18 +104,37 @@
 	      </ul>
 	    </div>
 	  <% end %>
-
+  <style type="text/css">
+  .radio {display: inline-block; margin-right: 5px;}</style>
 	  <div class="field">
 	    <%= f.label :conservation_score %><br>
-	    <%= f.number_field :conservation_score, in: 0...6 %>
+      <div class="radio"><label><%= f.radio_button :conservation_score, 0 %> 0 </label></div>
+      <div class="radio"><label><%= f.radio_button :conservation_score, 1 %> 1 </label></div>
+      <div class="radio"><label><%= f.radio_button :conservation_score, 2 %> 2 </label></div>
+      <div class="radio"><label><%= f.radio_button :conservation_score, 3 %> 3 </label></div>
+      <div class="radio"><label><%= f.radio_button :conservation_score, 4 %> 4 </label></div>
+      <div class="radio"><label><%= f.radio_button :conservation_score, 5 %> 5 </label></div>
+
+
+      <%# f.number_field :conservation_score, in: 0...6 %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :science_score %><br>
-	    <%= f.number_field :science_score, in: 0...6 %>
+	    <div class="radio"><label><%= f.radio_button :science_score, 0 %> 0 </label></div>
+      <div class="radio"><label><%= f.radio_button :science_score, 1 %> 1 </label></div>
+      <div class="radio"><label><%= f.radio_button :science_score, 2 %> 2 </label></div>
+      <div class="radio"><label><%= f.radio_button :science_score, 3 %> 3 </label></div>
+      <div class="radio"><label><%= f.radio_button :science_score, 4 %> 4 </label></div>
+      <div class="radio"><label><%= f.radio_button :science_score, 5 %> 5 </label></div>
 	  </div>
 	  <div class="field">
 	    <%= f.label :visual_score %><br>
-	    <%= f.number_field :visual_score, in: 0...6 %>
+	    <div class="radio"><label><%= f.radio_button :visual_score, 0 %> 0 </label></div>
+      <div class="radio"><label><%= f.radio_button :visual_score, 1 %> 1 </label></div>
+      <div class="radio"><label><%= f.radio_button :visual_score, 2 %> 2 </label></div>
+      <div class="radio"><label><%= f.radio_button :visual_score, 3 %> 3 </label></div>
+      <div class="radio"><label><%= f.radio_button :visual_score, 4 %> 4 </label></div>
+      <div class="radio"><label><%= f.radio_button :visual_score, 5 %> 5 </label></div>
 	  </div>
 	  <div class="field">
 	    <%= f.label :recommendation %><br>
