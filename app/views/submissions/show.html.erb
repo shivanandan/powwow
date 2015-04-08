@@ -43,10 +43,33 @@
 <hr>
 <div class="row">
   <div class="col-lg-6">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="" style="width:100%;"> 
+
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script>
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(<%= @submission.gps_lat %>,<%= @submission.gps_lng %>);
+      var mapOptions = {
+        zoom: 8,
+        center: myLatlng
+      }
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Hello World!'
+      });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
+    <div id="map-canvas"  style="width: 100%; height: 300px;"></div>
+
+    <!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @submission.gps_lat %>,<%= @submission.gps_lng %>&zoom=13&size=900x300&maptype=roadmap&markers=color:blue%7C<%= @submission.gps_lat %>,<%= @submission.gps_lng %>" alt="" style="width:100%;"> -->
   </div>
   <div class="col-lg-4">
-    
+
   </div>
 </div>
 <p>
@@ -94,7 +117,7 @@
 <div class="row">
     <% @reviews.each do |r| %>
       <div class="col-lg-3 well">
-        <strong><%= r.user.full_name %></strong> <hr>
+        <strong><%= r.user.full_name %></strong> <%= raw '<span class="capitalize label label-success">FINALIZED</span>' if r.finalized %> <%= raw '<span class="capitalize label label-danger">STILL REVIEWING</span>' unless r.finalized %> <hr>
         CONSERVATION : <%= r.conservation_score %> <br>
         SCIENCE : <%= r.science_score %> <br>
         VISUAL : <%= r.visual_score %> <br>

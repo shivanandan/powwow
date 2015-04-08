@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+    <p>Dear <%= @user.first_name %> <%= @user.last_name %>,</p>
+
+    <p>You have been assigned the following abstracts for review:</p>
+
+    <% @reviews.each do |r| %>
+    <p><strong><%= r.submission.title %></strong><br>
+    <em><%= r.submission.keywords %></em></p>
+    <% end %>
+
+    <hr>
+
+    <p>You can view these on your dashboard, once you login to your account on sccs-bng.org/users/sign_in. Detailed guidelines for scoring the abstracts are also available here.</p>
+
+    <p>We would like to have all the abstracts reviewed latest by Friday 25 April, 2015. We have a commitment to communicate all results to applicants by the first week of May 2015. At this time we also have to send a list of foreign attendees and their visa details to the Ministry of External Affairs in India.</p>
+
+    <p>Please send us an email on sccs@sccs-bng.org once you have completed reviewing all the abstracts assigned to you. Do not hesitate to email us if you need any further information or clarification.</p>
+
+    <p>Many thanks, <br>
+    Organising Committee of SCCS-Bengaluru 2015</p>
+  </body>
+</html>

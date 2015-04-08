@@ -29,9 +29,10 @@
 	<td><%= u.ticket_number %><%= raw "<span class='text-danger' title='Not Registered with doattend'>✖</span>" if u.ticket_number.nil? %> <%= link_to "Issue", new_ticket_path(u.id), :remote => true, :method => :post, data: { confirm: "Are you sure? This will issue a ticket to #{u.full_name.upcase}. Undoing this is very painful. Please proceed with caution." } if u.ticket_number.nil? %></td>
 	<td><%= u.role%></td>
 	<td>
-		<%= link_to "Edit", edit_participant_path(u.id) %> 
+		<%= link_to "Edit", edit_participant_path(u.id) %>
+		<%= link_to "Abstract Dispatch", alert_reviewers_path(u.id), :remote => true, :method => 'POST', data: { confirm: "This will send an email to #{u.full_name} with details about the abstracts assigned to them. Please do not refresh this page until this is complete. You will get an alert letting you know the status." } if u.reviewer? %>
 		<% if u.nationality == 'IN' %>
-		
+
 		<% else %>
 			<% if u.passportless? %>
 			<% else %>

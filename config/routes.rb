@@ -5,7 +5,7 @@ Powwow::Application.routes.draw do
   resources :submissions
 
   post '/tinymce_assets' => 'tinymce_assets#create'
-  
+
   resources :webpages
 
   resources :announcements
@@ -14,11 +14,11 @@ Powwow::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  
+
 
   get 'applicant' => 'applicant#index', as: :applicant
   get 'setticket' => 'applicant#setticket', as: :setticket
-  post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend  
+  post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend
   post 'passport' => 'applicant#passport', as: :passport
   get 'uploadpassport' => 'applicant#uploadpassport', as: :uploadpassport
 
@@ -45,9 +45,10 @@ Powwow::Application.routes.draw do
   get 'get_free_reviewers/:submission_id' => 'reviews#get_free_reviewers', as: :get_free_reviewers
   post 'assign_reviewer/:submission_id/:reviewer_id' => 'reviews#assign_reviewer', as: :assign_reviewer
   delete 'unassign_reviewer/:submission_id/:reviewer_id' => 'reviews#unassign_reviewer', as: :unassign_reviewer
+  post 'alert_reviewers/:user_id' => 'reviews#alert_reviewers', as: :alert_reviewers
 
   get 'transfer' => 'home#post_login', as: :post_login
-  
+
 
   # You can have the root of your site routed with "root"
   root 'home#index'

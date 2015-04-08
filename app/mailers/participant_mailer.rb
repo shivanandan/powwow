@@ -7,4 +7,10 @@ class ParticipantMailer < ActionMailer::Base
 
     mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : Reviewer Invite')
   end
+
+  def alert_reviewers_of_reviews(user, reviews)
+    @user = user
+    @reviews = reviews
+    mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
+  end
 end

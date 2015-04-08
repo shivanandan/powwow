@@ -13,6 +13,12 @@ class ReviewsController < ApplicationController
   end
 
   def alert_reviewers
+    @user = User.find(params[:user_id])
+    @reviews = Review.where(:user_id => @user.id).includes(:submission)
+    ParticipantMailer.alert_reviewers_of_reviews(@user, @reviews).deliver
+    respond_to do |format|
+      format.js
+    end
   end
 
   def get_free_reviewers
