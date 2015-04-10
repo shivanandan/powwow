@@ -5,7 +5,7 @@ $orange : #FF8F57;
 .home .jumbotron {
 	background-color: #FED434;
 	background-size: cover;
-	background-position: top;
+	background-position: bottom;
 	color: white;
 	font-weight: 900;
 	text-shadow: 2px 2px 20px black;
@@ -96,6 +96,19 @@ $orange : #FF8F57;
 	text-align: center;
 	padding: 70px 0px;
 	color: $green;
+
+	.row {
+		text-align: center;
+	}
+
+	.speaker {
+		width : 30%;
+		max-width: 300px;
+		display: inline-block;
+		vertical-align: top;
+		margin: 20px;
+	}
+
 	.h3title {
 		margin-bottom: 60px;
 		font-size: 30px;
