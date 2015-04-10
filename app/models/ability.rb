@@ -8,9 +8,9 @@ class Ability
     if user.admin?
         can :manage, :all
     elsif user.applicant?
-        can [:create], Submission do |s|
-            user.abstractless? and !user.ticketless?
-        end
+        # can [:create], Submission do |s|
+        #     user.abstractless? and !user.ticketless?
+        # end
         can :show, Webpage
         can [:read], Submission do |s|
             s.user_id == user.id

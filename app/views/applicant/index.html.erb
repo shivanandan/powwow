@@ -13,7 +13,8 @@
 		<% if current_user.abstractless? %>
 			<p>
 				<% unless (current_user.passportless? or current_user.ticketless?) %>
-					<%= link_to "Upload an Abstract", new_submission_path %>
+					<%# link_to "Upload an Abstract", new_submission_path %>
+					Abstract Submission is closed.
 				<% end %>
 			</p>
 		<% else %>
