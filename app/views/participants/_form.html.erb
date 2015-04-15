@@ -1,4 +1,4 @@
-<%= form_for @user, :url => { :action => "save_edited" }, :method => :POST, :html => {:class => "nifty_form"} do |f| %>
+<%= form_for @user, :url => { :action => "save_edited" }, :method => :POST, :html => {:class => "nifty_form",  :multipart => true } do |f| %>
 
 <ul>
 <% @user.errors.full_messages.each do |msg| %>
@@ -248,10 +248,21 @@
 		  	<%= f.label :consulate_email %>
 		  	<%= f.text_field :consulate_email, placeholder: "Consulate email", class: 'form-control' %>
 		  </div>
+		  <div class="form-group">
+		  	<% if current_user.admin? %>
+		  	<hr>
+		  		<strong>PASSPORT SCAN</strong> <br>
+		  		<a href="<%= @user.passportscan %>" target="_blank">Download Passport Scan</a> <br> <br>
+		  		If you wish to override this applicant's passport, please upload a new one by clicking below. <span class="text-danger">Please note that the earlier copy will be destroyed.</span> <br> <br>
+		  		<%= f.file_field :passportscan %>
+		  	<% end %>
+		  </div>
 		</div> <!-- #nonindian ends -->
 	</div>
 </div>
-  <div class="page-header">
+
+
+<div class="page-header">
 	<h4>Login Details</h4>
 </div>
 
