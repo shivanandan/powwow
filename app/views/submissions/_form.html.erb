@@ -82,7 +82,9 @@ Likewise, when you are describing what the conservation implications of your res
   <div class="form-group col-lg-8">
     <%= f.label :visual_abstract, "Visual Component" %>
     <p>Visual Component (JPEG/PNG file less than 1 MB in size): we would like you to add a visual component which should typically complement the textual element of your abstract. This single image file could be either in the form of graphs, tables, maps, figures, illustrations, flow charts, photographs and other visual elements illustrating the main results, the study design, or the main idea that is captured by the study. Keep text within this visual component to a minimum and try not to replicate the same text you have used in the text of your abstract. </p>
-    <span class="btn btn-file"><%= f.file_field :visual_abstract, required: true %></span>
+    <%= image_tag @submission.visual_abstract(:large) %>
+  <span class="btn btn-file"><%= f.file_field :visual_abstract %></span>
+    <span class="text-danger">If you select a new file, the old visual abstarct will be overridden.</span>
   </div>
 </div>
 
@@ -137,7 +139,7 @@ $('#us3').locationpicker({
 <div class="row">
   <div class="form-group col-lg-6">
     <%= f.label :presenter %><br>
-    <%= f.text_field :presenter, class: 'form-control', value: "#{current_user.first_name} #{current_user.middle_name} #{current_user.last_name}" ,required: true %>
+    <%= f.text_field :presenter, class: 'form-control' ,required: true %>
   </div>
   <div class="col-lg-6 instructions"><br>FUll Name of the presenter</div>
 </div>
@@ -145,7 +147,7 @@ $('#us3').locationpicker({
 <div class="row">
   <div class="form-group col-lg-6">
     <%= f.label :current_institution, "Current Institution Name and Country of Presenter" %><br>
-    <%= f.text_area :current_institution, class: 'form-control', value: "#{current_user.institutional_affiliation}" ,required: true %>
+    <%= f.text_area :current_institution, class: 'form-control' ,required: true %>
   </div>
   <div class="col-lg-6 instructions"><br>Current institutional affiliation of main presenter
 
