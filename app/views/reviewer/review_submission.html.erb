@@ -23,17 +23,18 @@
 </p>
 
 <p>
-  <strong>Methods:</strong>
+  <strong>Methods/ Materials/Methodology: What were the main research methods you used? </strong>
   <%= @submission.methods %>
 </p>
 
 <p>
-  <strong>Results:</strong>
+  <strong>Results/ Findings/Argument Development: What are the main results/findings of your study?
+</strong>
   <%= @submission.results %>
 </p>
 
 <p>
-  <strong>Discussion:</strong>
+  <strong>Discussion/Synthesis and conservation relevance: Discuss and synthesise your results and the relevance of your findings for conservation practice/science.</strong>
   <%= @submission.discussion %>
 </p>
 </div>
@@ -155,7 +156,7 @@
 	  <div class="field">
       <div class="checkbox">
                 <label><br>
-                  <%= f.check_box :finalized %>Check this box to Finalise Review.
+                  <%= f.check_box :finalized %>Check this box to Finalise Review and click on Save Changes. <br> If you want to come back later and finalise changes, but save your comments, scores and recommendation, please leave it unchecked, but click Save Changes.
                   <br> <br>
                 </label>
               </div>
