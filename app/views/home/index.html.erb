@@ -70,6 +70,78 @@
 	</div>
 </div>
 
+<div class="alllocations">
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		var submissions = <%= raw @submissions.to_json %>;
+		var markers = [];
+		var map;
+
+	  // Add a marker to the map and push to the array.
+	  function addMarker(location, title) {
+	    var marker = new google.maps.Marker({
+	      position: location,
+	      map: map,
+	      icon: '<%= image_path 'marker.png' %>',
+	      title: title
+	    });
+	    markers.push(marker);
+	  }
+
+	  // Sets the map on all markers in the array.
+	  function setAllMap(map) {
+	    for (var i = 0; i < markers.length; i++) {
+	      markers[i].setMap(map);
+	    }
+	  }
+
+	  // Removes the markers from the map, but keeps them in the array.
+	  function clearMarkers() {
+	    setAllMap(null);
+	  }
+
+	  // Shows any markers currently in the array.
+	  function showMarkers() {
+	    setAllMap(map);
+	  }
+
+	  // Deletes all markers in the array by removing references to them.
+	  function deleteMarkers() {
+	    clearMarkers();
+	    markers = [];
+	  }
+
+	  function initialize() {
+	    var haightAshbury = new google.maps.LatLng(submissions[1].gps_lat, submissions[1].gps_lng);
+	    var mapOptions = {
+	      zoom: 3,
+	      center: haightAshbury,
+	      mapTypeId: google.maps.MapTypeId.TERRAIN,
+	      styles: mapStyle
+	    };
+	    var infowindow = new google.maps.InfoWindow();
+	    map = new google.maps.Map(document.getElementById('map-canvas'),
+	        mapOptions);
+
+	    for (var i = submissions.length - 1; i >= 0; i--) {
+	    	var location = new google.maps.LatLng(submissions[i].gps_lat, submissions[i].gps_lng);
+	    	var marker = new google.maps.Marker({
+	    	  position: location,
+	    	  map: map,
+	    	  icon: '<%= image_path 'marker.png' %>',
+	    	  // title: submissions[i].title + ' • ' + submissions[i].presenter + ' • ' + submissions[i].keywords,
+	    	  title: submissions[i].presenter.toUpperCase() + ' • ' + submissions[i].keywords,
+	    	});
+	    	markers.push(marker);
+	    };
+	  }
+
+	  google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+		<div id="mapexplain" style="background-color: #193341; color: #fff; font-weight: 900; text-align: center;"><br>OUR PARTICPANTS COME FROM AROUND THE WORLD<br></div>
+	  <div id="map-canvas"  style="width: 100%; height: 500px; border: 30px solid #193341; border-left:none; border-right: none;"></div>
+</div>
+
 <div class="past">
 	<div class="container">
 

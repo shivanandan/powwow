@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def index
   	@announcements = Announcement.order('priority DESC').limit(4)
+    @submissions = Submission.all
   end
 
   def abstracts_archive

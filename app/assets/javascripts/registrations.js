@@ -1,5 +1,5 @@
 function action_on_nations(selected) {
-	// if (selected != 'IN') {
+	if (selected != 'IN') {
 		$('#nonindian input').prop('required',false);
 		$('#nonindian textarea').prop('required',false);
 		$('#nonindian select').prop('required',true);
@@ -15,17 +15,17 @@ function action_on_nations(selected) {
 		$('#nonindian').css('display', 'block');
 		$('#nonindian').animate({'opacity': 1}, 500, function(){
 		});
-	// } else {
-	// 	$('#nonindian input').prop('required',false);
-	// 	$('#nonindian textarea').prop('required',false);
-	// 	$('#nonindian select').prop('required',false);
-	// 	$('#nonindian input').prop('disabled',true);
-	// 	$('#nonindian textarea').prop('disabled',true);
-	// 	$('#nonindian select').prop('required',false);
-	// 	$('#nonindian').animate({'opacity': 0}, 500, function(){
-	// 		$(this).css('display', 'none');
-	// 	});
-	// }
+	} else {
+		$('#nonindian input').prop('required',false);
+		$('#nonindian textarea').prop('required',false);
+		$('#nonindian select').prop('required',false);
+		$('#nonindian input').prop('disabled',true);
+		$('#nonindian textarea').prop('disabled',true);
+		$('#nonindian select').prop('required',false);
+		$('#nonindian').animate({'opacity': 0}, 500, function(){
+			$(this).css('display', 'none');
+		});
+	}
 }
 
 
@@ -44,7 +44,7 @@ function monitor_change_to_select() {
 
 	$('.othersqs input').click(function(){
 		var html = '<div class="form-group tttt"><input id="titleotherinput" type="text" name="users[title]" class="form-control ti" placeholder="Your current job title"></div>';
-		
+
 		if ($(this).hasClass('ti1')) {
 			// This is to identify the others radio button
 			$('.othersqs').append(html);
