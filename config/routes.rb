@@ -41,6 +41,9 @@ Powwow::Application.routes.draw do
   post 'participants/new_ticket/:user_id' => 'participants#new_ticket', as: :new_ticket
   get 'participants/all_reviewers/' => 'participants#all_reviewers', as: :all_reviewers
 
+  post 'submissions/lock/:id' => 'submissions#lock', as: :lock_submission
+  post 'submissions/unlock/:id' => 'submissions#unlock', as: :unlock_submission
+
   get 'review_overview' => 'reviews#overview', as: :review_overview
   get 'get_free_reviewers/:submission_id' => 'reviews#get_free_reviewers', as: :get_free_reviewers
   post 'assign_reviewer/:submission_id/:reviewer_id' => 'reviews#assign_reviewer', as: :assign_reviewer

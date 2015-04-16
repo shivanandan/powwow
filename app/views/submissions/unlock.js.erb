@@ -1,0 +1,5 @@
+alert('Unlocked! This submission can now be edited by <%= @submission.user.full_name %>.');
+var html = '';
+html += '<%= @submission.id %>';
+html += '<%= link_to "Lock", lock_submission_path(@submission.id), :remote => true, :method => "POST" if @submission.editable %>';
+$('tr#submission-<%= @submission.id %> td.submission_id_col').html(html);

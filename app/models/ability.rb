@@ -16,6 +16,9 @@ class Ability
             s.user_id == user.id
         end
         cannot [:index, :edit, :update], Submission
+        can [:edit, :update], Submission do |s|
+            s.user_id == user.id and s.editable == true
+        end
     elsif user.reviewer?
         can [:update], Review do |r|
             r.user_id = user.id and !r.finalized

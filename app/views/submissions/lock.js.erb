@@ -1,0 +1,5 @@
+alert('Locked! This submission can now be only edited by an administrator. <%= @submission.user.full_name %> cannot make any further changes.');
+var html = '';
+html += '<%= @submission.id %>';
+html += '<%= link_to "Unlock", unlock_submission_path(@submission.id), :remote => true, :method => "POST" unless @submission.editable %>';
+$('tr#submission-<%= @submission.id %> td.submission_id_col').html(html);

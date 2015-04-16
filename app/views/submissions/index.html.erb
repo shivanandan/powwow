@@ -14,8 +14,11 @@
 
   <tbody>
     <% @submissions.each do |submission| %>
-      <tr>
-        <td><%= submission.id %></td>
+      <tr id="submission-<%= submission.id %>">
+        <td class="submission_id_col"><%= submission.id %>
+        <%= link_to "Unlock", unlock_submission_path(submission.id), :remote => true, :method => "POST" unless submission.editable %>
+        <%= link_to "Lock", lock_submission_path(submission.id), :remote => true, :method => "POST" if submission.editable %>
+        </td>
         <td><%= submission.user.id %></td>
         <td><%= submission.title %></td>
         <td><%= submission.poster %></td>

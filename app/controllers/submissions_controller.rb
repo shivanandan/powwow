@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_submission, only: [:show, :edit, :update, :destroy, :lock, :unlock]
   load_and_authorize_resource
 
   # GET /submissions
@@ -65,6 +65,16 @@ class SubmissionsController < ApplicationController
       format.html { redirect_to submissions_url }
       format.json { head :no_content }
     end
+  end
+
+  def lock
+    @submission.editable = false
+    @submission.save
+  end
+
+  def unlock
+    @submission.editable = true
+    @submission.save
   end
 
   private
