@@ -125,12 +125,12 @@
         SCIENCE : <%= r.science_score %> <br>
         VISUAL : <%= r.visual_score %> <br>
         <hr>
-        <%= raw "COMMENT TO ADMIN : <br>" unless r.comment_to_admin %>
+        <%= raw "COMMENT TO ADMIN : <br>" if r.comment_to_admin %>
         <%= r.comment_to_admin %>
-        <%= raw "<hr>" unless r.comment_to_admin %>
-        <%= raw "COMMENT TO APPLICANT : <br>" unless r.comment_to_applicant %>
+        <%= raw "<hr>" if r.comment_to_admin %>
+        <%= raw "COMMENT TO APPLICANT : <br>" if r.comment_to_applicant %>
         <%= r.comment_to_applicant %>
-        <%= raw "<hr>" unless r.comment_to_applicant %>
+        <%= raw "<hr>" if r.comment_to_applicant %>
         RECOMENDATION : <%= r.recommendation %>
         <hr>
         <small><%= r.user.full_name %> has viewed this abstract <%= r.view_count %> times.</small>
