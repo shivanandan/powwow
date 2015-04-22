@@ -40,6 +40,7 @@ Powwow::Application.routes.draw do
   post '/participants/save_edited/:user_id' => 'participants#save_edited', as: :save_edited
   post 'participants/new_ticket/:user_id' => 'participants#new_ticket', as: :new_ticket
   get 'participants/all_reviewers/' => 'participants#all_reviewers', as: :all_reviewers
+  get 'participants/non_indian/' => 'participants#non_indian', as: :non_indian_participants
 
   post 'submissions/lock/:id' => 'submissions#lock', as: :lock_submission
   post 'submissions/unlock/:id' => 'submissions#unlock', as: :unlock_submission
