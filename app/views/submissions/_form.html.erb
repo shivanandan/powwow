@@ -113,7 +113,7 @@ $('#us3').locationpicker({
   <% if @submission.gps_lat.nil? %>
     location: {latitude: 13.015551285477105, longitude: 77.5613899230957},
   <% else %>
-    location: {latitude: <%= @submission.gps_lat %>, longitude: <%= @submission_gps_lng %>},
+    location: {latitude: <%= @submission.gps_lat %>, longitude: <%= @submission.gps_lng %>},
   <% end %>
 
   radius: 300,
@@ -128,6 +128,9 @@ $('#us3').locationpicker({
   </div>
   <div class="col-lg-4 instructions">
     <br><br>
+    <pre>
+      <%= @submission.inspect %>
+    </pre>
    Please indicate the geographical location where your study was conducted on the map provided. If your study did not involve fieldwork, i.e. if your work was theoretical, literature-based etc., please indicate the location of the institution/organisation where the work was carried out . You can either mark the location on the Google Map provided by clicking and dragging the pin or enter GPS coordinates of your study site.
   </div>
 </div>
