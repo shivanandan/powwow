@@ -24,7 +24,7 @@
 
 <tbody>
 <% @users.each do |u| %>
-<tr>
+<tr id="row<%= u.id %>">
 	<td><%= u.full_name %></td>
 	<td><%= u.nationality %></td>
 	<td><%= u.email  %></td>
@@ -32,7 +32,16 @@
 	<td><%= u.title %></td>
 	<td><%= u.institutional_affiliation %></td>
 	<td><%= u.phone %></td>
-	<td><%= u.ticket_number %><%= raw "<span class='text-danger' title='Not Registered with doattend'>✖</span>" if u.ticket_number.nil? %> <%= link_to "Issue", new_ticket_path(u.id), :remote => true, :method => :post, data: { confirm: "Are you sure? This will issue a ticket to #{u.full_name.upcase}. Undoing this is very painful. Please proceed with caution." } if u.ticket_number.nil? %></td>
+	<td>
+	<% if u.applicant? %>
+		<%= u.ticket_number %>
+		<%= link_to "Issue", new_ticket_path(u.id), :remote => true, :method => :post, data: { confirm: "Are you sure? This will issue a ticket to #{u.full_name.upcase}. Undoing this is very painful. Please proceed with caution." } if u.ticket_number.nil? %>
+		<%= link_to raw("<span class='text-danger' title='Revoke Ticket'>✖</span>"), revoke_ticket_path(u.id), :remote => true, :method => :post, data: { confirm: "Are you sure? This will revoke the ticket from #{u.full_name.upcase}. Undoing this is very very very painful. Please proceed with caution." } unless u.ticket_number.nil? %>
+		<% elsif u.reviewer? %>
+		-
+		<% end %>
+		</td>
+
 	<td><%= u.role%></td>
 	<td>
 		<%= link_to "Edit", edit_participant_path(u.id) %>

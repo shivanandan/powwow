@@ -74,6 +74,15 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  def revoke_ticket
+    @participant = User.find(params[:user_id])
+    @participant.ticket_number = nil
+    @participant.save
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def reviewers
     @users = User.where(:role => 'reviewer')
   end
