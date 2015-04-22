@@ -4,7 +4,7 @@
 Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewer", new_participant_path %> <!-- / <%= link_to 'All Reviewers', all_reviewers_path %> -->
 <hr>
 <br>
-<p>To view reviews, click on the submission's title.</p>
+<p>To view reviews, click on the submission's title. Reviewer names in <strong>bold</strong> have finalized thier reviews.</p>
 <table id="" class="table table-striped table-hover table-bordered datatable">
 	<thead>
 		<th>Submission</th>
@@ -25,14 +25,18 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 					<% ctotal = 0 %>
 					<% stotal = 0 %>
 					<% vtotal = 0 %>
+					<% final = 0 %>
 					<% s.reviews.each do |r| %>
-						<% ctotal = ctotal + r.conservation_score %>
-						<% stotal = stotal + r.science_score %>
-						<% vtotal = vtotal + r.visual_score %>
+						<% if r.finalized %>
+							<% ctotal = ctotal + r.conservation_score %>
+							<% stotal = stotal + r.science_score %>
+							<% vtotal = vtotal + r.visual_score %>
+							<% final = final + 1 %>
+						<% end %>
 					<% end %>
-					<td><%= ctotal / s.reviews.count %> </td>
-					<td><%= stotal %></td>
-					<td><%= vtotal %></td>
+					<td><%= ctotal / final if final > 0 %> </td>
+					<td><%= stotal / final if final > 0 %></td>
+					<td><%= vtotal / final if final > 0 %></td>
 				<% else %>
 					<td>nil</td>
 					<td>nil</td>
@@ -42,24 +46,36 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 			<td>
 				<% if s.reviews.count > 0 %>
 					<% s.reviews.each do |r| %>
-						<%= r.recommendation[0].upcase %>
+						<%= r.recommendation[0].upcase if r.finalized %>
 					<% end %>
 				<% else %>
 					nil
 				<% end %>
 			</td>
 			<td id="s<%= s.id %>-<%= s.reviews[0].id unless s.reviews[0].nil? %>">
-				<%= s.reviews[0].user.full_name unless s.reviews[0].nil? %>
+				<% unless s.reviews[0].nil? %>
+					<%= raw "<strong>" if s.reviews[0].finalized %>
+					<%= s.reviews[0].user.full_name %>
+					<%= raw "</strong>" if s.reviews[0].finalized %>
+				<% end %>
 				<%= link_to "Assign", get_free_reviewers_path(s.id), :remote => 'true' if s.reviews[0].nil? %>
 				<%= link_to "Unassign", unassign_reviewer_path(s.id, s.reviews[0].user.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' }  unless s.reviews[0].nil? %>
 			</td>
 			<td id="s<%= s.id %>-<%= s.reviews[1].id unless s.reviews[1].nil? %>">
-				<%= s.reviews[1].user.full_name unless s.reviews[1].nil? %>
+				<% unless s.reviews[1].nil? %>
+					<%= raw "<strong>" if s.reviews[1].finalized %>
+					<%= s.reviews[1].user.full_name %>
+					<%= raw "</strong>" if s.reviews[1].finalized %>
+				<% end %>
 				<%= link_to "Assign", get_free_reviewers_path(s.id), :remote => 'true' if s.reviews[1].nil? %>
 				<%= link_to "Unassign", unassign_reviewer_path(s.id, s.reviews[1].user.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' }  unless s.reviews[1].nil? %>
 			</td>
 			<td id="s<%= s.id %>-<%= s.reviews[2].id unless s.reviews[2].nil? %>">
-				<%= s.reviews[2].user.full_name unless s.reviews[2].nil? %>
+				<% unless s.reviews[2].nil? %>
+					<%= raw "<strong>" if s.reviews[2].finalized %>
+					<%= s.reviews[2].user.full_name %>
+					<%= raw "</strong>" if s.reviews[2].finalized %>
+				<% end %>
 				<%= link_to "Assign", get_free_reviewers_path(s.id), :remote => 'true' if s.reviews[2].nil? %>
 				<%= link_to "Unassign", unassign_reviewer_path(s.id, s.reviews[2].user.id), :method => 'delete', :remote=>true, data: { confirm: 'Are you sure you want to unassign this reviewer? All data associated with this reviewer will also be destroyed. PROCEED WITH CAUTION!' }  unless s.reviews[2].nil? %>
 			</td>
