@@ -1,0 +1,69 @@
+<h1>Non Indian Participants</h1>
+<p>This table lists all non indian participants who have bought a ticket. If the participant you are looking for does not appear here, please go back to the all participants table to find her/him. You can issue a ticket for that person from there if you wish.</p>
+
+<div class="container">
+  <div class="well">
+    <%= link_to "Back to all participants", participants_path  %>
+  </div>
+</div>
+
+<table id="" class="table table-striped table-hover table-bordered" style="width: 1900px;">
+  <thead>
+    <tr>
+  <th>Full Name</th>
+  <th>Father's Name</th>
+  <th>Mother's Name</th>
+  <th>D.O.B</th>
+  <th>Birthplace</th>
+  <th>Passport Address</th>
+  <th>Passport Number</th>
+  <th>P Issue Date</th>
+  <th>P Expiry Date</th>
+  <th>Passport Place of Issue</th>
+  <th>Consulate Address</th>
+  <th>Country</th>
+  <th>Email</th>
+  <th>Ticket</th>
+  <th>Phone</th>
+  <th>Actions</th>
+    </tr>
+  </thead>
+
+<tbody>
+<% @users.each do |u| %>
+<% unless u.ticketless? %>
+<tr>
+  <td><%= u.full_name %></td>
+  <td><%= u.guardian_names %></td>
+  <td><%= u.mothers_name %></td>
+  <td><%= u.date_of_birth %></td>
+  <td><%= u.place_of_birth %></td>
+  <td><%= u.address_as_stated_in_your_passport %></td>
+  <td><%= u.passport_number %></td>
+  <td><%= u.passport_date_of_issue %></td>
+  <td><%= u.passport_date_of_expiry %></td>
+  <td><%= u.passport_place_of_issue %></td>
+  <td><%= u.address_as_stated_in_your_passport %></td>
+  <td><%= u.nationality %></td>
+  <td><%= u.email  %></td>
+  <td><%= u.ticket_number %></td>
+  <td><%= u.phone %></td>
+  <td>
+    <%= link_to "Edit", edit_participant_path(u.id) %>
+    <%= link_to "Abstract Dispatch", alert_reviewers_path(u.id), :remote => true, :method => 'POST', data: { confirm: "This will send an email to #{u.full_name} with details about the abstracts assigned to them. Please do not refresh this page until this is complete. You will get an alert letting you know the status." } if u.reviewer? %>
+    <% if u.nationality == 'IN' %>
+
+    <% else %>
+      <% if u.passportless? %>
+      <% else %>
+      • <a href="<%= u.passportscan %>">Download Passport</a>
+      <% end %>
+    <% end %>
+  </td>
+</tr>
+<% end %>
+<% end %>
+</tbody>
+</table>
+
+<br><br>
