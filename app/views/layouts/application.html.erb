@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Student Conference on Conservation Science - Bengaluru 2015</title>
-  <meta name="viewport" content="initial-scale=1">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -10,6 +9,7 @@
   <% if action_name == 'edit' or action_name == 'new' %>
   <%= tinymce_assets %>
   <% end %>
+  <meta name=viewport content="width=device-width, initial-scale=1">
   <noscript>
     <meta http-equiv="refresh" content="2;url=/nojswarning.html">
   </noscript>
