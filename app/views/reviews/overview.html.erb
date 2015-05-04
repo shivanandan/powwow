@@ -7,6 +7,7 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 <p>To view reviews, click on the submission's title. Reviewer names in <strong>bold</strong> have finalized thier reviews.</p>
 <table id="" class="table table-striped table-hover table-bordered datatable">
 	<thead>
+		<th>I.D.</th>
 		<th>Submission</th>
 		<th>Con</th>
 		<th>Sci</th>
@@ -19,6 +20,7 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 	<tbody>
 		<% @submissions.each do |s| %>
 		<tr id="s<%= s.id %>">
+			<td><%= s.id %></td>
 			<td><%= link_to s.title, submission_path(s) %> / <%= s.user.full_name %></td>
 
 				<% if s.reviews.count > 0 %>
