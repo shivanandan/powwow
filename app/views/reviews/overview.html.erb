@@ -13,6 +13,7 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 		<th>Sci</th>
 		<th>Vis</th>
 		<th>Reco</th>
+		<th>S Pref.</th>
 		<th>Reviewer</th>
 		<th>Reviewer</th>
 		<th>Reviewer</th>
@@ -44,7 +45,7 @@ Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewe
 					<td>nil</td>
 					<td>nil</td>
 				<% end %>
-
+			<td><%= s.poster %></td>
 			<td>
 				<% if s.reviews.count > 0 %>
 					<% s.reviews.each do |r| %>
