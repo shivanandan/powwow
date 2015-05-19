@@ -1,0 +1,15 @@
+<br>
+<h2>Compose a message to your participants</h2>
+<hr>
+<br>
+<br>
+<%= form_for current_user, :url => { :action => "send_mails" }, :method => :POST do |f| %>
+
+<strong>Send mails to:</strong>
+Radios for type of user
+<hr>
+body
+
+
+
+<% end %>

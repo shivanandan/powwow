@@ -87,6 +87,12 @@ class ParticipantsController < ApplicationController
     @users = User.where(:role => 'reviewer')
   end
 
+  def compose_message
+  end
+
+  def send_mails
+  end
+
   private
 
   def user_params

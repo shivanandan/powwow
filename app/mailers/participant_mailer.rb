@@ -13,4 +13,10 @@ class ParticipantMailer < ActionMailer::Base
     @reviews = reviews
     mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
   end
+
+  def mail_participant(user, submission, subject ,body)
+    @user = user
+    @submission = submission
+    mail(to: @user.email, subject: subject)
+  end
 end
