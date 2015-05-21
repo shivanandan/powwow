@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415131210) do
+ActiveRecord::Schema.define(version: 20150519075144) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20150415131210) do
     t.text     "other_institutional_affiliations"
     t.string   "keywords"
     t.boolean  "editable"
+    t.string   "final_status"
   end
 
   create_table "users", force: true do |t|

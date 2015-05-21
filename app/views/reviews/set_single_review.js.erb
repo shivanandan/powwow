@@ -1,0 +1,4 @@
+var s = <%= raw @submission.to_json %>;
+var thecell = $('td#'+s.id+'finalise');
+thecell.find('a.setfinal').text(s.final_status);
+thecell.find('.wait').addClass('hide');

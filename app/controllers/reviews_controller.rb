@@ -130,6 +130,19 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def finalise_reviews
+    @submissions = Submission.includes(:reviews)
+  end
+
+  def set_single_review
+    @submission = Submission.find(params[:submission_id]);
+    @submission.final_status = params[:status]
+    @submission.save
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review

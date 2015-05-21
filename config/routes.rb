@@ -49,10 +49,12 @@ Powwow::Application.routes.draw do
   post 'submissions/unlock/:id' => 'submissions#unlock', as: :unlock_submission
 
   get 'review_overview' => 'reviews#overview', as: :review_overview
+  get 'finalise_reviews' => 'reviews#finalise_reviews', as: :finalise_reviews
   get 'get_free_reviewers/:submission_id' => 'reviews#get_free_reviewers', as: :get_free_reviewers
   post 'assign_reviewer/:submission_id/:reviewer_id' => 'reviews#assign_reviewer', as: :assign_reviewer
   delete 'unassign_reviewer/:submission_id/:reviewer_id' => 'reviews#unassign_reviewer', as: :unassign_reviewer
   post 'alert_reviewers/:user_id' => 'reviews#alert_reviewers', as: :alert_reviewers
+  post 'setsingle/:submission_id/:status' => 'reviews#set_single_review', as: :set_single_review
 
   get 'transfer' => 'home#post_login', as: :post_login
 

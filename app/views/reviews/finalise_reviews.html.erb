@@ -1,0 +1,79 @@
+<h1>Reviews Overview</h1>
+<br>
+<hr>
+Links to : <%= link_to "All Reviews", reviews_path %> / <%= link_to "Add Reviewer", new_participant_path %> / <%= link_to 'Finalise Reviews', finalise_reviews_path %> <!-- / <%= link_to 'All Reviewers', all_reviewers_path %> -->
+<hr>
+<br>
+<p>To view reviews, click on the submission's title. Reviewer names in <strong>bold</strong> have finalized thier reviews.</p>
+<table id="" class="table table-striped table-hover table-bordered datatable">
+  <thead>
+    <th>I.D.</th>
+    <th>Submission</th>
+    <th width='100'>Scores</th>
+    <th>S Pref.</th>
+    <th>Reco</th>
+    <th>Status / Finalise</th>
+  </thead>
+  <tbody>
+    <% @submissions.each do |s| %>
+    <tr id="s<%= s.id %>">
+      <td><%= s.id %></td>
+      <td><%= link_to s.title, submission_path(s) %> / <%= s.user.full_name %></td>
+
+        <% if s.reviews.count > 0 %>
+          <% ctotal = 0 %>
+          <% stotal = 0 %>
+          <% vtotal = 0 %>
+          <% final = 0 %>
+          <% s.reviews.each do |r| %>
+            <% if r.finalized %>
+              <% ctotal = ctotal + r.conservation_score %>
+              <% stotal = stotal + r.science_score %>
+              <% vtotal = vtotal + r.visual_score %>
+              <% final = final + 1 %>
+            <% end %>
+          <% end %>
+          <td>C<%= ctotal / final if final > 0 %> • S<%= stotal / final if final > 0 %> • V<%= vtotal / final if final > 0 %></td>
+        <% else %>
+          <td>nil</td>
+        <% end %>
+      <td><%= s.poster %></td>
+      <td>
+        <% if s.reviews.count > 0 %>
+          <% s.reviews.each do |r| %>
+            <%= r.recommendation[0].upcase if r.finalized %>
+          <% end %>
+        <% else %>
+          nil
+        <% end %>
+      </td>
+      <td width="250" id="<%= s.id %>finalise">
+      <a href="#" class="setfinal" title="Click to change the status"><%= s.final_status %></a>
+      <div class='<%= "hide" unless s.final_status.nil? %> finalise'>
+        <%= link_to "Talk", set_single_review_path(s,'talk'), :remote=>true, :class=>'btn btn-info btn-xs', :method=>:post %>
+        <%= link_to "Poster", set_single_review_path(s,'poster'), :remote=>true, :class=>'btn btn-success btn-xs', :method=>:post %>
+        <%= link_to "Reject", set_single_review_path(s,'reject'), :remote=>true, :class=>'btn btn-danger btn-xs', :method=>:post %>
+      </div>
+      <div class="wait hide">Please Wait..</div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+  jQuery(document).ready(function($) {
+    $('td a.btn').click(function(event) {
+      $(this).parent().find('.wait').show();
+      var w = $(this).parent().parent().find('.wait');
+      w.removeClass('hide');
+      $(this).parent().addClass('hide');
+    });
+
+    $('a.setfinal').click(function(event) {
+      /* Act on the event */
+      event.preventDefault();
+      $(this).parent().find('.finalise').removeClass('hide');
+    });
+  });
+</script>
