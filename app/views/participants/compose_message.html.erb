@@ -1,15 +1,97 @@
 <br>
 <h2>Compose a message to your participants</h2>
 <hr>
-<br>
-<br>
-<%= form_for current_user, :url => { :action => "send_mails" }, :method => :POST do |f| %>
+<p>Please use this with care as it mass mails a HUGE selection of your users. This is very powerful for sending personalised emails out.</p>
+<%= form_for @mann, :url => { :action => "send_mails" }, :method => :POST do |f| %>
 
-<strong>Send mails to:</strong>
-Radios for type of user
+<div class="form-group">
+  <div class="input-group">
+    <span class="input-group-addon"><strong>TO</strong></span>
+    <div class="radio submitters"><label><%= radio_button_tag 'users', 'reject' %>Rejected Submitters</label></div>
+    <div class="radio submitters"><label><%= radio_button_tag 'users', 'talks' %>Talk Presenters</label></div>
+    <div class="radio submitters"><label><%= radio_button_tag 'users', 'posters' %>Poster Presenters</label></div>
+    <div class="radio"><label><%= radio_button_tag 'users', 'reviewers' %>Reviewers</label></div>
+    <div class="radio"><label><%= radio_button_tag 'users', 'admins' %>Admins</label></div>
+    <div class="radio"><label><%= radio_button_tag 'users', 'participants' %>Participants</label></div>
+    <div class="radio"><label><%= radio_button_tag 'users', 'all' %>All Users</label></div>
+    <div class="clear"></div>
+  </div>
+</div>
 <hr>
-body
+<div class="form-group">
+  <div class="input-group">
+    <span class="input-group-addon"><strong>SUBJECT</strong></span>
+    <%= text_field_tag 'subject', nil, :class=>'form-control', :placeholder=>'Subject' %>
+  </div>
+</div>
+<hr>
+<div class="well text-muted">
+<div class="inputty"></div>
+  <strong>Available Tokens : </strong>
+  <div class="token submissiony">_AbstractTitle_</div>
+  <div class="token submissiony">_AbstractFinalStatus_</div>
+  <div class="token submissiony">_ReviewComments_</div>
+  <div class="token">_UserFullName_</div>
+</div>
+<div class="form-group">
+  <label for="textArea" class="control-label inputty">BODY</label>
+  <div class="side">
+    <%= text_area_tag 'body', nil, :class=>'form-control', :rows=>10 %>
+    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+  </div>
+</div>
+
+<div class="actions">
+  <%= f.submit "Send Mails" %>
+</div>
 
 
 
 <% end %>
+
+<style>
+  .radio {
+    display: inline-block;
+  }
+  .input-group-addon {
+    min-width: 100px;
+    text-align: right;
+  }
+  .radio label {
+    margin-right: 10px;
+    padding-right: 10px;
+    float: none;
+    clear: both;
+  }
+  .inputty {
+    min-width: 100px;
+    text-align: right;
+    padding: 1em;
+  }
+  .inputty, .side {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .side {
+    width: calc(100% - 110px);
+  }
+  .token {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  .submissiony {
+    display: none;
+  }
+</style>
+<script>
+  jQuery(document).ready(function($) {
+    $('.radio input[type=radio]').change(function(){
+      console.log( $(this).parent().parent().hasClass('submitters') );
+      if ( $(this).parent().parent().hasClass('submitters') ) {
+        $('.submissiony').css('display', 'inline-block');
+      } else {
+        $('.submissiony').hide();
+      }
+    });
+  });
+</script>

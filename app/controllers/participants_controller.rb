@@ -88,9 +88,11 @@ class ParticipantsController < ApplicationController
   end
 
   def compose_message
+    @mann = Webpage.new
   end
 
   def send_mails
+    @mann = params
   end
 
   private
