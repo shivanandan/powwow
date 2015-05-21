@@ -24,7 +24,7 @@ class ParticipantMailer < ActionMailer::Base
     @user = user
     @submission = submission
     @reviews = reviews
-    # mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
-    mail(to: 'arjuna.shankar@gmail.com', subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
+    mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
+    # mail(to: 'arjuna.shankar@gmail.com', subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
   end
 end
