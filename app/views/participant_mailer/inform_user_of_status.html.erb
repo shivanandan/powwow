@@ -7,7 +7,7 @@
     <p>Dear <%= @user.first_name %> <%= @user.last_name %></p>
 
 
-<p>Thank you for submitting an abstract for SCCS-Bengaluru 2015. Your abstract was independently reviewed by three reviewers as well as the Organising Committee, and we are glad to inform you that your abstract has been selected for a <%= @submission.final_status %> presentation.</p>
+<p>Thank you for submitting an abstract for SCCS-Bengaluru 2015. Your abstract was independently reviewed by three reviewers as well as the Organising Committee, and we are glad to inform you that your abstract has been selected for a <strong><%= @submission.final_status %> presentation</strong>.</p>
 
 <p>Some information to help you prepare your <%= @submission.final_status %> is available on our website http://www.sccs-bng.org under the Information for Presenters tab.</p>
 
@@ -27,10 +27,11 @@ Conference Administrator</p>
 <p><strong>Reviewer Comments (if any):</strong></p>
 
 --------------------------------------------------------------------------------------------------------------------
+  <ul>
   <% @reviews.each do |r| %>
-      <p><%= r.comment_to_applicant %></p>
+      <li><%= r.comment_to_applicant %></li>
   <% end %>
-
+  </ul>
 <% end %>
 
   </body>
