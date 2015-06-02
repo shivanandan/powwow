@@ -52,6 +52,15 @@ class HomeController < ApplicationController
     @result =  archive.execute ("select * from workshops where id='#{@params[:id]}'")
   end
 
+  def talks_or_posters
+    @status = params[:type] == 'talks' ? 'talk' : 'poster'
+    @submissions = Submission.where(:final_status => @status)
+  end
+
+  def single_current_abstract
+    @submission = Submission.find params[:id]
+  end
+
   def post_login
     # Do stuff here for all different users
     if user_signed_in?

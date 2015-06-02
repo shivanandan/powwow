@@ -1,0 +1,19 @@
+<%# @results.inspect %>
+<br>
+<br>
+<br>
+
+<div class="container archive">
+
+<hr>
+<h1>Student </h1>
+
+<%# @results[0] %>
+
+<% @submissions.each do |s| %>
+<%= link_to s.title, submission_path(s.id)  %> <br>
+Presented by  <%= s.user.full_name %> <br>
+<hr>
+<% end %>
+
+</div>

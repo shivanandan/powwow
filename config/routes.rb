@@ -47,6 +47,8 @@ Powwow::Application.routes.draw do
 
   post 'submissions/lock/:id' => 'submissions#lock', as: :lock_submission
   post 'submissions/unlock/:id' => 'submissions#unlock', as: :unlock_submission
+  get '2015/abstracts/:id' => 'home#single_current_abstract', as: :single_current_abstract
+  get '2015/:type' => 'home#talks_or_posters', as: :talks_or_posters
 
   get 'review_overview' => 'reviews#overview', as: :review_overview
   get 'finalise_reviews' => 'reviews#finalise_reviews', as: :finalise_reviews

@@ -18,8 +18,8 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="/webpages/plenaries">Plenaries</a></li>
             <li><a href="/webpages/workshops">Workshops</a></li>
-            <li><a href="/webpages/student-talks">Student Talks</a></li>
-            <li><a href="/webpages/student-posters">Student Posters</a></li>
+            <li><a href="/2015/talks">Student Talks</a></li>
+            <li><a href="/2015/posters">Student Posters</a></li>
             <li><a href="/webpages/schedule">Schedule</a></li>
           </ul>
         </li>
@@ -82,12 +82,12 @@
             <li><a href="/webpages/2012-conference">2012 Conference</a></li>
             <li><a href="/webpages/2011-conference">2011 Conference</a></li>
             <li><a href="/webpages/2010-conference">2010 Conference</a></li>
-            
+
           </ul>
         </li>
 
         <% if user_signed_in? %>
-        
+
         <% else %>
         <li style="font-weight:bold; background-color: #111;"><%= link_to "Register", new_user_registration_path, :style=>'color: white;' %></li>
         <li><%= link_to 'Sign In', new_user_session_path %></li>

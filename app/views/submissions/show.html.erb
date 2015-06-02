@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <br><br>
-<span class="capitalize label label-info">2015 : Submission</span>
+<span class="capitalize label label-info">2015 : Abstract <%= ": #{@submission.final_status.capitalize}" unless @submission.final_status.nil? %></span>
 <hr>
 <div class="archive">
 <h2><%= @submission.title %></h2>
@@ -79,7 +79,7 @@
 </div>
 
 <!-- ONLY FOR ADMIN -->
-<% if current_user.admin? or current_user.id == @submission.user_id %>
+<% if user_signed_in? and (current_user.admin? or current_user.id == @submission.user_id) %>
 
 <p>
   <strong>Presentation Format:</strong>
@@ -107,7 +107,7 @@
 </p>
 <% end %>
 
-<% if current_user.admin? %>
+<% if user_signed_in? and current_user.admin? %>
 
 <hr>
   <% unless @reviews.empty? %>

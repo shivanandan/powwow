@@ -28,7 +28,9 @@ class Ability
         end
     else
         can :show, :all
-        cannot :show, Submission
+        can :show, Submission do |s|
+            s.final_status == 'talk' or s.final_status == 'poster'
+        end
     end
     #
     # The first argument to `can` is the action you are giving the user
