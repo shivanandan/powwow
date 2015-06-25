@@ -74,7 +74,7 @@
 <div class="alllocations">
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script>
-		var submissions = <%= raw @submissions.to_json %>;
+		var submissions = <%= raw @confirmed.to_json %>;
 		var markers = [];
 		var map;
 

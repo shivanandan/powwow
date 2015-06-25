@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   def index
   	@announcements = Announcement.order('priority DESC').limit(4)
     @submissions = Submission.all
+    @denied = Submission.where(:final_status => nil)
+    @confirmed = @submissions - @denied
   end
 
   def abstracts_archive
