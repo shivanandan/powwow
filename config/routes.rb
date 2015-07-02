@@ -1,5 +1,7 @@
 Powwow::Application.routes.draw do
 
+  resources :workshops
+
   resources :reviews
 
   resources :submissions
