@@ -10,6 +10,13 @@ class User < ActiveRecord::Base
 
   has_many :reviews
 
+  has_many :workshopconductorship
+  has_many :workshops, :through => :workshopconductorship
+
+  has_many :workshopregistrations
+  has_many :workshops, :through => :workshopregistrations
+
+
   has_attached_file :passportscan
 
   validates_attachment_content_type :passportscan, :content_type => ["application/pdf"]
@@ -57,6 +64,10 @@ class User < ActiveRecord::Base
 
   def applicant?
     self.role == "applicant"
+  end
+
+  def resourceperson?
+    self.role == "resourceperson"
   end
 
   def ticketless?

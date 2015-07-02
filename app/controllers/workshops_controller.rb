@@ -1,5 +1,6 @@
 class WorkshopsController < ApplicationController
   before_action :set_workshop, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /workshops
   # GET /workshops.json

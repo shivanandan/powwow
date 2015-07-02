@@ -26,6 +26,8 @@ class Ability
         can [:show], Review do |r|
             r.user_id = user.id
         end
+    elsif user.reviewer?
+        can [:update], Workshop, :workshopconductorship => {:user_id => user.id}
     else
         can :show, :all
         can :show, Submission do |s|
