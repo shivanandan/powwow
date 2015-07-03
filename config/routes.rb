@@ -60,6 +60,9 @@ Powwow::Application.routes.draw do
   post 'alert_reviewers/:user_id' => 'reviews#alert_reviewers', as: :alert_reviewers
   post 'setsingle/:submission_id/:status' => 'reviews#set_single_review', as: :set_single_review
 
+  get 'workshops/allresourcepeople/:workshop_id' => 'workshops#allresourcepeople', as: :allresourcepeople
+  post 'workshops/addresourceperson/:workshop_id/:user_id' => 'workshops#addresourceperson', as: :add_resourceperson
+
   get 'transfer' => 'home#post_login', as: :post_login
 
 

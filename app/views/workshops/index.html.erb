@@ -1,6 +1,6 @@
 <h1>Listing workshops</h1>
 
-<table>
+<table id="" class="table table-striped table-hover table-bordered datatable">
   <thead>
     <tr>
       <th>Title</th>
@@ -8,7 +8,7 @@
       <th>Description</th>
       <th>Type</th>
       <th>Keywords</th>
-      <th></th>
+      <th>Resource People</th>
       <th></th>
       <th></th>
     </tr>
@@ -20,16 +20,31 @@
         <td><%= workshop.title %></td>
         <td><%= workshop.level %></td>
         <td><%= workshop.description %></td>
-        <td><%= workshop.type %></td>
+        <td><%= workshop.category %></td>
         <td><%= workshop.keywords %></td>
-        <td><%= link_to 'Show', workshop %></td>
-        <td><%= link_to 'Edit', edit_workshop_path(workshop) %></td>
-        <td><%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= workshop.workshopconductorship.inspect %>
+          <%= link_to 'Add Resourceperson', allresourcepeople_path(workshop), :remote=>true %>
+        </td>
+        <td></td>
+        <td>
+          <%= link_to 'Show', workshop %>
+          <%= link_to 'Edit', edit_workshop_path(workshop) %>
+          <%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+
 
 <%= link_to 'New Workshop', new_workshop_path %>
+<%= link_to "New Resourceperson", new_participant_path %>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

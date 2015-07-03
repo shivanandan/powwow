@@ -1,5 +1,6 @@
 class WorkshopsController < ApplicationController
   before_action :set_workshop, only: [:show, :edit, :update, :destroy]
+  before_action :set_resourcepeople, only: [:new, :edit, :allresourcepeople]
   load_and_authorize_resource
 
   # GET /workshops
@@ -62,14 +63,42 @@ class WorkshopsController < ApplicationController
     end
   end
 
+  def allresourcepeople
+    @w = Workshop.find(params[:workshop_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def addresourceperson
+    @u = User.find(params[:user_id])
+    @w = Workshop.find(params[:workshop_id])
+
+    @workshopconductor = Workshopconductorship.new
+    @workshopconductor.user_id = @u.id
+    @workshopconductor.workshop_id = @w.id
+    if @workshopconductor.save
+      @message.success = true
+    else
+      @message.success = false
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workshop
       @workshop = Workshop.find(params[:id])
     end
 
+    def set_resourcepeople
+      @resourcepeople = User.where(:role => 'resourceperson')
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def workshop_params
-      params.require(:workshop).permit(:title, :level, :description, :type, :keywords)
+      params.require(:workshop).permit(:title, :level, :description, :category, :keywords)
     end
 end
