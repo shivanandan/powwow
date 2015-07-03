@@ -2,6 +2,21 @@ $yellow : #FFE45A;
 $green : #84CF92;
 $orange : #FF8F57;
 
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 .home .jumbotron {
 	background-color: #FED434;
 	background-size: cover;
@@ -102,11 +117,14 @@ $orange : #FF8F57;
 	}
 
 	.speaker {
-		width : 30%;
+		width : 100%;
 		max-width: 300px;
 		display: inline-block;
 		vertical-align: top;
 		margin: 20px;
+		@include tablet {
+			width: 20%;
+		}
 	}
 
 	.h3title {
