@@ -24,6 +24,12 @@
 			</p>
 		<% end %>
 
+		<hr>
+		Workshops
+		<%= @applicantworkshops.inspect %>
+		<br>
+		<%= link_to 'Register for workshops', workshops_list_path %>
+
 	</div>
 	<div class="col-lg-5">
 		<% success = '<span class="label label-success">&#10004;</span>' %>
