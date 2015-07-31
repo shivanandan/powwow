@@ -68,6 +68,7 @@ class HomeController < ApplicationController
     if user_signed_in?
       redirect_to applicant_path if current_user.applicant?
       redirect_to reviewer_path if current_user.reviewer?
+      redirect_to resourceperson_path if current_user.resourceperson?
       redirect_to root_path if current_user.admin?
     else
       redirect_to root_path

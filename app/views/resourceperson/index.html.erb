@@ -1,0 +1,23 @@
+<br>
+<br>
+<br>
+<br>
+
+<h4>Hello <%= current_user.full_name %></h4>
+<p>This is your dashboard. You can use this area to administer and manage your workshop(s).</p>
+
+<hr>
+
+<% @workshopconductorships.each do |wc| %>
+  <strong><%= wc.workshop.title %></strong> <br>
+  <%= wc.workshop.description %>
+  <%= wc.workshop.inspect %>
+  <hr>
+<% end %>
+
+
+
+<br>
+<br>
+<br>
+<br>
