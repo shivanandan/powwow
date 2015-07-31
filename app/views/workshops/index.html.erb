@@ -23,7 +23,9 @@
         <td><%= workshop.category %></td>
         <td><%= workshop.keywords %></td>
         <td>
-          <%= workshop.workshopconductorship.inspect %>
+          <% workshop.workshopconductorship.each do |u| %>
+            <%= link_to u.user.full_name, remove_resourceperson_path(workshop.id , u.user.id), :remote=>true, :method=>'post', :title=>"click to remove" %>
+          <% end %>
           <%= link_to 'Add Resourceperson', allresourcepeople_path(workshop), :remote=>true %>
         </td>
         <td></td>
@@ -42,6 +44,22 @@
 <%= link_to 'New Workshop', new_workshop_path %>
 <%= link_to "New Resourceperson", new_participant_path %>
 
+  <div id="mymodal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 <br>
 <br>

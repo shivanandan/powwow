@@ -1,1 +1,9 @@
-alert('hi!');
+// alert('hi!');
+var html = '';
+<% @resourcepeople.each do |r| %>
+  html += '<%= link_to r.full_name , add_resourceperson_path(@w.id, r.id), :remote => true, :method=>:post %>';
+<% end %>
+
+$('#mymodal .modal-title').html('Select Resource People for <%= @w.title %>');
+$('#mymodal .modal-body').html(html);
+$('#mymodal').modal();

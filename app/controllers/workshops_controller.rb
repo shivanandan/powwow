@@ -65,6 +65,14 @@ class WorkshopsController < ApplicationController
 
   def allresourcepeople
     @w = Workshop.find(params[:workshop_id])
+    @conductorship = Workshopconductorship.where(:workshop_id => @w.id)
+    @thesepeople = [];
+
+    @conductorship.each do |c|
+      @thesepeople << c.user
+    end
+
+    @resourcepeople = User.where(:role => 'resourceperson') - @thesepeople
     respond_to do |format|
       format.js
     end
@@ -73,15 +81,27 @@ class WorkshopsController < ApplicationController
   def addresourceperson
     @u = User.find(params[:user_id])
     @w = Workshop.find(params[:workshop_id])
+    @message = false
 
     @workshopconductor = Workshopconductorship.new
     @workshopconductor.user_id = @u.id
     @workshopconductor.workshop_id = @w.id
     if @workshopconductor.save
-      @message.success = true
+      @message = true
     else
-      @message.success = false
+      @message = false
     end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def removeresourceperson
+    @workshopconductor = Workshopconductorship.where(:user_id => params[:user_id]).where(:workshop_id => params[:workshop_id])
+    @workshopconductor.each do |w|
+      w.destroy
+    end
+
     respond_to do |format|
       format.js
     end
