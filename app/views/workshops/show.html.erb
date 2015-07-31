@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
+
+<h3><%= @workshop.title %></h3>
+
+
+<hr>
+  <%= @workshop.level %> • <%= @workshop.category %> • <%= @workshop.keywords %>
+<hr>
 
 <p>
-  <strong>Title:</strong>
-  <%= @workshop.title %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @workshop.level %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @workshop.description %>
 </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @workshop.category %>
-</p>
+<% if current_user.admin? or current_user.resourceperson? %>
+  <%= render 'resourceperson' %>
+<% end %>
 
-<p>
-  <strong>Keywords:</strong>
-  <%= @workshop.keywords %>
-</p>
-
-<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
-<%= link_to 'Back', workshops_path %>
+<br>
+<br>
+<br>

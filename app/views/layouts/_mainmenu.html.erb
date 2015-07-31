@@ -102,6 +102,7 @@
 <% if user_signed_in? %>
 <%= render 'layouts/adminmenu' if current_user.admin? %>
 <%= render 'layouts/reviewermenu' if current_user.reviewer? %>
+<%= render 'layouts/resourceperson' if current_user.resourceperson? %>
 <%= render 'layouts/applicantmenu' if current_user.applicant? %>
 <% else %>
 
