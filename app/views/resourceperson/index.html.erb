@@ -10,7 +10,6 @@
 
 <% @workshopconductorships.each do |wc| %>
   <strong><%= link_to wc.workshop.title, workshop_path(wc.workshop) %></strong> <br>
-  <%= wc.workshop.description %> <br>
   <%= wc.workshop.current_seats == nil ? '0' : wc.workshop.current_seats  %> / <%= wc.workshop.maximum_seats %>
   <hr>
 <% end %>

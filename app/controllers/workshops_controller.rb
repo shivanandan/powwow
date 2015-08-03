@@ -16,6 +16,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1
   # GET /workshops/1.json
   def show
+    @registered_participants = Workshopregistrations.where(:workshop_id => params[:id])
   end
 
   # GET /workshops/new

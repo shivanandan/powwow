@@ -8,9 +8,23 @@
 <hr>
 <p>This page is being updated. So the information here is bound to change until we open workshop registrations.</p>
 
+<div class="welly">
+  FILTERS :
+  <div class="label btn btn-small" data-target="day1"><a href="#">Day 1</a></div>
+  <div class="label btn btn-small" data-target="day2"><a href="#">Day 2</a></div>
+  <div class="label btn btn-small" data-target="day3"><a href="#">Day 3</a></div>
+  <div class="label btn btn-small" data-target="day4"><a href="#">Day 4</a></div>
+
+  <% @workshops.each do |w| %>
+    <div class="label btn btn-small" data-target="<%= w.level %>"><a href="#"><%= w.level %></a></div>
+  <% end %>
+
+  <div class="label btn btn-small" data-target="workshopcard"><a href="#">All</a></div>
+</div>
+
 <% @workshops.each do |w| %>
 
-<div class="workshopcard">
+<div class="workshopcard day<%= w.day %> <%= w.level %>">
 <hr>
 <br>
   <h4><%= w.title %></h4>
@@ -20,6 +34,15 @@
 </div>
 
 <% end %>
+
+<script>
+  $('.welly .btn a').click(function(e){ e.preventDefault() });
+  $('.welly .btn').click(function(){
+    $('.workshopcard').hide();
+    var target = $(this).attr('data-target');
+    $('.'+target).show();
+  });
+</script>
 
 <br>
 <br>

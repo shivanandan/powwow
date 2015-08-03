@@ -3,14 +3,24 @@
 <br>
 
   <h4><%= @workshop.title %></h4>
-  <div class="well"><strong><%= @workshop.workshopconductorship.first.user.full_name unless @workshop.workshopconductorship.empty? %></strong> <%= @workshop.level %> • <%= @workshop.keywords %> • <%= @workshop.maximum_seats %> Seats • <%= @workshop.duration %> • Starts at <%= @workshop.time %> on DAY <%= @workshop.day %> </div>
+  <div class="well">
+  <strong>
+  <% unless @workshop.workshopconductorship.empty? %>
+    <% @workshop.workshopconductorship.each do |wc|  %>
+      <%= wc.user.full_name %> &nbsp;
+    <% end %>
+  <% end %>
+  </strong>
+
+  <%= @workshop.level %> • <%= @workshop.keywords %> • <%= @workshop.maximum_seats %> Seats • <%= @workshop.duration %> • Starts at <%= @workshop.time %> on DAY <%= @workshop.day %> </div>
 
   <%= raw @workshop.description %>
+  <hr>
+  <br>
+  <% if current_user.admin? or current_user.resourceperson? %>
+    <%= render 'resourceperson' %>
+  <% end %>
 </div>
-
-<% if current_user.admin? or current_user.resourceperson? %>
-  <%= render 'resourceperson' %>
-<% end %>
 
 <br>
 <br>

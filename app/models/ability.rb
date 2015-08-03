@@ -30,7 +30,7 @@ class Ability
         can [:main], Workshop
     elsif user.resourceperson?
         can [:update], Workshop, :workshopconductorship => {:user_id => user.id}
-        can [:listall, :main], Workshop
+        can [:listall, :main, :show], Workshop
     else
         can :show, :all
         can :show, Submission do |s|
