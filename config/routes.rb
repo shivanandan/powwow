@@ -17,7 +17,6 @@ Powwow::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 
-
   get 'applicant' => 'applicant#index', as: :applicant
   get 'setticket' => 'applicant#setticket', as: :setticket
   post 'checkdoattend' => 'applicant#checkdoattend', as: :checkdoattend
@@ -29,6 +28,8 @@ Powwow::Application.routes.draw do
   get 'reviewer/review/:submission_id' => 'reviewer#review_submission', as: :review_submission
 
   get 'resourceperson' => 'resourceperson#index', as: :resourceperson
+
+  get 'allworkshops/' => 'workshops#main', as: :main_workshop
 
   get 'archive/plenaries/:year' => 'home#plenaries_archive', as: :plenaries_archive
   get 'archive/plenary/:year/:slug' => 'home#single_plenary', as: :single_plenary_archive

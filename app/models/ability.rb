@@ -19,7 +19,7 @@ class Ability
         can [:edit, :update], Submission do |s|
             s.user_id == user.id and s.editable == true
         end
-        can [:listall], Workshop
+        can [:listall, :main], Workshop
     elsif user.reviewer?
         can [:update], Review do |r|
             r.user_id = user.id and !r.finalized
@@ -27,13 +27,16 @@ class Ability
         can [:show], Review do |r|
             r.user_id = user.id
         end
-    elsif user.reviewer?
+        can [:main], Workshop
+    elsif user.resourceperson?
         can [:update], Workshop, :workshopconductorship => {:user_id => user.id}
+        can [:listall, :main], Workshop
     else
         can :show, :all
         can :show, Submission do |s|
             s.final_status == 'talk' or s.final_status == 'poster'
         end
+        can [:main], Workshop
     end
     #
     # The first argument to `can` is the action you are giving the user

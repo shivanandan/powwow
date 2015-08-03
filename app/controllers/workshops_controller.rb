@@ -9,6 +9,10 @@ class WorkshopsController < ApplicationController
     @workshops = Workshop.all
   end
 
+  def main
+    @workshops = Workshop.all
+  end
+
   # GET /workshops/1
   # GET /workshops/1.json
   def show
@@ -110,6 +114,8 @@ class WorkshopsController < ApplicationController
 
   def listall
     @workshops = Workshop.all
+
+    # Write a redirect if the current user does not have a ticket
   end
 
   private
@@ -124,6 +130,6 @@ class WorkshopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workshop_params
-      params.require(:workshop).permit(:title, :level, :description, :category, :keywords, :maximum_seats, :current_seats)
+      params.require(:workshop).permit(:title, :level, :description, :category, :keywords, :maximum_seats, :current_seats, :day, :time, :duration)
     end
 end

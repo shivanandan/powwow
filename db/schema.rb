@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731212332) do
+ActiveRecord::Schema.define(version: 20150803135833) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -187,6 +187,9 @@ ActiveRecord::Schema.define(version: 20150731212332) do
     t.string   "max_seats"
     t.integer  "current_seats"
     t.integer  "maximum_seats"
+    t.integer  "day"
+    t.string   "time"
+    t.string   "duration"
   end
 
 end

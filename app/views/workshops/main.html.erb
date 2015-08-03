@@ -1,0 +1,22 @@
+<br>
+<br>
+<br>
+
+<h1>Workshops 2015</h1>
+
+<% @workshops.each do |w| %>
+
+<div class="workshopcard">
+<hr>
+<br>
+  <h4><%= w.title %></h4>
+  <div class="well"><strong><%= w.workshopconductorship.first.user.full_name %></strong> • <%= w.level %> • <%= w.keywords %> • <%= w.maximum_seats %> Seats • <%= w.duration %> long • Starts at <%= w.time %> on DAY <%= w.day %> </div>
+
+  <p><%= w.description %></p>
+</div>
+
+<% end %>
+
+<br>
+<br>
+<br>
