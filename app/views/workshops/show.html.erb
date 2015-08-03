@@ -17,8 +17,10 @@
   <%= raw @workshop.description %>
   <hr>
   <br>
-  <% if current_user.admin? or current_user.resourceperson? %>
+  <% if user_signed_in? %>
+  <% if can? :update, @workshop %>
     <%= render 'resourceperson' %>
+  <% end %>
   <% end %>
 </div>
 
