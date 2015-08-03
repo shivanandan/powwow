@@ -29,6 +29,7 @@ class Ability
         end
         can [:main], Workshop
     elsif user.resourceperson?
+        can :show, Webpage
         can [:update], Workshop, :workshopconductorship => {:user_id => user.id}
         can [:listall, :main, :show], Workshop
     else
