@@ -14,9 +14,9 @@
 <hr>
 <br>
   <h4><%= w.title %></h4>
-  <div class="well"><strong><%= w.workshopconductorship.first.user.full_name %></strong> <%= '•' unless w.workshopconductorship.nil? %> <%= w.level %> • <%= w.keywords %> • <%= w.maximum_seats %> Seats • <%= w.duration %> long • Starts at <%= w.time %> on DAY <%= w.day %> </div>
+  <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.keywords %> • <%= w.maximum_seats %> Seats • <%= w.duration %> • Starts at <%= w.time %> on DAY <%= w.day %> </div>
 
-  <p><%= w.description %></p>
+  <p><%= raw w.description %></p>
 </div>
 
 <% end %>
