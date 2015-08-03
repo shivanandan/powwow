@@ -2,16 +2,11 @@
 <br>
 <br>
 
-<h3><%= @workshop.title %></h3>
+  <h4><%= w.title %></h4>
+  <div class="well"><strong><%= w.workshopconductorship.first.user.full_name %></strong> • <%= w.level %> • <%= w.keywords %> • <%= w.maximum_seats %> Seats • <%= w.duration %> long • Starts at <%= w.time %> on DAY <%= w.day %> </div>
 
-
-<hr>
-  <%= @workshop.level %> • <%= @workshop.category %> • <%= @workshop.keywords %>
-<hr>
-
-<p>
-  <%= @workshop.description %>
-</p>
+  <p><%= w.description %></p>
+</div>
 
 <% if current_user.admin? or current_user.resourceperson? %>
   <%= render 'resourceperson' %>
