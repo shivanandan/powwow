@@ -15,8 +15,13 @@
   <div class="label btn btn-small" data-target="day3"><a href="#">Day 3</a></div>
   <div class="label btn btn-small" data-target="day4"><a href="#">Day 4</a></div>
 
+  <% @levels = [] %>
   <% @workshops.each do |w| %>
-    <div class="label btn btn-small" data-target="<%= w.level %>"><a href="#"><%= w.level %></a></div>
+  <% @levels.push w.level.downcase %>
+  <% end %>
+  <% @levels = @levels.uniq %>
+  <% @levels.each do |l| %>
+    <div class="label btn btn-small" data-target="<%= l.strip %>"><a href="#"><%= l %></a></div>
   <% end %>
 
   <div class="label btn btn-small" data-target="workshopcard"><a href="#">All</a></div>
