@@ -29,7 +29,7 @@
 
 <% @workshops.each do |w| %>
 
-<div class="workshopcard day<%= w.day %> <%= w.level %>">
+<div class="workshopcard day<%= w.day %> <%= w.level.downcase.strip %>">
 <hr>
 <br>
   <h4><%= w.title %></h4>
