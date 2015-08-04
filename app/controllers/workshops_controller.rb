@@ -115,6 +115,7 @@ class WorkshopsController < ApplicationController
 
   def listall
     @workshops = Workshop.all
+    @registered = Workshopregistrations.where(:user_id => current_user.id)
 
     # Write a redirect if the current user does not have a ticket
   end
@@ -123,21 +124,41 @@ class WorkshopsController < ApplicationController
     @registration = Workshopregistrations.new
     @registration.user_id = params[:user_id]
     @registration.workshop_id = params[:workshop_id]
+    @workshop = Workshop.find(params[:workshop_id])
+    @workshop.current_seats.nil? ? @workshop.current_seats = 0 : @workshop.current_seats
+    @workshop.current_seats = @workshop.current_seats + 1
     if current_user.applicant?
       @registration.user_id = current_user.id
     end
-    @registration.save
+
+    @user_registrations = Workshopregistrations.where(:user_id => @registration.user_id)
+    @registeredworkshops = []
+    @user_registrations.each do |r|
+      @registeredworkshops.push r.workshop_id
+    end
+
+    @registeredworkshops
+
+    if @registeredworkshops.include? params[:workshop_id]
+    else
+      @workshop.save
+      @registration.save
+    end
+
+
     respond_to do |format|
       format.html { redirect_to workshops_list_path, notice: 'Workshop was successfully updated.' }
     end
   end
 
   def deregister
-    current_user.applicant? ? id = current_user.id : id = params[:id]
-    @registrations = Workshopregistrations.where(:user_id => id).where(:workshop_id => params[:workshop_id])
+    @registrations = Workshopregistrations.where(:user_id => params[:user_id]).where(:workshop_id => params[:workshop_id])
+    @workshop = Workshop.find(params[:workshop_id])
+    @workshop.current_seats = @workshop.current_seats - @registrations.length
+    @workshop.save
     @registrations.destroy_all
     respond_to do |format|
-      format.html { redirect_to workshops_path, notice: 'Workshop was successfully updated.' }
+      format.js
     end
   end
 

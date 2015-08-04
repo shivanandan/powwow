@@ -1,11 +1,17 @@
 <br>
 <br>
 <br>
+<div id="listall">
+<h4>Registered for</h4>
+<% @registered.each do |r| %>
+  <%= r.workshop.title %>
+<% end %>
+</div>
 
 <h4>Register for workshops</h4>
 
 <% @workshops.each do |w| %>
-  <%= link_to w.title, workshop_register_path(w.id, current_user.id), :method=> :post %> <br>
+  <%= link_to w.title, workshop_register_path(w.id, current_user.id), :method=> :post %>  <%= w.maximum_seats.to_i - w.current_seats.to_i %> <br>
 <% end %>
 
 <br>

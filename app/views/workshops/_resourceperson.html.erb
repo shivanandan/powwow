@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-lg-6">
   <h5>REGISTERED PARTICIPANTS</h5>
-  <%= @registered_participants.inspect %>
+  <% @registered_participants.each do |r| %>
+    <%= r.user.full_name %> <%= link_to 'Deregister', workshop_deregister_path(@workshop, r.user), :remote=>true, :method=>:post %> <br>
+  <% end %>
   </div>
   <div class="col-lg-2"></div>
   <div class="col-lg-4">
