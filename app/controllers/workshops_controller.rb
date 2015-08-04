@@ -119,6 +119,28 @@ class WorkshopsController < ApplicationController
     # Write a redirect if the current user does not have a ticket
   end
 
+  def register
+    @registration = Workshopregistrations.new
+    @registration.user_id = params[:user_id]
+    @registration.workshop_id = params[:workshop_id]
+    if current_user.applicant?
+      @registration.user_id = current_user.id
+    end
+    @registration.save
+    respond_to do |format|
+      format.html { redirect_to workshops_list_path, notice: 'Workshop was successfully updated.' }
+    end
+  end
+
+  def deregister
+    current_user.applicant? ? id = current_user.id : id = params[:id]
+    @registrations = Workshopregistrations.where(:user_id => id).where(:workshop_id => params[:workshop_id])
+    @registrations.destroy_all
+    respond_to do |format|
+      format.html { redirect_to workshops_path, notice: 'Workshop was successfully updated.' }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workshop

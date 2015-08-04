@@ -5,7 +5,7 @@
 <h4>Register for workshops</h4>
 
 <% @workshops.each do |w| %>
-  <%= w.title %>
+  <%= link_to w.title, workshop_register_path(w.id, current_user.id), :method=> :post %> <br>
 <% end %>
 
 <br>

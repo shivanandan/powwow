@@ -19,7 +19,7 @@ class Ability
         can [:edit, :update], Submission do |s|
             s.user_id == user.id and s.editable == true
         end
-        can [:listall, :main], Workshop
+        can [:listall, :main, :register], Workshop
     elsif user.reviewer?
         can [:update], Review do |r|
             r.user_id = user.id and !r.finalized
