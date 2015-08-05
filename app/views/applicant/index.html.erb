@@ -28,7 +28,10 @@
 		<!-- Workshops -->
 		<%# @applicantworkshops.inspect %>
 		<br>
-		<%# link_to 'Register for workshops', workshops_list_path %>
+		<% @test_ids = [120,142,7,10,11,143,40] %>
+		<% if @test_ids.include? current_user.id %>
+		<%= link_to 'Register for workshops(testing)', listall_path unless current_user.ticketless? %>
+		<% end %>
 
 	</div>
 	<div class="col-lg-5">
