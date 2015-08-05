@@ -28,6 +28,10 @@ Detailed information on all workshops is available on this page:
 <% if current_user.ticketless? %>
   <% controller.redirect_to root_path %>
 <% end %>
+<% @test_ids = [120,142,7,10,11,143,40] %>
+<% if @test_ids.include? current_user.id %>
+  <% controller.redirect_to root_path %>
+<% end %>
 <h4>Registered for :</h4>
 <% @registered.each do |r| %>
   <%= r.workshop.title %> <br>
