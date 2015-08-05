@@ -1,9 +1,18 @@
 
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+Detailed information on all workshops is available on this page:
+<a href="http://www.sccs-bng.org/allworkshops/">http://www.sccs-bng.org/allworkshops/</a>
 
-<br>
-<br>
-<br>
-<strong>WORKSHOP REGISTRATIONS ARE BEING TESTED. CLICKING AROUND HERE IS ONLY GOING TO CREATE DUMMY ENTRIES.</strong>
+<div class="well text-danger">BEWARE! You cannot make any changes after clicking on ‘Register’ for a given workshop. </div>
+<hr>
 <style>
   h5 {
     text-align: center;
@@ -26,11 +35,10 @@
 </div>
 
 <% @daysfilled = @daysfilled.uniq %>
-<% @alldays = [1,2,3,4] %>
-
-<% if @daysfilled == [] %>
+<% @alldays = [1,2,3,4] - @daysfilled %>
+<% if @alldays == [] or @daysfilled == [] %>
 <% else %>
-<% @alldays = @alldays - @daysfilled %>
+<hr>
 You can still register for workshops on the following days: <br>
   <% @alldays.each do |d| %>
     Day <%= d %> &nbsp;&nbsp;
@@ -44,7 +52,7 @@ You can still register for workshops on the following days: <br>
   <div class="wcard col-lg-4">
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
-    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post unless @daysfilled.include? 1 %>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post, :title=>'You cannot make changes for this day after you click this link.', :class=>'btn btn-sm btn-danger' unless @daysfilled.include? 1 %>
     <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
   </div>
 <% end %>
@@ -56,7 +64,7 @@ You can still register for workshops on the following days: <br>
   <div class="wcard col-lg-4">
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
-    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 2 %>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post, :title=>'You cannot make changes for this day after you click this link.', :class=>'btn btn-sm btn-danger'  unless @daysfilled.include? 2 %>
     <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
     <br>
   </div>
@@ -69,7 +77,7 @@ You can still register for workshops on the following days: <br>
   <div class="wcard col-lg-4">
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
-    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 3 %>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post, :title=>'You cannot make changes for this day after you click this link.', :class=>'btn btn-sm btn-danger'  unless @daysfilled.include? 3 %>
     <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
     <br>
   </div>
@@ -82,7 +90,7 @@ You can still register for workshops on the following days: <br>
   <div class="wcard col-lg-4">
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
-    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 4 %>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post, :title=>'You cannot make changes for this day after you click this link.', :class=>'btn btn-sm btn-danger'  unless @daysfilled.include? 4 %>
     <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
     <br>
   </div>
