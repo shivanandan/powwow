@@ -45,7 +45,7 @@ You can still register for workshops on the following days: <br>
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
     <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post unless @daysfilled.include? 1 %>
-    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
   </div>
 <% end %>
 
@@ -57,7 +57,7 @@ You can still register for workshops on the following days: <br>
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
     <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 2 %>
-    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
     <br>
   </div>
 <% end %>
@@ -70,7 +70,7 @@ You can still register for workshops on the following days: <br>
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
     <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 3 %>
-    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
     <br>
   </div>
 <% end %>
@@ -83,7 +83,7 @@ You can still register for workshops on the following days: <br>
     <strong><%= w.title %></strong>
     <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
     <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 4 %>
-    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata')) %></small>
     <br>
   </div>
 <% end %>
