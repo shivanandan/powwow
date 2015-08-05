@@ -1,19 +1,106 @@
+
+
 <br>
 <br>
 <br>
+<style>
+  h5 {
+    text-align: center;
+  }
+  .wcard {
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+  }
+</style>
 <div id="listall">
-<h4>Registered for</h4>
+<p><%= notice %></p>
+
+<% if current_user.ticketless? %>
+  <% controller.redirect_to root_path %>
+<% end %>
+<h4>Registered for :</h4>
 <% @registered.each do |r| %>
-  <%= r.workshop.title %>
+  <%= r.workshop.title %> <br>
 <% end %>
 </div>
 
-<h4>Register for workshops</h4>
+<% @daysfilled = @daysfilled.uniq %>
+<% @alldays = [1,2,3,4] %>
 
-<% @workshops.each do |w| %>
-  <%= link_to w.title, workshop_register_path(w.id, current_user.id), :method=> :post %>  <%= w.maximum_seats.to_i - w.current_seats.to_i %> <br>
+<% if @daysfilled == [] %>
+<% else %>
+<% @alldays = @alldays - @daysfilled %>
+You can still register for workshops on the following days: <br>
+  <% @alldays.each do |d| %>
+    Day <%= d %> &nbsp;&nbsp;
+  <% end %>
 <% end %>
 
+<h4>Register for workshops</h4>
+
+<h5>Day 1</h5>
+<% @day1.each do |w| %>
+  <div class="wcard col-lg-4">
+    <strong><%= w.title %></strong>
+    <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post unless @daysfilled.include? 1 %>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+  </div>
+<% end %>
+
+<div class="clear" style="clear:both;"></div>
+<hr>
+<h5>Day 2</h5>
+<% @day2.each do |w| %>
+  <div class="wcard col-lg-4">
+    <strong><%= w.title %></strong>
+    <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 2 %>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br>
+  </div>
+<% end %>
+
+<div class="clear" style="clear:both;"></div>
+<hr>
+<h5>Day 3</h5>
+<% @day3.each do |w| %>
+  <div class="wcard col-lg-4">
+    <strong><%= w.title %></strong>
+    <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 3 %>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br>
+  </div>
+<% end %>
+
+<div class="clear" style="clear:both;"></div>
+<hr>
+<h5>Day 4</h5>
+<% @day4.each do |w| %>
+  <div class="wcard col-lg-4">
+    <strong><%= w.title %></strong>
+    <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %></div>
+    <%= link_to 'Register', workshop_register_path(w.id, current_user.id), :method=> :post  unless @daysfilled.include? 4 %>
+    <br><small><%= w.maximum_seats.to_i - w.current_seats.to_i %> seats left at <%= Time.current %></small>
+    <br>
+  </div>
+<% end %>
+
+<div class="clear" style="clear:both;"></div>
+
 <br>
 <br>
 <br>
+
+
+<script>
+  $(document).ready(function() {
+    var w = $('.wcard');
+    var wht = 0;
+    $.each(w, function(index, val) {
+      if ( $(this).height() > wht ) { wht = $(this).height() + 50}
+    });
+    w.css('height', wht+'px');
+  });
+</script>

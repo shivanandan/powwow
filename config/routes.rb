@@ -69,7 +69,7 @@ Powwow::Application.routes.draw do
   post 'worshops/register/:workshop_id/:user_id' => 'workshops#register', as: :workshop_register
   post 'worshops/deregister/:workshop_id/:user_id' => 'workshops#deregister', as: :workshop_deregister
 
-  get 'register_for_workshops' => 'workshops#listall', as: :workshops_list
+  get 'listall' => 'workshops#listall', as: :listall
 
   get 'transfer' => 'home#post_login', as: :post_login
 

@@ -115,7 +115,16 @@ class WorkshopsController < ApplicationController
 
   def listall
     @workshops = Workshop.all
+    @day1 = Workshop.where(:day => 1)
+    @day2 = Workshop.where(:day => 2)
+    @day3 = Workshop.where(:day => 3)
+    @day4 = Workshop.where(:day => 4)
     @registered = Workshopregistrations.where(:user_id => current_user.id)
+
+    @daysfilled = []
+    @registered.each do |r|
+      @daysfilled.push r.workshop.day
+    end
 
     # Write a redirect if the current user does not have a ticket
   end
@@ -133,21 +142,30 @@ class WorkshopsController < ApplicationController
 
     @user_registrations = Workshopregistrations.where(:user_id => @registration.user_id)
     @registeredworkshops = []
+    @days = []
     @user_registrations.each do |r|
       @registeredworkshops.push r.workshop_id
+      @days.push r.workshop.day
     end
 
-    @registeredworkshops
+    @noofattendees = Workshopregistrations.where(:workshop_id => params[:workshop_id]).count
 
-    if @registeredworkshops.include? params[:workshop_id]
+
+    if @registeredworkshops.include? params[:workshop_id].to_i
+      message = 'You cannot register for the same workshop twice'
+    elsif @noofattendees >= @workshop.maximum_seats
+      message = "#{@workshop.title} is has filled up. Please try another one."
+    elsif @days.include? @workshop.day
+      message = "You cannot register for two workshops on the same day."
     else
       @workshop.save
       @registration.save
+      message = 'You have been registered for the workshop'
     end
 
 
     respond_to do |format|
-      format.html { redirect_to workshops_list_path, notice: 'Workshop was successfully updated.' }
+      format.html { redirect_to listall_path, notice: message }
     end
   end
 
