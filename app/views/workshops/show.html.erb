@@ -36,6 +36,7 @@
   <strong><a href="<%= e.link %>" target="_blank"><%= e.title %></a></strong>
   <% end %> <br>
   <%= raw e.description %>
+  <%= e.attachment %>
   <% if e.attachment.exists? %>
   <a href="<%= e.attachment %>">Download attachment</a>
   <% end %>
