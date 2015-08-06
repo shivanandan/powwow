@@ -6,7 +6,7 @@
   <div class="col-lg-7">
   <h5>Manage Workshop Resources</h5>
   <% @workshop_extras.each do |w| %>
-  <%= w.title %> • <%= link_to 'edit', edit_workshop_extra_path(w.id) %> • <%= link_to 'Destroy', workshop_extra_path(w.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= w.title %> • <%= link_to 'edit', edit_workshop_extra_path(w.id) %> • <%= link_to 'Destroy', workshop_extra_path(w.id), method: :delete, data: { confirm: 'Are you sure?' } %> <br>
   <% end %>
   <hr>
   <a href="#" id="addr" class="btn btn-sm btn-success">Add resource</a>
