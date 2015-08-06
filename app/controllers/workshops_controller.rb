@@ -162,7 +162,7 @@ class WorkshopsController < ApplicationController
     else
       @workshop.save
       @registration.save
-      message = 'You have been registered for the workshop'
+      message = "You have been registered for the workshop : #{@workshop.title}"
     end
 
 

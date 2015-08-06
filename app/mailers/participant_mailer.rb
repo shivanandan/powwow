@@ -5,7 +5,7 @@ class ParticipantMailer < ActionMailer::Base
   	@user = user
     @password = password
 
-    mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : Reviewer Invite')
+    mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : Resource Person Invite')
   end
 
   def alert_reviewers_of_reviews(user, reviews)

@@ -5,7 +5,9 @@
   </head>
   <body>
     <p><strong>Dear <%= @user.full_name %>,</strong></p>
-    <p>Thank you for accepting our invitation to review abstracts for SCCS-Bengaluru 2015.</p>
+    <% if @user.resourceperson? %>
+    <p>Thank you for accepting our invitation to conduct a workshop at SCCS-Bengaluru 2015.</p>
+    <% end %>
     <p>An administrator at sccs-bng.org has added you to the site as <strong><% @user.role == 'reviewer' ? "a" : "an" %> <%= @user.role %></strong>.</p>
     <p>Your login credentials are below. Please note, you can change your password once you <a href="http://www.sccs-bng.org/users/sign_in" "email me">SIGN IN</a> to the site (bottom right of page)..</p>
 
