@@ -27,4 +27,13 @@ class ParticipantMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'SCCS-Bengaluru 2015 : Decision on your Abstract')
     # mail(to: 'arjuna.shankar@gmail.com', subject: 'SCCS-Bengaluru 2015 : New Abstracts Assigned')
   end
+
+  def send_workshop_mailer(workshop, users, resourceperson, subject, body)
+    @workshop = workshop
+    @users = users
+    @resourceperson = resourceperson
+    @subject = subject
+    @body = body
+    mail(to: @resourceperson.email, cc: @users, subject: @subject)
+  end
 end

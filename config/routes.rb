@@ -70,6 +70,8 @@ Powwow::Application.routes.draw do
   post 'workshops/removeresourceperson/:workshop_id/:user_id' => 'workshops#removeresourceperson', as: :remove_resourceperson
   post 'worshops/register/:workshop_id/:user_id' => 'workshops#register', as: :workshop_register
   post 'worshops/deregister/:workshop_id/:user_id' => 'workshops#deregister', as: :workshop_deregister
+  get 'workshops/:workshop_id/mail_participants' => 'workshops#mail_participants', as: :workshop_mail_participants
+  post 'workshops/:workshop_id/send_mails' => 'workshops#send_mail', as: :workshop_send_mail
 
   get 'registerforworkshops' => 'workshops#listall', as: :listall
 

@@ -33,7 +33,7 @@ class Ability
         can [:main], Workshop
     elsif user.resourceperson?
         can :show, Webpage
-        can [:update], Workshop, :workshopconductorship => {:user_id => user.id}
+        can [:update, :mail_participants, :send_mail], Workshop, :workshopconductorship => {:user_id => user.id}
         can [:listall, :main, :show], Workshop
     else
         can :show, :all

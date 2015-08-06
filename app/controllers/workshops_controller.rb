@@ -182,6 +182,36 @@ class WorkshopsController < ApplicationController
     end
   end
 
+  def mail_participants
+    @workshop = Workshop.find params[:workshop_id]
+    @registered = Workshopconductorship.where(:user_id => current_user.id).where(:workshop_id => params[:workshop_id])
+    if @registered.empty?
+      redirect_to post_login_path
+    else
+      respond_to do |format|
+        format.html
+      end
+    end
+  end
+
+  def send_mail
+    @workshop = Workshop.find(params['workshoppp']['workshop_id'])
+    @subject = params['workshoppp']['subject']
+    @body = params['workshoppp']['body']
+    @users = []
+    @registrations = Workshopregistrations.where(:workshop_id => @workshop.id)
+    @registrations.each do |r|
+      @users.push r.user.email
+    end
+    @resourceperson = current_user
+    ParticipantMailer.send_workshop_mailer(@workshop, @users, @resourceperson, @subject, @body).deliver
+
+    respond_to do |format|
+      format.html { redirect_to post_login_path, notice: 'Sent Mail Successfully' }
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workshop

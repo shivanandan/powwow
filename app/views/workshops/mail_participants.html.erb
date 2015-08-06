@@ -1,0 +1,42 @@
+<br>
+<br>
+<br>
+<p>The form below can be used to mail all participants registered to your workshop. This mail will be addressed to you and cced to all the other participants. Please use this feature with care and try not to spam participants.</p>
+<hr>
+<style>
+  .mailerform input, .mailerform textarea{
+    border: 2px solid #f0f0f0;
+    font-size: 12px;
+    font-family: monospace;
+  }
+  label {
+    width: 50px;
+  }
+</style>
+<div class="mailerform">
+<%= form_for :workshoppp, :url => { :action => "send_mail" }, :method => :POST do |f| %>
+  <p>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body,  :class => "tinymce", :rows => 10, :cols => 90 %>
+  </p>
+
+  <input type="hidden" id="workshop_extra_workshop_id" name="workshoppp[workshop_id]" value="<%= @workshop.id %>" />
+
+
+  <p>
+    <%= f.submit "Send Email" %>
+  </p>
+<% end %>
+</div>
+<hr>
+<%= link_to "← back to workshop", workshop_path(@workshop) %>
+<br>
+<br>
+
+
+<br>

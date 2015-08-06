@@ -63,9 +63,11 @@
   <div class="col-lg-2"></div>
   <div class="col-lg-3">
   <h5>REGISTERED PARTICIPANTS</h5>
+  <hr>
   <% @registered_participants.each do |r| %>
-    <%= r.user.full_name %> <%= link_to 'Deregister', workshop_deregister_path(@workshop, r.user), :remote=>true, :method=>:post if current_user.admin? %> <br>
+    <%= r.user.full_name %> <br><%= r.user.email %> <%= link_to 'Deregister', workshop_deregister_path(@workshop, r.user), :remote=>true, :method=>:post if current_user.admin? %> <hr>
   <% end %>
+  <%= link_to 'Mail Participants', workshop_mail_participants_path(@workshop), :class=>'btn btn-success btn-sm' %>
   </div>
 </div>
 
