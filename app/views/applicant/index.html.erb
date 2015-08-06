@@ -32,10 +32,10 @@
 			<h5>My workshops</h5>
 			<p>Please click on the links below to check on resources and links added by the workshop organisers.</p>
 			<% @applicantworkshops.each do |r| %>
-				<%= link_to r.workshop.title, workshop_path(r.workshop) %>
+				<%= link_to r.workshop.title, workshop_path(r.workshop) %> <br>
 			<% end %>
 		<% end %>
-
+<br><br><br>
 	</div>
 	<div class="col-lg-5">
 		<% success = '<span class="label label-success">&#10004;</span>' %>
