@@ -70,6 +70,6 @@ class WorkshopExtrasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workshop_extra_params
-      params.require(:workshop_extra).permit(:title, :description, :link, :workshop_id)
+      params.require(:workshop_extra).permit(:title, :description, :link, :workshop_id, :attachment)
     end
 end
