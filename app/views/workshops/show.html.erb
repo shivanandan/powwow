@@ -1,7 +1,8 @@
 <br>
 <br>
 <br>
-
+<div class="row">
+<div class="col-lg-7">
   <h4><%= @workshop.title %></h4>
   <div class="well">
   <strong>
@@ -15,11 +16,42 @@
   <%= @workshop.level %> • <%= @workshop.keywords %> • <%= @workshop.maximum_seats %> Seats • <%= @workshop.duration %> • Starts at <%= @workshop.time %> on DAY <%= @workshop.day %> </div>
 
   <%= raw @workshop.description %>
-  <hr>
+</div>
+<div class="col-lg-5">
+<% parts = [] %>
+<% @registered_participants.each do |r| %>
+<% parts.push r.user_id %>
+<% end %>
+<% unless (user_signed_in? and current_user.applicant? and parts.include? current_user.id) or current_user.resourceperson? or current_user.admin? %>
+  <% controller.redirect_to post_login_path %>
+<% end %>
+<h5>Workshop Resources</h5>
+<div class="wresources" style="font-size: 12px;">
+  <%= raw "No workshop resources have been added yet by this organiser. <br> Check back later." if @workshop_extras.empty? %>
+  <% @workshop_extras.each do |e| %>
   <br>
-  <% if user_signed_in? and can? :update, @workshop %>
-    <%= render 'resourceperson' %>
+  <% if e.link.empty? %>
+  <strong><%= e.title %></strong>
+  <% else %>
+  <strong><a href="<%= e.link %>" target="_blank"><%= e.title %></a></strong>
+  <% end %> <br>
+  <%= raw e.description %>
+  <% if e.attachment.exists? %>
+  <a href="<%= e.attachment %>">Download attachment</a>
   <% end %>
+
+
+  <hr>
+  <%  %>
+  <% end %>
+</div>
+</div>
+</div>
+<hr>
+<br>
+<% if user_signed_in? and can? :update, @workshop %>
+  <%= render 'resourceperson' %>
+<% end %>
 </div>
 
 <br>

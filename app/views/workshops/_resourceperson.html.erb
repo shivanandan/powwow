@@ -1,14 +1,79 @@
-<p>You can view details about the workshop here. You can also use the buttons below to upload documents and leave text based information for your workshop.</p>
+<div class="row">
+  <p>You can view details about the workshop here. You can also use the buttons below to upload documents and leave text based information for your workshop.</p>
+</div>
 
 <div class="row">
-  <div class="col-lg-6">
-  <h5>REGISTERED PARTICIPANTS</h5>
-  <% @registered_participants.each do |r| %>
-    <%= r.user.full_name %> <%= link_to 'Deregister', workshop_deregister_path(@workshop, r.user), :remote=>true, :method=>:post %> <br>
+  <div class="col-lg-7">
+  <h5>Manage Workshop Resources</h5>
+  <% @workshop_extras.each do |w| %>
+  <%= w.title %> • <%= link_to 'edit', edit_workshop_extra_path(w.id) %> • <%= link_to 'Destroy', workshop_extra_path(w.id), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+  <hr>
+  <a href="#" id="addr" class="btn btn-sm btn-success">Add resource</a>
+  <div class="resourcew modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <%= form_for(@workshop_extra, :html => { :multipart => true })  do |f| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Create Workshop Resource</h4>
+        </div>
+        <div class="modal-body">
+          <% if @workshop_extra.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@workshop_extra.errors.count, "error") %> prohibited this workshop_extra from being saved:</h2>
+              <ul>
+              <% @workshop_extra.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <%= f.label :description %><br>
+            <%= f.text_area :description, :class => "tinymce", :rows => 10, :cols => 10 %>
+          </div>
+          <div class="field">
+            <%= f.label :link %><br>
+            <%= f.text_field :link %>
+          </div>
+          <div class="field">
+            <%= f.label :attachment %><br>
+            <%= f.file_field :attachment %>
+          </div>
+          <br>
+          <hr>
+          <input type="hidden" id="workshop_extra_workshop_id" name="workshop_extra[workshop_id]" value="<%= @workshop.id %>" />
+        </div>
+        <div class="modal-footer">
+          <div class="actions">
+            <%= f.submit "Create Workshop Resource"%>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
   </div>
   <div class="col-lg-2"></div>
-  <div class="col-lg-4">
-  <h5>ACTIONS</h5>
+  <div class="col-lg-3">
+  <h5>REGISTERED PARTICIPANTS</h5>
+  <% @registered_participants.each do |r| %>
+    <%= r.user.full_name %> <%= link_to 'Deregister', workshop_deregister_path(@workshop, r.user), :remote=>true, :method=>:post if current_user.admin? %> <br>
+  <% end %>
   </div>
 </div>
+
+<%= tinymce %>
+<script>
+  $(document).ready(function() {
+    $('#addr').click(function(e){
+      e.preventDefault();
+      $('.resourcew.modal').modal();
+    });
+  });
+</script>

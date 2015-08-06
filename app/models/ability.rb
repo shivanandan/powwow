@@ -19,7 +19,7 @@ class Ability
         can [:edit, :update], Submission do |s|
             s.user_id == user.id and s.editable == true
         end
-        can [:main], Workshop
+        can [:main, :show], Workshop
         can [:listall, :register], Workshop do |w|
             user.ticketless?
         end

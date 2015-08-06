@@ -2,7 +2,7 @@ class ApplicantController < ApplicationController
 	before_filter :onlyapplicant
 
 	def index
-		@applicantworkshops = Workshopregistrations.where(:user_id => current_user.id)
+		@applicantworkshops = Workshopregistrations.where(:user_id => current_user.id).joins(:workshop)
 	end
 
 	def setticket

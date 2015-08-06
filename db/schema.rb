@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803135833) do
+ActiveRecord::Schema.define(version: 20150805195248) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -159,6 +159,19 @@ ActiveRecord::Schema.define(version: 20150803135833) do
   end
 
   add_index "webpages", ["slug"], name: "index_webpages_on_slug", unique: true
+
+  create_table "workshop_extras", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "workshop_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
 
   create_table "workshopconductorships", force: true do |t|
     t.integer  "workshop_id"

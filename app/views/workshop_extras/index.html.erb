@@ -1,0 +1,31 @@
+<h1>Listing workshop_extras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workshop_extras.each do |workshop_extra| %>
+      <tr>
+        <td><%= workshop_extra.title %></td>
+        <td><%= workshop_extra.description %></td>
+        <td><%= workshop_extra.link %></td>
+        <td><%= link_to 'Show', workshop_extra %></td>
+        <td><%= link_to 'Edit', edit_workshop_extra_path(workshop_extra) %></td>
+        <td><%= link_to 'Destroy', workshop_extra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workshop extra', new_workshop_extra_path %>
