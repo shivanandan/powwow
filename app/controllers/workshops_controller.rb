@@ -185,7 +185,16 @@ class WorkshopsController < ApplicationController
   def mail_participants
     @workshop = Workshop.find params[:workshop_id]
     @registered = Workshopconductorship.where(:user_id => current_user.id).where(:workshop_id => params[:workshop_id])
-    if @registered.empty? or !current_user.admin?
+    @condition = false
+
+    if current_user.admin?
+      @condition = true
+    else
+      if @registered.empty?
+        @condition = false
+      end
+    end
+    if @condition == false
       redirect_to post_login_path
     else
       respond_to do |format|
