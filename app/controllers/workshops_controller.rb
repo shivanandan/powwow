@@ -127,6 +127,8 @@ class WorkshopsController < ApplicationController
     @registered.each do |r|
       @daysfilled.push r.workshop.day
     end
+    @daysfilled = @daysfilled.uniq
+    @daysfilled = @daysfilled.sort
 
     # Write a redirect if the current user does not have a ticket
   end
