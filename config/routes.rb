@@ -1,5 +1,7 @@
 Powwow::Application.routes.draw do
 
+  resources :conferences
+
   resources :workshop_extras
 
   resources :workshops
@@ -72,6 +74,7 @@ Powwow::Application.routes.draw do
   post 'worshops/deregister/:workshop_id/:user_id' => 'workshops#deregister', as: :workshop_deregister
   get 'workshops/:workshop_id/mail_participants' => 'workshops#mail_participants', as: :workshop_mail_participants
   post 'workshops/:workshop_id/send_mails' => 'workshops#send_mail', as: :workshop_send_mail
+  post 'workshops/:workshop_id/toggle_registrations' => 'workshops#toggle_registrations', as: :toggle_registrations
 
   get 'registerforworkshops' => 'workshops#listall', as: :listall
 

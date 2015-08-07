@@ -1,0 +1,29 @@
+<h1>Listing conferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Workshop registration flag</th>
+      <th>Workshop close flag</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conferences.each do |conference| %>
+      <tr>
+        <td><%= conference.workshop_registration_flag %></td>
+        <td><%= conference.workshop_close_flag %></td>
+        <td><%= link_to 'Show', conference %></td>
+        <td><%= link_to 'Edit', edit_conference_path(conference) %></td>
+        <td><%= link_to 'Destroy', conference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Conference', new_conference_path %>

@@ -209,7 +209,17 @@ class WorkshopsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to post_login_path, notice: 'Sent Mail Successfully' }
     end
+  end
 
+  def toggle_registrations
+    unless current_user.admin?
+      redirect_to post_login_path
+    end
+    @conference.workshop_registration_flag = !@conference.workshop_registration_flag
+    @conference.save
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
