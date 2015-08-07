@@ -39,6 +39,7 @@
   <% controller.redirect_to root_path %>
 <% end %>
 <% @test_ids = [120,142,7,10,11,143] %>
+<% @test_ids = [] %>
 <% unless @test_ids.include? current_user.id or @conference.workshop_registration_flag %>
   <% controller.redirect_to root_path %>
 <% end %>

@@ -25,7 +25,8 @@
 		<!-- Workshops -->
 		<%# @applicantworkshops.inspect %>
 		<br>
-		<% @test_ids = [120,142,7,10,11,143] %>
+		<%# @test_ids = [120,142,7,10,11,143] %>
+		<% @test_ids = [] %>
 		<% if( @test_ids.include? current_user.id ) or @conference.workshop_registration_flag %>
 		<%= link_to 'Register for workshops(testing)', listall_path unless current_user.ticketless? %> <br>
 		<hr>
