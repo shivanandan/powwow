@@ -192,6 +192,8 @@ class WorkshopsController < ApplicationController
     else
       if @registered.empty?
         @condition = false
+      else
+        @condition = true
       end
     end
     if @condition == false
