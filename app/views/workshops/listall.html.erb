@@ -38,8 +38,8 @@
 <% if current_user.ticketless? %>
   <% controller.redirect_to root_path %>
 <% end %>
-<% @test_ids = [120,142,7,10,11,143,40] %>
-<% unless @test_ids.include? current_user.id %>
+<% @test_ids = [120,142,7,10,11,143] %>
+<% unless @test_ids.include? current_user.id or @conference.workshop_registration_flag %>
   <% controller.redirect_to root_path %>
 <% end %>
 <h4>Registered for :</h4>
