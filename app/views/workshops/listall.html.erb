@@ -52,6 +52,11 @@
 <% @daysfilled = @daysfilled.uniq %>
 <% @alldays = [1,2,3,4] - @daysfilled %>
 <% if @alldays == [] or @daysfilled == [] %>
+  <% if daysfilled == [] %>
+    <p>You have completed registering for workshops. They will now appear on your dashboard as soon as you login. </p>
+
+    <p>Clicking on a workshop link will take you to that workshop space, where the workshop organisers have the option of uploading resource materials. Remember to keep checking this space regularly until the conference.</p>
+  <% end %>
 <% else %>
 <hr>
 You can still register for workshops on the following days: <br>
