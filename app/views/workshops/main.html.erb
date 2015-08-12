@@ -39,7 +39,7 @@
 <div class="workshopcard day<%= w.day %> <%= w.level.downcase.strip %>">
 <hr>
 <br>
-  <h4><%= w.title %></h4>
+  <h4><%= link_to w.title, workshop_path(w) %></h4>
   <div class="well"><strong><%= w.workshopconductorship.first.user.full_name unless w.workshopconductorship.empty? %></strong> <%= '•' unless w.workshopconductorship.empty? %> <%= w.level %> • <%= w.category %> • <%= w.maximum_seats %> Seats • <%= w.duration %> • Starts at <%= w.time %> on DAY <%= w.day %> </div>
 
   <p><%= raw w.description %></p>
