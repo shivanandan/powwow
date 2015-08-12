@@ -6,9 +6,11 @@
   <h4><%= @workshop.title %></h4>
   <div class="well">
   <strong>
+  <% resourceperople = [] %>
   <% unless @workshop.workshopconductorship.empty? %>
     <% @workshop.workshopconductorship.each do |wc|  %>
       <%= wc.user.full_name %> &nbsp;
+      <% resourceperople.push wc.user.id %>
     <% end %>
   <% end %>
   </strong>
@@ -22,9 +24,9 @@
 <% @registered_participants.each do |r| %>
 <% parts.push r.user_id %>
 <% end %>
-<% unless (user_signed_in? and current_user.applicant? and parts.include? current_user.id) or current_user.resourceperson? or current_user.admin? %>
-  <% controller.redirect_to post_login_path %>
-<% end %>
+
+<% if user_signed_in? %>
+<% if (current_user.applicant? and parts.include? current_user.id) or (current_user.resourceperson? and resourceperople.include? current_user.id) or current_user.admin? %>
 <h5>Workshop Resources</h5>
 <div class="wresources" style="font-size: 12px;">
   <%= raw "No workshop resources have been added yet by this organiser. <br> Check back later." if @workshop_extras.empty? %>
@@ -45,6 +47,8 @@
   <%  %>
   <% end %>
 </div>
+<% end %>
+<% end %>
 </div>
 </div>
 <hr>
