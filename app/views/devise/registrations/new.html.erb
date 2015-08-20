@@ -1,19 +1,23 @@
 <div class="page-header">
 	<h2>Register for SCCS Bengaluru 2015</h2>
 </div>
+<div class="row">
+	Online registration has closed, but Spot Registration (INR 3500) will be available at the venue throughout the conference.
+</div>
 
+<div class="hidden" style="display:none;">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
  <div class="row">
  	 <div class="col-lg-6">
-	
+
 		<p>You need to register and create an account on our website in order to attend the conference, register for workshops and submit abstracts. </p>
 
 		<ul>
 			<li>Complete the form below.</li>
 			<li>You will receive an email with account confirmation instructions. Click on the link to pay the registration fees online through the <a href="http://sccsbng2015.doattend.com" target="_blank">DoAttend</a> payment gateway that you will be directed to. You can make the payment using credit, debit or cash cards, as well as from online bank accounts. NOTE: Please use the same email ID that you registered with on the SCCS website.</li>
-			<li>Once you have made the payment, your DoAttend ticket will be sent to you as an email attachment, with a link to a page where you can login to your account on the SCCS website. <br> <br> 
+			<li>Once you have made the payment, your DoAttend ticket will be sent to you as an email attachment, with a link to a page where you can login to your account on the SCCS website. <br> <br>
 			<%= image_tag 'ticket.jpg' %>
 			<span class="text-muted">The ticket number for the ticket above is 153911</span>
 			<hr>
@@ -52,7 +56,7 @@
 
 <div class="row">
 	<div class="col-lg-6">
-		
+
 		  <div class="page-header">
 			<h4>Basic Information</h4>
 		</div>
@@ -73,7 +77,7 @@
 		  </div>
 
 		  <div class="form-group">
-		  	
+
 			 <label>Gender</label>
 		  	<div class="row">
 		  		<div class="radio col-lg-3">
@@ -94,9 +98,9 @@
 			  		Other
 			  		</label>
 			  	</div>
-		  	</div> 
+		  	</div>
 
-		  	 
+
 		  </div>
 
 		  <div class="form-group">
@@ -173,7 +177,7 @@
 		  <div class="form-group">
 		  	<%= f.label :institutional_affiliation %>
 		  	<p class="text-muted">
-		  		 Your complete institutional affiliation with name and country. State 'None' if not applicable. 
+		  		 Your complete institutional affiliation with name and country. State 'None' if not applicable.
 		  	</p>
 		  	<%= f.text_area :institutional_affiliation, placeholder: " Complete Institutional Affiliation", class: 'form-control', required: true  %>
 		  </div>
@@ -308,8 +312,8 @@
 <div class="row">
 	<p class="col-lg-6 text-info">Within a few minutes after clicking on 'Sign up' below, you will receive an email from us with a link to confirm your account as well as further instructions.</p>
 	<p class="col-lg-6">.</p>
-</div>    
+</div>
   <div><%= f.submit "Sign up", :class=>'btn btn-success' %></div>
 <% end %>
-
+</div> <!-- .hidden ends -->
 <%= render "devise/shared/links" %>
