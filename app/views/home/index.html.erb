@@ -53,7 +53,17 @@
 			}
 		</style>
 
-		<table class="schedule" id="scheduletable" border=0 cellpadding=0 cellspacing=0 width="100%" style='border-collapse:
+		<ul class="nav nav-tabs">
+		  <li class="active"><a href="#mainschedule" data-toggle="tab" aria-expanded="true">Main Schedule</a></li>
+		  <li class=""><a href="#workshopschedule" data-toggle="tab" aria-expanded="false">Workshop Schedule</a></li>
+		  <li class=""><a href="#studentschedule" data-toggle="tab" aria-expanded="false">Student Talks Schedule</a></li>
+		  <li class=""><a href="#posterschedule" data-toggle="tab" aria-expanded="false">Student Poster Schedule</a></li>
+		  </li>
+		</ul>
+<br>
+<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade active in" id="mainschedule">
+		<table class="schedule table table-striped table-hover" id="scheduletable" border=0 cellpadding=0 cellspacing=0 width="100%" style='border-collapse:
 		 collapse;table-layout:fixed;width:100%;'>
 		 <col data-width=70 data-style='mso-width-source:userset;mso-width-alt:2986;width:70pt'>
 		 <col data-width=122 span=2 data-style='mso-width-source:userset;mso-width-alt:5205;
@@ -67,14 +77,14 @@
 		  <td class=xl66 data-width=140 data-style='width:140pt'>Day 3</td>
 		  <td class=xl66 data-width=158 data-style='width:158pt'>Day 4</td>
 		 </tr>
-		 <tr height=15 data-style='height:15.0pt'>
+		 <tr height=15  data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>&nbsp;</td>
 		  <td class=xl67 data-width=122 data-style='width:122pt'>08-Sep</td>
 		  <td class=xl67 data-width=122 data-style='width:122pt'>09-Sep</td>
 		  <td class=xl67 data-width=140 data-style='width:140pt'>10-Sep</td>
 		  <td class=xl67 data-width=158 data-style='width:158pt'>11-Sep</td>
 		 </tr>
-		 <tr height=15 data-style='height:15.0pt'>
+		 <tr height=15 class="info" data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>08:00-08:30</td>
 		  <td rowspan=2 class=xl70 data-width=122 data-style='width:122pt'>Registration &amp;
 		  Bursaries</td>
@@ -84,13 +94,13 @@
 		 </tr>
 		 <tr height=30 data-style='height:30.0pt'>
 		  <td height=30 class=xl65 data-width=70 data-style='height:30.0pt;width:70pt'>08:30-09:30</td>
-		  <td class=xl68 data-width=122 data-style='width:122pt'>Plenary: James D. Nichols</td>
-		  <td class=xl68 data-width=140 data-style='width:140pt'>Plenary: Sudha Vasan</td>
-		  <td class=xl68 data-width=158 data-style='width:158pt'>Plenary: Uma Ramakrishnan</td>
+		  <td class="warning" data-width=122 data-style='width:122pt'>Plenary: James D. Nichols</td>
+		  <td class="warning" data-width=140 data-style='width:140pt'>Plenary: Sudha Vasan</td>
+		  <td class="warning" data-width=158 data-style='width:158pt'>Plenary: Uma Ramakrishnan</td>
 		 </tr>
 		 <tr height=15 data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>09:30-09:50</td>
-		  <td rowspan=5 class=xl70 data-width=122 data-style='width:122pt'>Long Workshops (Tea
+		  <td rowspan=5 class="success" data-width=122 data-style='width:122pt'>Long Workshops (Tea
 		  break at 1130)</td>
 		  <td colspan=3 class=xl71 data-width=420 data-style='width:420pt'>Refreshments (20
 		  minutes)</td>
@@ -115,16 +125,16 @@
 		  <td class=xl68 data-width=158 data-style='width:158pt'>Poster Session 3<span
 		  data-style="mso-spacerun:yes">&nbsp;</span></td>
 		 </tr>
-		 <tr height=15 data-style='height:15.0pt'>
+		 <tr height=15 class="info" data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>13:00-14:00</td>
 		  <td colspan=4 class=xl71 data-width=542 data-style='width:542pt'>Lunch (60 minutes)</td>
 		 </tr>
 		 <tr height=15 data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>14:00-16:30</td>
-		  <td class=xl68 data-width=122 data-style='width:122pt'>Long workshops</td>
-		  <td class=xl68 data-width=122 data-style='width:122pt'>Short Workshops</td>
-		  <td class=xl68 data-width=140 data-style='width:140pt'>Short Workshops</td>
-		  <td class=xl68 data-width=158 data-style='width:158pt'>Short Workshops</td>
+		  <td class="success" data-width=122 data-style='width:122pt'>Long workshops</td>
+		  <td class="success" data-width=122 data-style='width:122pt'>Short Workshops</td>
+		  <td class="success" data-width=140 data-style='width:140pt'>Short Workshops</td>
+		  <td class="success" data-width=158 data-style='width:158pt'>Short Workshops</td>
 		 </tr>
 		 <tr height=15 data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>16:30-16:50</td>
@@ -136,31 +146,673 @@
 		  <td class=xl68 data-width=122 data-style='width:122pt'>Inauguration</td>
 		  <td rowspan=3 class=xl70 data-width=122 data-style='width:122pt'>Poster Session 1</td>
 		  <td rowspan=3 class=xl70 data-width=140 data-style='width:140pt'>Poster Session 2</td>
-		  <td rowspan=3 class=xl70 data-width=158 data-style='width:158pt'>Plenary: Jairam Ramesh</td>
+		  <td rowspan=3 class="warning" data-width=158 data-style='width:158pt'>Plenary: Jairam Ramesh</td>
 		 </tr>
 		 <tr height=30 data-style='height:30.0pt'>
 		  <td height=30 class=xl65 data-width=70 data-style='height:30.0pt;width:70pt'>17:10-17:40</td>
-		  <td class=xl69 data-width=122 data-style='width:122pt'>Art &amp; Conservation with Ben
+		  <td class="warning" data-width=122 data-style='width:122pt'>Art &amp; Conservation with Ben
 		  Mirin</td>
 		 </tr>
 		 <tr height=15 data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>17:40-18:00</td>
-		  <td rowspan=2 class=xl70 data-width=122 data-style='width:122pt'>Ravi Sankaran Memorial
+		  <td rowspan=2 class="warning" data-width=122 data-style='width:122pt'>Ravi Sankaran Memorial
 		  Lecture (T. R. Shankar Raman)</td>
 		 </tr>
 		 <tr height=30 data-style='height:30.0pt'>
 		  <td height=30 class=xl65 data-width=70 data-style='height:30.0pt;width:70pt'>18:00-19:00</td>
-		  <td class=xl68 data-width=122 data-style='width:122pt'>Plenary: Speaker to be confirmed</td>
-		  <td class=xl68 data-width=140 data-style='width:140pt'>Plenary: Kanchi Kohli</td>
-		  <td class=xl68 data-width=158 data-style='width:158pt'>Closing Remarks and Student
+		  <td class="warning" data-width=122 data-style='width:122pt'>Plenary: Speaker to be confirmed</td>
+		  <td class="warning" data-width=140 data-style='width:140pt'>Plenary: Kanchi Kohli</td>
+		  <td class="warning" data-width=158 data-style='width:158pt'>Closing Remarks and Student
 		  Awards</td>
 		 </tr>
-		 <tr height=15 data-style='height:15.0pt'>
+		 <tr height=15 class="info" data-style='height:15.0pt'>
 		  <td height=15 class=xl65 data-width=70 data-style='height:15.0pt;width:70pt'>19:00-21:00</td>
 		  <td colspan=3 class=xl71 data-width=384 data-style='width:384pt'>Dinner</td>
 		  <td class=xl68 data-width=158 data-style='width:158pt'></td>
 		 </tr>
 		</table>
+		</div>
+		<div class="tab-pane fade in" id="workshopschedule">
+		<table class="schedule table table-striped table-hover" border=0 cellpadding=0 cellspacing=0 width=100% style='border-collapse:collapse;width:100%'>
+		 <col data-width=65 data-style='width:65pt'>
+		 <col data-width=216 data-style='mso-width-source:userset;mso-width-alt:9216;width:216pt'>
+		 <col data-width=200 data-style='mso-width-source:userset;mso-width-alt:8533;width:200pt'>
+		 <col data-width=180 data-style='mso-width-source:userset;mso-width-alt:7680;width:180pt'>
+		 <col data-width=195 data-style='mso-width-source:userset;mso-width-alt:8320;width:195pt'>
+		 <col data-width=65 data-style='width:65pt'>
+		 <col data-width=170 data-style='mso-width-source:userset;mso-width-alt:7253;width:170pt'>
+		 <tr style="background-color: #111; color: white;" height=30 data-style='height:30.0pt'>
+		  <td height=30 class=xl65 data-width=65 data-style='height:30.0pt;width:65pt'>&nbsp;</td>
+		  <td class=xl66 data-width=216 data-style='width:216pt'>Day 1: Long Workshops (9:00 -
+		  16:00)</td>
+		  <td class=xl66 data-width=200 data-style='width:200pt'>Day 2: Short Workshops (14:00 -
+		  16:30)</td>
+		  <td class=xl66 data-width=180 data-style='width:180pt'>Day 3: Short Workshops (14:00 -
+		  16:30)</td>
+		  <td class=xl66 data-width=195 data-style='width:195pt'>Day 4: Short Workshops (14:00 -
+		  16:30)</td>
+
+		 </tr>
+		 <tr height=15 data-style='height:15.0pt'>
+		  <td height=15 class=xl65 data-style='height:15.0pt'>&nbsp;</td>
+		  <td class=xl67 data-width=216 data-style='width:216pt'>08-Sep</td>
+		  <td class=xl67 data-width=200 data-style='width:200pt'>09-Sep</td>
+		  <td class=xl67 data-width=180 data-style='width:180pt'>10-Sep</td>
+		  <td class=xl67 data-width=195 data-style='width:195pt'>11-Sep</td>
+
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl65 align=right data-style='height:75.0pt'>1</td>
+		  <td class=xl71 data-width=216 data-style='width:216pt'>Study design in ecology and
+		  conservation</td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'>How R you doing? Using the R
+		  platform for managing and analyzing ecological datasets<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=180 data-style='width:180pt'>The challenge of coordinating
+		  conservation for AsiaÕs Critically Endangered Vultures. Lessons and
+		  application for other conservation examples<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class="danger" data-width=195 data-style='width:195pt'>Getting the Measure of
+		  Diversity: A Macro-ecological Perspective</td>
+
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 align=right data-style='height:45.0pt'>2</td>
+		  <td class=xl71 data-width=216 data-style='width:216pt'>Advanced conservation
+		  genetics<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'>Freshwater Fish Conservation:
+		  Concepts, Techniques and Strategies<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=180 data-style='width:180pt'>Language and Ecology &#8211;
+		  Communicating Nature Through Local Languages<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=195 data-style='width:195pt'>Observational study of animal
+		  behaviour and its importance for animal conservation</td>
+
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 align=right data-style='height:45.0pt'>3</td>
+		  <td class=xl71 data-width=216 data-style='width:216pt'>The nitty-gritty of writing and
+		  presenting research<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl72>Landscape genetics<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=180 data-style='width:180pt'>Applications of molecular
+		  phylogenetics in conservation biology<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl72>Elements of effective study design</td>
+
+		 </tr>
+		 <tr height=30 data-style='height:30.0pt'>
+		  <td height=30 class=xl65 align=right data-style='height:30.0pt'>4</td>
+		  <td class=xl71 data-width=216 data-style='width:216pt'>Introduction to GIS and Remote
+		  Sensing using Quantum GIS<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'>Making effective
+		  presentations<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl72>Graphics and visualisation in R<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=195 data-style='width:195pt'>How to tell a conservation
+		  story<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+
+		 </tr>
+		 <tr height=65 data-style='height:65.0pt'>
+		  <td height=65 class=xl65 align=right data-style='height:65.0pt'>5</td>
+		  <td class=xl71 data-width=216 data-style='width:216pt'>Social and Ecological Dimensions
+		  of Freshwater Biodiversity Conservation<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class="danger" data-width=200 data-style='width:200pt'>Contribution of science in
+		  conflict management</td>
+		  <td class="danger" data-width=180 data-style='width:180pt'>What's behind a scientific
+		  article? What can sociological/ethnographic studies tell us about doing
+		  science and of writing a scientific paper?<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class="danger" data-width=195 data-style='width:195pt'>Conservation story-telling with
+		  images</td>
+
+		 </tr>
+		 <tr height=39 data-style='height:39.0pt'>
+		  <td height=39 class=xl65 align=right data-style='height:39.0pt'>6</td>
+		  <td class=xl71 data-width=216 data-style='width:216pt'>Animal Handling Techniques<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl72>Introduction to basic photography<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl72>Publication ethics</td>
+		  <td class=xl69 data-width=195 data-style='width:195pt'>Principles of Monitoring
+		  Ecological Populations and Communities: Why, What and How?<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+
+		 </tr>
+		 <tr height=30 data-style='height:30.0pt'>
+		  <td height=30 class=xl65 align=right data-style='height:30.0pt'>7</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>Google Earth Engine Hands-on
+		  Workshop<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'>Trust, Instinct, Common sense:
+		  Managing people &amp; teams<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=180 data-style='width:180pt'>Thinking quantitatively<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl69 data-width=195 data-style='width:195pt'>Business &amp; Biodiversity
+		  &#8211; working with businesses for conservation in India<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+
+		 </tr>
+		 <tr height=39 data-style='height:39.0pt'>
+		  <td height=39 class=xl65 align=right data-style='height:39.0pt'>8</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>Bird Ringing for Science &amp;
+		  Conservation<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl69 data-width=200 data-style='width:200pt'>ÔData entryÕ as an academic
+		  process: basics of data management and organization<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl73>What is chemical ecology?<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=195 data-style='width:195pt'>An introduction to conservation
+		  genetics</td>
+
+		 </tr>
+		 <tr height=39 data-style='height:39.0pt'>
+		  <td height=39 class=xl65 align=right data-style='height:39.0pt'>9</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>Framing Conservation Education
+		  in the context of Conservation Practice: a vital component</td>
+		  <td class=xl70 data-width=200 data-style='width:200pt'>An Introduction to Popular
+		  Science Writing</td>
+		  <td class=xl70 data-width=180 data-style='width:180pt'>Mobile Field Data Collection
+		  using OpenDataKit (ODK)<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl72 colspan=2 data-style='mso-ignore:colspan'>Workshop: An introduction
+		  to eBird and eBirding<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 align=right data-style='height:45.0pt'>10</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>The Science of Scientific
+		  Writing<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'>Can conditional approvals and
+		  legal compliance help achieve better conservation outcomes?</td>
+		  <td class="danger">Ecological Monitoring and Conservat<span data-style='display:none'>ion
+		  of Tropical Insect Biodiversity</span></td>
+		  <td class=xl72></td>
+
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl68 align=right data-style='height:60.0pt'>11</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>The Kodagu Game &#8211;
+		  Interactive models for Conservation Policy Development and Testing<span
+		  data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class="danger" data-width=200 data-style='width:200pt'>Advocacy for conservation</td>
+		  <td class=xl71 data-width=180 data-style='width:180pt'>Seeing the political in the
+		  ecological: Applying social science ideas and methods to conservation issues
+		  (abbreviated version)</td>
+		  <td class=xl72></td>
+
+		 </tr>
+		 <tr height=26 data-style='height:26.0pt'>
+		  <td height=26 class=xl65 align=right data-style='height:26.0pt'>12</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>Ecological Monitoring of
+		  Tropical Insect Diversity: Field and Lab Techniques</td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'></td>
+		  <td class="danger">Working with the Press</td>
+		  <td class=xl72></td>
+
+		 </tr>
+		 <tr height=39 data-style='height:39.0pt'>
+		  <td height=39 class=xl65 align=right data-style='height:39.0pt'>13</td>
+		  <td class=xl70 data-width=216 data-style='width:216pt'>Inferences for Animal
+		  Populations: Basics of Capture-recapture and Occupancy Modeling</td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'></td>
+		  <td class=xl72></td>
+		  <td class=xl72></td>
+
+		 </tr>
+		 <tr height=40 data-style='height:40.0pt'>
+		  <td height=40 class=xl65 align=right data-style='height:40.0pt'>14</td>
+		  <td class=xl74 data-width=216 data-style='width:216pt'>Seeing the political in the
+		  ecological: Applying social science ideas and methods to conservation
+		  issues<span data-style="mso-spacerun:yes">&nbsp;</span></td>
+		  <td class=xl71 data-width=200 data-style='width:200pt'></td>
+		  <td class=xl72></td>
+		  <td class=xl72></td>
+
+		 </tr>
+		</table>
+		<div class="danger" style="display:inline-block; padding:10px; background-color: #F9BDBB;">.</div> indicates OPEN sessions with no cap on the number of participants highlighted.
+		</div>
+		<div class="tab-pane fade in" id="studentschedule">
+		<table class="schedule table table-striped table-hover"  border=0 cellpadding=0 cellspacing=0 width=100% style='border-collapse:collapse;table-layout:fixed;width:100%;'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:1962;width:46pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:7552;width:177pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:1962;width:46pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:8789;width:206pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:1962;width:46pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:9344;width:219pt'>
+		 <tr style="background-color: #111; color: white;" height=30 data-style='height:30.0pt'>
+		  <td height=30 class=xl70 data-style='height:30.0pt;width:46pt'>Talk code</td>
+		  <td class=xl71 data-style='width:177pt'>Day 2</td>
+		  <td class=xl70 data-style='width:46pt'>Talk code</td>
+		  <td class=xl71 data-style='width:206pt'>Day 3</td>
+		  <td class=xl70 data-style='width:46pt'>Talk code</td>
+		  <td class=xl71 data-style='width:219pt'>Day 4</td>
+		 </tr>
+		 <tr height=15 data-style='height:15.0pt'>
+		  <td height=15 class=xl70 data-style='height:15.0pt;width:46pt'>&nbsp;</td>
+		  <td class=xl72 data-style='width:177pt'>09-Sep</td>
+		  <td class=xl70 data-style='width:46pt'>&nbsp;</td>
+		  <td class=xl72 data-style='width:206pt'>10-Sep</td>
+		  <td class=xl70 data-style='width:46pt'>&nbsp;</td>
+		  <td class=xl72 data-style='width:219pt'>11-Sep</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl73 data-style='height:60.0pt;width:46pt'>T1</td>
+		  <td class=xl73 data-style='width:177pt'>A leopard in your tea-cup: diet
+		  and habitat use of an adaptable felid in a forest-production landscape mosaic
+		  / Aritra Kshettry</td>
+		  <td class=xl73 data-style='width:46pt'>T6</td>
+		  <td class=xl73 data-style='width:206pt'>Forests of the Mind: Examining
+		  official Forest representations in a Shifting cultivation (jhum) landscape in
+		  Garo hills, India / Amit John Kurien</td>
+		  <td class=xl73 data-style='width:46pt'>T11</td>
+		  <td class=xl73 data-style='width:219pt'>Decoding the mass nesting
+		  behaviour of olive ridley turtles in Odisha, India. / Akash Verma</td>
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl73 data-style='height:75.0pt;width:46pt'>T2</td>
+		  <td class=xl73 data-style='width:177pt'>Metapopulation dynamics of birds
+		  in a rubber-forest mosaic affected by hunting / Rachakonda Sreekar</td>
+		  <td class=xl73 data-style='width:46pt'>T7</td>
+		  <td class=xl73 data-style='width:206pt'>Economic and ecological outcomes
+		  of forest managed by community in partnership with NGO: A case study from
+		  TobŽ-Kpobidon forest, Benin / Rodrigue Castro Gbedomon</td>
+		  <td class=xl73 data-style='width:46pt'>T12</td>
+		  <td class=xl73 data-style='width:219pt'>Asian elephants in the tropical
+		  rain forests of Dehing Patkai Elephant Reserve, Assam / Abhijit Boruah</td>
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl73 data-style='height:75.0pt;width:46pt'>T3</td>
+		  <td class=xl73 data-style='width:177pt'>The Customary use of Vulturine
+		  Parrots (Psittrichas fulgidus) in the Highlands of Papua New Guinea and its
+		  Implications on Conservation / Grace Agatha Nugi</td>
+		  <td class=xl73 data-style='width:46pt'>T8</td>
+		  <td class=xl73 data-style='width:206pt'>A study of land cover change in
+		  Papikonda National Park, Eastern Ghats, Andhra Pradesh, using NDVI based time
+		  series analysis / Vikram Aditya</td>
+		  <td class=xl73 data-style='width:46pt'>T13</td>
+		  <td class=xl73 data-style='width:219pt'>The association of human
+		  disturbances and vigilance by Tibetan Wild Ass, Equus kiang, in
+		  Trans-Himalayan India / Prameek Meena Kannan</td>
+		 </tr>
+		 <tr height=105 data-style='height:105.0pt'>
+		  <td height=105 class=xl73 data-style='height:105.0pt;width:46pt'>T4</td>
+		  <td class=xl73 data-style='width:177pt'>MOVEMENTS OF GREATER FLAMINGO
+		  PHOENICOPTERUS ROSEUS ALONG THE SOUTHEAST COAST OF INDIA, TRACKED THROUGH
+		  SATELLITE TRANSMITTER. / Tuhina Sanjay Katti</td>
+		  <td class=xl73 data-style='width:46pt'>T9</td>
+		  <td class=xl74 data-style='width:206pt'>Integrating Stand, Spectral and
+		  Geospatial Information for Aboveground Forest Carbon Estimation: A
+		  Comparative Study from Sub-Tropical Forests, Nepal / Hem Raj Acharya</td>
+		  <td class=xl73 data-style='width:46pt'>T14</td>
+		  <td class=xl73 data-style='width:219pt'>ASSESSMENT OF DETERMINANT OF
+		  HUMAN-WILDLIFE CONFLICT IN PANNA TIGER RESERVE, WITH PARTICULAR REFERENCE TO
+		  VILLAGERÕS LIVESTOCK HERDING AND FENCING STRATEGIES / Durga Prasad Srivastava</td>
+		 </tr>
+		 <tr height=105 data-style='height:105.0pt'>
+		  <td height=105 class=xl73 data-style='height:105.0pt;width:46pt'>T5</td>
+		  <td class=xl73 data-style='width:177pt'>Impacts of urbanization and
+		  associated anthropogenic perturbation on fitness of the Rock Pigeon (Columba
+		  livia): Implications on in situ conservation / Kajanka Jehan Mathiaparanam</td>
+		  <td class=xl73 data-style='width:46pt'>T10</td>
+		  <td class=xl73 data-style='width:206pt'>Edge effect on diurnal
+		  Lepidoptera diversity indicates need to re-describe the TDEFs of India. /
+		  Rishiddh Avnish Jhaveri</td>
+		  <td class=xl73 data-style='width:46pt'>T15</td>
+		  <td class=xl73 data-style='width:219pt'>Is incomplete knowledge helping
+		  the spreading of invasive Mimosa pigra? A case study on public awareness. /
+		  Saumya Chinthani Wanniaracchchi</td>
+		 </tr>
+		</table>
+		</div>
+		<div class="tab-pane fade in" id="posterschedule">
+		<table  class="schedule table table-striped table-hover" border=0 cellpadding=0 cellspacing=0 style='border-collapse:
+		 collapse;table-layout:fixed;width:100%'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:1578;width:37pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:9344;width:219pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:2005;width:47pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:10154;width:238pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:2005;width:47pt'>
+		 <col data-style='mso-width-source:userset;mso-width-alt:11221;width:263pt'>
+		 <tr style="background-color: #111; color: white;" height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 data-style='height:45.0pt;width:37pt'>Poster
+		  Code</td>
+		  <td class=xl66 data-style='width:219pt'>Day 2</td>
+		  <td class=xl66 data-style='width:47pt'>Poster Code</td>
+		  <td class=xl66 data-style='width:238pt'>Day 3</td>
+		  <td class=xl66 data-style='width:47pt'>Poster Code</td>
+		  <td class=xl66 data-style='width:263pt'>Day 4</td>
+		 </tr>
+		 <tr height=15 data-style='height:15.0pt'>
+		  <td height=15 class=xl65 data-style='height:15.0pt;width:37pt'>&nbsp;</td>
+		  <td class=xl67 data-style='width:219pt'>09-Sep</td>
+		  <td class=xl67 data-style='width:47pt'>&nbsp;</td>
+		  <td class=xl67 data-style='width:238pt'>10-Sep</td>
+		  <td class=xl67 data-style='width:47pt'>&nbsp;</td>
+		  <td class=xl67 data-style='width:263pt'>11-Sep</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A01</td>
+		  <td class=xl68 data-style='width:219pt'>Ecological Niche Modeling of
+		  Assamese Macaque in South and South-East Asia / Ganga Ram Regmi</td>
+		  <td class=xl69 data-style='width:47pt'>B01</td>
+		  <td class=xl68 data-style='width:238pt'>Understanding the range limits
+		  of Primula species along the elevation gradient of Sikkim Himalaya, India:
+		  insights from a transplant experiment / Priya Darshini Gurung</td>
+		  <td class=xl69 data-style='width:47pt'>C01</td>
+		  <td class=xl68 data-style='width:263pt'>Habitat correlates of the forest
+		  small mammal community in northeast India / Sahila D Kudalkar</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A02</td>
+		  <td class=xl68 data-style='width:219pt'>Phenology and plant pollinator
+		  interactions of Rhododendron species in Sikkim, Himalyas. / Shweta Basnett</td>
+		  <td class=xl69 data-style='width:47pt'>B02</td>
+		  <td class=xl68 data-style='width:238pt'>Food for Thought: Diet
+		  Separation between the Forest Owlet, Spotted Owlet and Jungle Owlet in Madhya
+		  Pradesh / Ridhi Rajesh Chandarana</td>
+		  <td class=xl69 data-style='width:47pt'>C02</td>
+		  <td class=xl68 data-style='width:263pt'>Solving the puzzle: Can we have
+		  community-based conservation in Cusuco National Park, Honduras?/ Guillaume M
+		  C G Demare</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A03</td>
+		  <td class=xl68 data-style='width:219pt'>Management of wetlands with
+		  special reference to the invasive aquatic macrophytes in Barak Valley, Assam,
+		  North East India / Nami Prasad</td>
+		  <td class=xl69 data-style='width:47pt'>B03</td>
+		  <td class=xl68 data-style='width:238pt'>Tree diversity in Pan Jhum, a
+		  traditional betel leaf based agroforestry system in Barak Valley, Assam /
+		  Biswajyoti Bikomiya Deori</td>
+		  <td class=xl69 data-style='width:47pt'>C03</td>
+		  <td class=xl68 data-style='width:263pt'>The effect of introduced chital
+		  (Axis axis) on forest vegetation communities in the Andaman islands / Krishna
+		  Anujan</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A04</td>
+		  <td class=xl68 data-style='width:219pt'>Prevalence of intestinal
+		  parasitic infections in free-ranging red panda Ailurus fulgens, Cuvier 1825
+		  (Carnivora: Ailuridae: Ailurinae) in Nepal / Tirth Raj Ghimire</td>
+		  <td class=xl69 data-style='width:47pt'>B04</td>
+		  <td class=xl68 data-style='width:238pt'>Diversity and current status of
+		  goblin spiders (Oonopidae) in rapidly changing ecosystems in Sri Lanka / Uda
+		  Gedara Sasanka Lakmali Ranasinghe</td>
+		  <td class=xl69 data-style='width:47pt'>C04</td>
+		  <td class=xl68 data-style='width:263pt'>Ranging and movement pattern of
+		  Lesser Florican (Sypheotides indica) in Rajasthan / Antharagam Mohan</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A05</td>
+		  <td class=xl68 data-style='width:219pt'>A case study on Pygmy Hogs in
+		  the Pygmy Hog breeding center / Smita Dutta</td>
+		  <td class=xl69 data-style='width:47pt'>B05</td>
+		  <td class=xl68 data-style='width:238pt'>EFFECT OF PINE PLANTATION ON
+		  LITTER ARTHROPOD FAUNA IN UPPER HANTHANA FOREST RESERVE, KANDY DISTRICT, SRI
+		  LANKA / Saumya Erandi Silva</td>
+		  <td class=xl69 data-style='width:47pt'>C05</td>
+		  <td class=xl68 data-style='width:263pt'>Influence of arbuscular
+		  mycorrhizal fungi on natural regeneration of grassland disclimaxes in
+		  Dothalugala MAB Reserve, Sri Lanka / Viraj Niroshana Gunarathne</td>
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 data-style='height:45.0pt;width:37pt'>A06</td>
+		  <td class=xl68 data-style='width:219pt'>FORENSIC MOLECULAR TOOL IN
+		  WILDLIFE CONSERVATION / Devika V S</td>
+		  <td class=xl69 data-style='width:47pt'>B06</td>
+		  <td class=xl68 data-style='width:238pt'>Assessment of cheetah prey base
+		  outside protected areas in Southern Kenya. / Noreen Mukhwana Mutoro</td>
+		  <td class=xl69 data-style='width:47pt'>C06</td>
+		  <td class=xl68 data-style='width:263pt'>Riverine obligate bird species
+		  in the Ganges: ecological and anthropogenic correlates / Ankita Sinha</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A07</td>
+		  <td class=xl68 data-style='width:219pt'>Effect of habitat degradation on
+		  behavioral patterns of a freshwater species, zebrafish (Brachydanio rerio) /
+		  Tamal Roy</td>
+		  <td class=xl69 data-style='width:47pt'>B07</td>
+		  <td class=xl68 data-style='width:238pt'>Effect of intensive artisanal
+		  fishery on aggregated small tuna population in coast and offshore areas off
+		  Southern Sri-Lanka / Chathuri Chandima Walpita</td>
+		  <td class=xl69 data-style='width:47pt'>C07</td>
+		  <td class=xl68 data-style='width:263pt'>Where have all the lorises gone:
+		  slender loris, citizen scientists, and urban growth in Bangalore / Vidisha
+		  Madhava Kulkarni</td>
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl65 data-style='height:75.0pt;width:37pt'>A08</td>
+		  <td class=xl68 data-style='width:219pt'>Karbi Anglong: Participatory
+		  modelling and integrated landscape approaches for development and
+		  conservation, part 1: Understanding the local agricultural system. / Swen
+		  Petrus Maria Bos</td>
+		  <td class=xl69 data-style='width:47pt'>B08</td>
+		  <td class=xl68 data-style='width:238pt'>Nest congregation of stingless
+		  bee, Trigona iridipennis Smith. in coffee Agro forest ecosystems of Kodagu
+		  district, Karnataka / Manu T. N.</td>
+		  <td class=xl69 data-style='width:47pt'>C08</td>
+		  <td class=xl68 data-style='width:263pt'>Species specific primers and a
+		  Panel of Microsatellites for Sloth Bear (Melursus ursinus). / Kaushalkumar
+		  Ganeshbhai Patel</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A09</td>
+		  <td class=xl68 data-style='width:219pt'>Vital Statistics: Preliminary
+		  Information on Population Trends of the Forest Owlet in East Kalibhit Range,
+		  Madhya Pradesh / Prasanna N S</td>
+		  <td class=xl69 data-style='width:47pt'>B09</td>
+		  <td class=xl68 data-style='width:238pt'>Spider Family (Aranae)
+		  Assemblage in High Altitude Ecosystems: A Case Study in Askot wildlife
+		  Sanctuary, Western Himalaya (India) / Uttaran Bandyopadhyay</td>
+		  <td class=xl69 data-style='width:47pt'>C09</td>
+		  <td class=xl68 data-style='width:263pt'>VOCALIZATION CHARACTERISTICS
+		  OVERRIDE PHYLOGENETIC SIGNAL IN GREEN COLORED SRI LANKAN PSEUDOPHILAUTUS
+		  SPECIES / Navarathna Mudiyanselage Tharindu Gunathilaka</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A10</td>
+		  <td class=xl68 data-style='width:219pt'>Social behavior among vultures
+		  during feeding (A case study from Ghachowk and Pithauli Vulture restaurants,
+		  Nepal) / Anisha Pokharel</td>
+		  <td class=xl69 data-style='width:47pt'>B10</td>
+		  <td class=xl68 data-style='width:238pt'>Assessing Habitat Quality of
+		  Forest-Corridors through NDVI Analysis in Dry Tropical Forests of South
+		  India: Implications for Conservation and Management / Paramesha Mallegowda</td>
+		  <td class=xl69 data-style='width:47pt'>C10</td>
+		  <td class=xl68 data-style='width:263pt'>Estimating hornbill density
+		  using spatially explicit capture recapture methods / Ravinder Kaur Kirpal
+		  Singh</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A11</td>
+		  <td class=xl68 data-style='width:219pt'>DRY SEEDS OF RUBBER ( Hevea
+		  brasiliensis)- A FALL-BACK FOOD FOR GOLDEN LANGUR IN FRAGMENTED HABITAT OF
+		  ASSAM , INDIA / Debahutee Roy</td>
+		  <td class=xl69 data-style='width:47pt'>B11</td>
+		  <td class=xl68 data-style='width:238pt'>Understanding the role of
+		  natural habitat affecting pollinator interactions in an urbanization
+		  landscape / Ronita Mukherjee</td>
+		  <td class=xl69 data-style='width:47pt'>C11</td>
+		  <td class=xl68 data-style='width:263pt'>Seasonal changes in forage
+		  quality of ungulates along the elevation gradient in Sikkim Himalaya, India.
+		  / Tanushree Srivastava</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A12</td>
+		  <td class=xl68 data-style='width:219pt'>Natural resources and their
+		  utilization pattern by the ecosystem people of Chatla floodplain wetland of
+		  Barak Valley, Assam, Northeast India / Priyanka Sarkar</td>
+		  <td class=xl69 data-style='width:47pt'>B12</td>
+		  <td class=xl68 data-style='width:238pt'>Conceptions of two local
+		  stakeholder groups towards the crop-raiding Bawean warty pig (Sus blouchi),
+		  endemic to Bawean island, Indonesia. / Shafia Zahra</td>
+		  <td class=xl69 data-style='width:47pt'>C12</td>
+		  <td class=xl68 data-style='width:263pt'>Factors Influencing FishermenÕs
+		  Perception of Otters along the Bhadra River, India / Parvathi Krishna Prasad</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A13</td>
+		  <td class=xl68 data-style='width:219pt'>Bats in GodÕs Place: In-situ
+		  conservation of bats in the sacred caves of Gupteswar, Southern Odisha along
+		  Easternghat, India / Subrat Debata</td>
+		  <td class=xl69 data-style='width:47pt'>B13</td>
+		  <td class=xl68 data-style='width:238pt'>Distribution pattern of odonates
+		  relative to different biotopes in Rani Reserve Forest and its adjacent areas.
+		  (Work in progress) / Dipti Thakuria</td>
+		  <td class=xl69 data-style='width:47pt'>C13</td>
+		  <td class=xl68 data-style='width:263pt'>Herpetofaunal species richness
+		  and abundance in different forest types at the Sakaerat Biosphere Reserve,
+		  Thailand / Matthew Steven Crane</td>
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 data-style='height:45.0pt;width:37pt'>A14</td>
+		  <td class=xl68 data-style='width:219pt'>Traditional Livelihood and
+		  Natural Resource Dependence of a Resettled Birhor Community. / Vijaylakshmi
+		  Suman</td>
+		  <td class=xl69 data-style='width:47pt'>B14</td>
+		  <td class=xl68 data-style='width:238pt'>Analysis of human perceptions
+		  and temporal patterns of human-snow leopard conflict in Nepal Himalayas /
+		  Balkumar Nepali</td>
+		  <td class=xl69 data-style='width:47pt'>C14</td>
+		  <td class=xl68 data-style='width:263pt'>Assessment of Nest Sites of
+		  Forest Owlet and Spotted Owlet in Khandwa District, Madhya Pradesh / Megha
+		  Rao</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A15</td>
+		  <td class=xl68 data-style='width:219pt'>Providing connectivity between
+		  two meta-population of Kanha Tiger Reserve and Pench Tiger Reserve / Sprih
+		  Harsh</td>
+		  <td class=xl69 data-style='width:47pt'>B15</td>
+		  <td class=xl68 data-style='width:238pt'>Identifying the patterns of crop
+		  raiding by wild ungulates and elephants in Ramnagar Forest Division,
+		  Uttarakhand. / Ankur Kumar</td>
+		  <td class=xl69 data-style='width:47pt'>C15</td>
+		  <td class=xl68 data-style='width:263pt'>Developing landscape level
+		  habitat suitability maps for selected mammals in Western Himalaya - a case
+		  study in Askot Landscape, Uttarakhand / Ankita Bhattacharya</td>
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl65 data-style='height:75.0pt;width:37pt'>A16</td>
+		  <td class=xl68 data-style='width:219pt'>Variations of species
+		  composition of Seagrass related to the sediment characters in the Southern
+		  Coast of Sri Lanka. / Herath Mudiyanselage Udari Ayeshya</td>
+		  <td class=xl69 data-style='width:47pt'>B16</td>
+		  <td class=xl68 data-style='width:238pt'>Predicting distribution of
+		  Himalayan wolf and its relation with environmental variables / Swati Saini</td>
+		  <td class=xl69 data-style='width:47pt'>C16</td>
+		  <td class=xl68 data-style='width:263pt'>Diversity of Avifauna in a
+		  Tropical Lowland Forest in South West, Sri Lanka: A Comparative Study of
+		  Different Habitats / Shachindrika Rukshani Wijesinghe</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A17</td>
+		  <td class=xl68 data-style='width:219pt'>Tree cavities and associated
+		  vertebrate fauna: a case study in Rani Reserve Forest, Kamrup, Assam /
+		  Minarul Haque</td>
+		  <td class=xl69 data-style='width:47pt'>B17</td>
+		  <td class=xl68 data-style='width:238pt'>Effect of Management Modalities
+		  and Forest Condition on Forest Carbon Biomass in Pine Dominated Forests, Mid
+		  Hill Nepal / Anita Dandekhya</td>
+		  <td class=xl69 data-style='width:47pt'>C17</td>
+		  <td class=xl68 data-style='width:263pt'>ÒNo Entry for the ElephantsÓ
+		  Benefits of Crop Guarding: A Case Study from North Kanara District,
+		  Karnataka. / Sangram Parida</td>
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 data-style='height:45.0pt;width:37pt'>A18</td>
+		  <td class=xl68 data-style='width:219pt'>Plant Diversity as Surrogate for
+		  Insects in Tropical Landscapes / Kai Zhang</td>
+		  <td class=xl69 data-style='width:47pt'>B18</td>
+		  <td class=xl68 data-style='width:238pt'>Fractional Cover Assessment
+		  Using MESMA Technique in Doon Valley / Florencia Matina Tuladhar</td>
+		  <td class=xl69 data-style='width:47pt'>C18</td>
+		  <td class=xl68 data-style='width:263pt'>Investigating habitat change in
+		  Lala Bustard Sanctuary using Remote Sensing and GIS / Nisargsingh Rajendra
+		  Chaudhari</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A19</td>
+		  <td class=xl68 data-style='width:219pt'>Foods and Habitats of Asian
+		  small-clawed otters and smooth-coated otters, northern Cambodia / Naven Hon</td>
+		  <td class=xl69 data-style='width:47pt'>B19</td>
+		  <td class=xl68 data-style='width:238pt'>Finding the cause and securing
+		  the future of highly problematic Sloth bear population in Nilgiri, Eastern
+		  India. / Prakash Chandra Mardaraj</td>
+		  <td class=xl69 data-style='width:47pt'>C19</td>
+		  <td class=xl68 data-style='width:263pt'>Comparative study on diversity
+		  and distribution of spiders in different forest habitat type in Guwahati
+		  metro (on going) / Awarlin Chetia</td>
+		 </tr>
+		 <tr height=45 data-style='height:45.0pt'>
+		  <td height=45 class=xl65 data-style='height:45.0pt;width:37pt'>A20</td>
+		  <td class=xl68 data-style='width:219pt'>To study the population
+		  characteristics and habitat use by Ladakh Urial in the Trans-Himalayan
+		  region. / Zehidul Hussain</td>
+		  <td class=xl69 data-style='width:47pt'>B20</td>
+		  <td class=xl68 data-style='width:238pt'>Diversity and Habitat Occupancy
+		  of Odonata in Sinharaja Man and Biosphere Reserve, Sri Lanka / Amila Prasanna
+		  Sumanapala</td>
+		  <td class=xl69 data-style='width:47pt'>C20</td>
+		  <td class=xl68 data-style='width:263pt'>Impact of invasive plant Lantana
+		  camara and road-edge on butterfly habitat use in a tropical moist deciduous
+		  forest in India / Suman Attiwilli</td>
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl65 data-style='height:75.0pt;width:37pt'>A21</td>
+		  <td class=xl68 data-style='width:219pt'>Urban lizards run faster and
+		  have bolder escape strategies / Anuradha Batabyal</td>
+		  <td class=xl69 data-style='width:47pt'>B21</td>
+		  <td class=xl68 data-style='width:238pt'>A COMPARATIVE LIMNOLOGICAL STUDY
+		  ON PLANKTON DIVERSITY AND THE EFFECT OF POLLUTANTS ON CHANDUBI LAKE, DEEPAR
+		  BEEL AND DIGHOLIPUKHURI, ASSAM / Dhurjati Pathak</td>
+		  <td class=xl69 data-style='width:47pt'>C21</td>
+		  <td class=xl68 data-style='width:263pt'>Fisheries in Gulf of Kachchh:
+		  Importance, conflicts and conservation strategies / Ema Fatima</td>
+		 </tr>
+		 <tr height=75 data-style='height:75.0pt'>
+		  <td height=75 class=xl65 data-style='height:75.0pt;width:37pt'>A22</td>
+		  <td class=xl68 data-style='width:219pt'>CONSERVATIONAL VALUE OF
+		  DUNUMADALAWA FOREST RESERVE IN CENTRAL SRI LANKA BASED ON THE ENDEMISM OF THE
+		  AVIFAUNA. / Tharangi Roshima Kumari Hettiarachchi</td>
+		  <td class=xl69 data-style='width:47pt'>B22</td>
+		  <td class=xl68 data-style='width:238pt'>Spatial Ecology And Habitat
+		  Utilization Of King Cobras (Ophiophagus hannah) In Northeast Thailand / Ins
+		  Maria Sim›es Silva</td>
+		  <td class=xl69 data-style='width:47pt'>C22</td>
+		  <td class=xl68 data-style='width:263pt'>Effectiveness of Community-based
+		  Conservation: A study from the Great Himalayan National Park (Tirthan
+		  Valley), Himachal Pradesh, India / Priyanka Singh</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A23</td>
+		  <td class=xl68 data-style='width:219pt'>Comparative Assessment Of
+		  Undisturbed And Restored Mangrove Areas Based On Birds As Indicator Species.
+		  / Prasad Anil Kulkarni</td>
+		  <td class=xl69 data-style='width:47pt'>B23</td>
+		  <td class=xl68 data-style='width:238pt'>Assessment of Diversity of Fauna
+		  and Flora in High-Grown Tea Plantations in Dimbula Region of Nuwara Eliya
+		  District, Sri Lanka / Chathuranga Iroshan Deshapriya</td>
+		  <td class=xl69 data-style='width:47pt'>C23</td>
+		  <td class=xl68 data-style='width:263pt'>Sustainable practices in modern
+		  fishing scenarios: Conservation of Barred spiny eel in Kolavai lake, Tamil
+		  Nadu / Dinesh Kumar Sivasankaran</td>
+		 </tr>
+		 <tr height=60 data-style='height:60.0pt'>
+		  <td height=60 class=xl65 data-style='height:60.0pt;width:37pt'>A24</td>
+		  <td class=xl68 data-style='width:219pt'>Sacred GroveÕs Potential in
+		  Mitigating Climate Change through Carbon Sequestration / Arpitkumar Shantilal
+		  Patel</td>
+		  <td class=xl69 data-style='width:47pt'>B24</td>
+		  <td class=xl68 data-style='width:238pt'>Aquatic insects diversity and
+		  water quality: A comparison of two freshwater habitats in Colombo district,
+		  Sri Lanka / Agasthya Malinatha Wickramarachchi Thotagamuwa</td>
+		  <td class=xl69 data-style='width:47pt'>&nbsp;</td>
+		  <td class=xl68 data-style='width:263pt'></td>
+		 </tr>
+		</table>
+		</div>
+</div>
 	</div>
 </div>
 
