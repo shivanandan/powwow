@@ -130,7 +130,7 @@ class WorkshopsController < ApplicationController
     @daysfilled = @daysfilled.uniq
     @daysfilled = @daysfilled.sort
 
-    # Write a redirect if the current user does not have a ticket
+    redirect_to post_login_path
   end
 
   def register
