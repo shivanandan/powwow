@@ -1,0 +1,49 @@
+<style>
+table.wwwworkshop td, table.wwwworkshop th {
+  padding: 4px;
+  border: 1px solid #f0f0f0;
+}
+</style>
+<br><br><br>
+<% counter = 0 %>
+<% @workshops.each do |w| %>
+<hr>
+<% remaining = w.maximum_seats - w.current_seats %>
+<strong><%= w.title %></strong> <br>
+  <strong>CONDUCTORS : </strong><% @conductors[counter].each do |c| %>
+    <%= c.user.full_name %>
+  <% end %>
+  <br>
+  <% rcount = 1 %>
+    <table class="wwwworkshop">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @registrations[counter].each do |r| %>
+        <tr>
+          <td><%= rcount %> </td>
+          <td><%= r.user.full_name %></td>
+          <td><%= r.user.email %></td>
+        </tr>
+          <% rcount = rcount + 1 %>
+        <% end %>
+        <% remaining.times do |count| %>
+          <tr>
+            <td><%= rcount + count %></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <div class="well">
+    MAX SEATS : <%= w.maximum_seats %> • <%= remaining %> remaining.
+
+  </div>
+  <% counter = counter + 1 %>
+<% end %>

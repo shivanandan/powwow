@@ -76,6 +76,8 @@ Powwow::Application.routes.draw do
   post 'workshops/:workshop_id/send_mails' => 'workshops#send_mail', as: :workshop_send_mail
   post 'workshops/:workshop_id/toggle_registrations' => 'workshops#toggle_registrations', as: :toggle_registrations
 
+  get 'workshops_download_data' => 'workshops#workshop_data', as: :download_data
+
   get 'registerforworkshops' => 'workshops#listall', as: :listall
 
   get 'transfer' => 'home#post_login', as: :post_login

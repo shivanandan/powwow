@@ -1,6 +1,8 @@
 class ApplicantController < ApplicationController
 	before_filter :onlyapplicant
 
+	require 'csv'
+
 	def index
 		@applicantworkshops = Workshopregistrations.where(:user_id => current_user.id).joins(:workshop)
 	end

@@ -235,6 +235,27 @@ class WorkshopsController < ApplicationController
     end
   end
 
+  def workshop_data
+    @workshops = Workshop.all
+    @registrations = []
+    @conductors = []
+
+    @workshops.each do |worky|
+      rtemp = Workshopregistrations.where(:workshop_id => worky.id)
+      ctemp = Workshopconductorship.where(:workshop_id => worky.id)
+      @registrations.push(rtemp)
+      @conductors.push(ctemp)
+    end
+
+    respond_to do |format|
+       format.html
+       format.csv do
+         headers['Content-Disposition'] = "attachment; filename=\"user-list\""
+         headers['Content-Type'] ||= 'text/csv'
+       end
+     end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workshop

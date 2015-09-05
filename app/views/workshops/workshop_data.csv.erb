@@ -1,0 +1,6 @@
+<%- headers = ['id', 'Title', ] -%>
+<%= CSV.generate_line headers %>
+<%- @workshops.each do |w| -%>
+  <%= CSV.generate_line([w.id, w.title]) %>
+  <% participants = w.workshop_registrations %>
+<%- end -%>
