@@ -28,7 +28,7 @@
 		<%# @test_ids = [120,142,7,10,11,143] %>
 		<% @test_ids = [] %>
 		<% if( @test_ids.include? current_user.id ) or @conference.workshop_registration_flag %>
-		<%# link_to 'Register for workshops', listall_path unless current_user.ticketless? %> <br>
+		<%= link_to 'Register for workshops', listall_path unless current_user.ticketless? %> <br>
 		<hr>
 			<h5>My workshops</h5>
 			<p>Please click on the links below to check on resources and links added by the workshop organisers.</p>
