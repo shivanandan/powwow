@@ -3,11 +3,15 @@ table.wwwworkshop td, table.wwwworkshop th {
   padding: 4px;
   border: 1px solid #f0f0f0;
 }
+h6 {page-break-before: always}
 </style>
 <br><br><br>
+
+Please click on <em>file > print</em> to print this entire list out. Warning, keep loads of paper handy.
+
 <% counter = 0 %>
 <% @workshops.each do |w| %>
-<hr>
+<h6>- - - - - -</h6>
 <% remaining = w.maximum_seats - w.current_seats %>
 <strong><%= w.title %></strong> <br>
   <strong>CONDUCTORS : </strong><% @conductors[counter].each do |c| %>
