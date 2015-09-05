@@ -29,12 +29,12 @@
 		<% @test_ids = [] %>
 		<% if( @test_ids.include? current_user.id ) or @conference.workshop_registration_flag %>
 		<%= link_to 'Register for workshops', listall_path unless current_user.ticketless? %> <br>
+		<% end %>
 		<hr>
 			<h5>My workshops</h5>
 			<p>Please click on the links below to check on resources and links added by the workshop organisers.</p>
-			<% @applicantworkshops.each do |r| %>
-				<%= link_to r.workshop.title, workshop_path(r.workshop) %> <br>
-			<% end %>
+		<% @applicantworkshops.each do |r| %>
+			<%= link_to r.workshop.title, workshop_path(r.workshop) %> <br>
 		<% end %>
 <br><br><br>
 	</div>
