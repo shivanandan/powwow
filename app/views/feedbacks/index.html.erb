@@ -1,0 +1,53 @@
+<h1>Listing feedbacks</h1>
+
+<table class="table table-striped table-hover table-bordered datatable">
+  <thead>
+    <tr>
+      <th>Plenary</th>
+      <th>Scheduling</th>
+      <th>Scheduling comments</th>
+      <th>Plenary topic1</th>
+      <th>Plenary topic2</th>
+      <th>Plenary topic3</th>
+      <th>Workshop topic1</th>
+      <th>Workshop topic2</th>
+      <th>Workshop topic3</th>
+      <th>Food</th>
+      <th>Overall rating</th>
+      <th>Overall suggestions</th>
+      <th>Compare</th>
+      <th>Additional comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+        <td><%= feedback.plenary %></td>
+        <td><%= feedback.scheduling %></td>
+        <td><%= feedback.scheduling_comments %></td>
+        <td><%= feedback.plenary_topic1 %></td>
+        <td><%= feedback.plenary_topic2 %></td>
+        <td><%= feedback.plenary_topic3 %></td>
+        <td><%= feedback.workshop_topic1 %></td>
+        <td><%= feedback.workshop_topic2 %></td>
+        <td><%= feedback.workshop_topic3 %></td>
+        <td><%= feedback.food %></td>
+        <td><%= feedback.overall_rating %></td>
+        <td><%= feedback.overall_suggestions %></td>
+        <td><%= feedback.compare %></td>
+        <td><%= feedback.additional_comments %></td>
+        <td><%= link_to 'Show', feedback %></td>
+        <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
+        <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feedback', new_feedback_path %>

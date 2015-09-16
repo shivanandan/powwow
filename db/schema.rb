@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807114411) do
+ActiveRecord::Schema.define(version: 20150915193811) do
 
   create_table "announcements", force: true do |t|
     t.string   "title"
@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(version: 20150807114411) do
   create_table "conferences", force: true do |t|
     t.boolean  "workshop_registration_flag"
     t.boolean  "workshop_close_flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feedbacks", force: true do |t|
+    t.text     "plenary"
+    t.text     "scheduling"
+    t.text     "scheduling_comments"
+    t.text     "plenary_topic1"
+    t.text     "plenary_topic2"
+    t.text     "plenary_topic3"
+    t.text     "workshop_topic1"
+    t.text     "workshop_topic2"
+    t.text     "workshop_topic3"
+    t.text     "food"
+    t.text     "overall_rating"
+    t.text     "overall_suggestions"
+    t.text     "compare"
+    t.text     "additional_comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

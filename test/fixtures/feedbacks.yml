@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plenary: MyText
+  scheduling: MyText
+  scheduling_comments: MyText
+  plenary_topic1: MyText
+  plenary_topic2: MyText
+  plenary_topic3: MyText
+  workshop_topic1: MyText
+  workshop_topic2: MyText
+  workshop_topic3: MyText
+  food: MyText
+  overall_rating: MyText
+  overall_suggestions: MyText
+  compare: MyText
+  additional_comments: MyText
+
+two:
+  plenary: MyText
+  scheduling: MyText
+  scheduling_comments: MyText
+  plenary_topic1: MyText
+  plenary_topic2: MyText
+  plenary_topic3: MyText
+  workshop_topic1: MyText
+  workshop_topic2: MyText
+  workshop_topic3: MyText
+  food: MyText
+  overall_rating: MyText
+  overall_suggestions: MyText
+  compare: MyText
+  additional_comments: MyText

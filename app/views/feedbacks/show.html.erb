@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<pre>
+  <%= @feedback.inspect %>
+</pre>
+
+<p>
+  <strong>Plenary:</strong>
+  <%= @feedback.plenary %>
+</p>
+
+<p>
+  <strong>Scheduling:</strong>
+  <%= @feedback.scheduling %>
+</p>
+
+<p>
+  <strong>Scheduling comments:</strong>
+  <%= @feedback.scheduling_comments %>
+</p>
+
+<p>
+  <strong>Plenary topic1:</strong>
+  <%= @feedback.plenary_topic1 %>
+</p>
+
+<p>
+  <strong>Plenary topic2:</strong>
+  <%= @feedback.plenary_topic2 %>
+</p>
+
+<p>
+  <strong>Plenary topic3:</strong>
+  <%= @feedback.plenary_topic3 %>
+</p>
+
+<p>
+  <strong>Workshop topic1:</strong>
+  <%= @feedback.workshop_topic1 %>
+</p>
+
+<p>
+  <strong>Workshop topic2:</strong>
+  <%= @feedback.workshop_topic2 %>
+</p>
+
+<p>
+  <strong>Workshop topic3:</strong>
+  <%= @feedback.workshop_topic3 %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @feedback.food %>
+</p>
+
+<p>
+  <strong>Overall rating:</strong>
+  <%= @feedback.overall_rating %>
+</p>
+
+<p>
+  <strong>Overall suggestions:</strong>
+  <%= @feedback.overall_suggestions %>
+</p>
+
+<p>
+  <strong>Compare:</strong>
+  <%= @feedback.compare %>
+</p>
+
+<p>
+  <strong>Additional comments:</strong>
+  <%= @feedback.additional_comments %>
+</p>
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

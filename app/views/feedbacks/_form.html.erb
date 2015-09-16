@@ -1,0 +1,95 @@
+<%= form_for(@feedback) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+      <ul>
+      <% @feedback.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <style>
+  .field {
+    padding: 2em 0em;
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  select#feedback_plenary {
+    border: 1px solid #c0c0c0;
+    padding: 1em;
+    width: 50%;
+  }
+  </style>
+
+  <div class="field">
+    <strong>Which of the plenaries did you find particularly inspiring?</strong> <br>
+    Hold down the Ctrl (windows) / Command (Mac) button to select multiple options. <br>
+    <br>
+    <%= f.select :plenary, options_for_select([ "T. R. Shankar Raman","James D. Nichols","Sudha Vasan",
+"Uma Ramakrishnan", "Jairam Ramesh", "Krushnamegh Kunte" ,"Kanchi Kohli", "None"], "None"), {}, { :multiple => true, :size => 8 } %>
+<br>
+  </div>
+  <div class="field">
+    <strong>How did you find the scheduling of the conference?</strong><br>
+        <%= f.select :scheduling, options_for_select(["Too packed", "Just right", "Too much free time"], "Just right") %>
+    <br><br>
+    <%= f.label :scheduling_comments, "Any other comments?" %><br>
+    <%= f.text_area :scheduling_comments %>
+  </div>
+<br><br>
+  <strong>Is there any specific topic you would like to see covered at future SCCS conferences?</strong>
+  <div class="field row">
+    <div class="col-md-4">
+      In Plenaries <br>
+      <%= f.label :plenary_topic1, "1" %><br>
+      <%= f.text_area :plenary_topic1 %> <br>
+
+      <%= f.label :plenary_topic2, "2" %><br>
+      <%= f.text_area :plenary_topic2 %> <br>
+
+      <%= f.label :plenary_topic3, "3" %><br>
+      <%= f.text_area :plenary_topic3 %>
+
+    </div>
+    <div class="col-md-4">
+    In Workshops <br>
+      <%= f.label :workshop_topic1, "1" %><br>
+      <%= f.text_area :workshop_topic1 %> <br>
+
+      <%= f.label :workshop_topic2, "2" %><br>
+      <%= f.text_area :workshop_topic2 %> <br>
+
+      <%= f.label :workshop_topic3, "3" %><br>
+      <%= f.text_area :workshop_topic3 %>
+    </div>
+  </div>
+
+  <div class="field">
+    <strong><%= f.label :food, "How was the food during the conference and was there any specific food you liked at the conference?" %></strong><br>
+    <%= f.text_area :food %>
+  </div>
+  <div class="field">
+    <%= f.label :overall_rating, "Overall how would you rate SCCS­Blr 2015" %> (​general organisation, volunteer support, food, access, venue, accommodation)<br>
+    <%= f.select :overall_rating, options_for_select(["Loved It!", "All Right", "Disappointed"], "All Right") %>
+    <br><br>
+    <%= f.label :overall_suggestions, "Any suggestions on how we can improve?" %><br>
+    <%= f.text_area :overall_suggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :compare, "Overall how would you rate SCCS­Blr 2015 as compared to previous SCCS­Blr conferences​" %> (general organisation, volunteer support, food, access, venue, accommodation)<br>
+    <%= f.select :compare, options_for_select(["N/A (This is the first time I have attended SCCS)", "Much Better", "Similar", "Much Worse"], "Similar") %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_comments, "Any additional comments?" %><br>
+    <%= f.text_area :additional_comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
