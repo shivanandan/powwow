@@ -20,10 +20,12 @@ class Ability
             s.user_id == user.id and s.editable == true
         end
         can [:main, :show], Workshop
+        can :create, Feedback
         # can [:listall, :register], Workshop do |w|
         #     user.ticketless?
         # end
     elsif user.reviewer?
+        can :create, Feedback
         can [:update], Review do |r|
             r.user_id = user.id and !r.finalized
         end
@@ -32,11 +34,13 @@ class Ability
         end
         can [:main], Workshop
     elsif user.resourceperson?
+        can :create, Feedback
         can :show, Webpage
         can [:update, :mail_participants, :send_mail], Workshop, :workshopconductorship => {:user_id => user.id}
         can [:listall, :main, :show], Workshop
     else
         can :show, :all
+        can :create, Feedback
         can :show, Submission do |s|
             s.final_status == 'talk' or s.final_status == 'poster'
         end
