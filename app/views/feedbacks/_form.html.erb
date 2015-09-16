@@ -39,7 +39,7 @@
     <strong>How did you find the scheduling of the conference?</strong><br>
         <%= f.select :scheduling, options_for_select(["Too packed", "Just right", "Too much free time"], "Just right") %>
     <br><br>
-    <%= f.label :scheduling_comments, "Any other comments?" %><br>
+    <%= f.label :scheduling_comments, "Additional comments and what suggestions if any do you have to fix this?" %><br>
     <%= f.text_area :scheduling_comments %>
   </div>
 <br><br>
@@ -71,7 +71,7 @@
   </div>
 
   <div class="field">
-    <strong><%= f.label :food, "How was the food during the conference and was there any specific food you liked at the conference?" %></strong><br>
+    <strong><%= f.label :food, "How was the food during the conference? Was there any specific food you liked/disliked at the conference?" %></strong><br>
     <%= f.text_area :food %>
   </div>
   <div class="field">
